@@ -1,0 +1,11 @@
+:root {
+    --color-primary: #1E3A8A; /*الهيدر والعناوين والروابط*/
+    --color-accent: #F97316;/*أزرار الحجز والبحث فقط*/
+    --color-text-dark: #0F172A;/*النصوص الأساسية*/
+    --color-text-gray: #64748B;/*النصوص الثانوية*/
+    --color-border: #E2E8F0;/*الخطوط والحدود*/
+    --color-background: #F8FAFC;/*خلفية الصفحات*/
+    --color-white: #FFFFFF;/*الكروت*/
+    --color-success: #16A34A;/*رسائل النجاح*/
+    --color-error: #DC2626;/*رسائل الخطأ*/
+}
