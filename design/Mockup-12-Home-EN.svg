@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2300" viewBox="0 0 1440 2300">
+<title>Home EN</title>
+<rect id="Page-Background" width="1440" height="2300" fill="#F8FAFC"/>
+<rect x="0" y="0" width="1440" height="80" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="120" y="50" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="start"><tspan fill="#1E3A8A">Yalla</tspan><tspan fill="#F97316"> Car</tspan></text>
+<text x="330" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A" text-anchor="start">Home</text>
+<text x="455" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="start">Cars</text>
+<text x="580" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="start">Companies</text>
+<text x="705" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="start">How it works</text>
+<rect x="1260" y="16" width="60" height="48" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="1290.0" y="46.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle" direction="rtl" unicode-bidi="embed">ع</text>
+<rect x="1094" y="16" width="150" height="48" rx="8" fill="#F97316"/>
+<text x="1169.0" y="46.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Log in</text>
+<rect id="Hero" x="0" y="80" width="1440" height="560" rx="0" fill="#1E3A8A"/>
+<text x="720" y="225" font-family="Cairo, Arial, sans-serif" font-size="44" font-weight="700" fill="#FFFFFF" text-anchor="middle">Rent a car in Jordan with ease</text>
+<text x="720" y="280" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="400" fill="#CBD5E1" text-anchor="middle">Cars from trusted Jordanian rental companies at clear prices</text>
+<rect id="Search-box" x="220" y="340" width="1000" height="130" rx="16" fill="#FFFFFF"/>
+<text x="244" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="start">Pickup city</text>
+<rect x="244" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="258" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Amman</text>
+<text x="450" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="start">Pickup date</text>
+<rect x="450" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="464" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Select date</text>
+<text x="656" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="start">Return date</text>
+<rect x="656" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="670" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Select date</text>
+<text x="862" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="start">Car type</text>
+<rect x="862" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="876" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">All</text>
+<rect x="1068" y="390" width="128" height="48" rx="8" fill="#F97316"/>
+<text x="1132.0" y="420.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Search</text>
+<rect x="555.0" y="545" width="330" height="69.3" rx="20.79" fill="#3B5BB0"/>
+<rect x="627.6" y="500.648" width="184.8" height="58.211999999999996" rx="19.404" fill="#3B5BB0"/>
+<circle cx="630.9" cy="614.3" r="23.562" fill="#475569"/>
+<circle cx="809.1" cy="614.3" r="23.562" fill="#475569"/>
+<text x="120" y="720" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="start">Categories</text>
+<rect x="120" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="230" cy="785" r="18" fill="#EFF6FF"/>
+<text x="230" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">Economy</text>
+<rect x="365" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="475" cy="785" r="18" fill="#EFF6FF"/>
+<text x="475" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">Family</text>
+<rect x="610" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="720" cy="785" r="18" fill="#EFF6FF"/>
+<text x="720" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">SUV</text>
+<rect x="855" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="965" cy="785" r="18" fill="#EFF6FF"/>
+<text x="965" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">Luxury</text>
+<rect x="1100" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="1210" cy="785" r="18" fill="#EFF6FF"/>
+<text x="1210" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">4x4</text>
+<text x="120" y="920" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="start">Featured cars</text>
+<rect x="120" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="132" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="186.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="219.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="220.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="301.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="136" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="start">Kia Picanto 2023</text>
+<text x="136" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Ram Rentals</text>
+<text x="136" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="start">Auto • 5 seats</text>
+<text x="136" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="start">22 JOD / day</text>
+<rect x="276" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="331.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle">Details</text>
+<rect x="426" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="438" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="492.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="525.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="526.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="607.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="442" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="start">Hyundai Tucson 2024</text>
+<text x="442" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Petra Car</text>
+<text x="442" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="start">Auto • 5 seats</text>
+<text x="442" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="start">45 JOD / day</text>
+<rect x="582" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="637.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle">Details</text>
+<rect x="732" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="744" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="798.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="831.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="832.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="913.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="748" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="start">Toyota Corolla 2023</text>
+<text x="748" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Amman Rent</text>
+<text x="748" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="start">Auto • 5 seats</text>
+<text x="748" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="start">28 JOD / day</text>
+<rect x="888" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="943.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle">Details</text>
+<rect x="1038" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1050" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="1104.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="1137.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="1138.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="1219.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="1054" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="start">Mercedes C200</text>
+<text x="1054" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Nukhba Car</text>
+<text x="1054" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="start">Auto • Luxury</text>
+<text x="1054" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="start">85 JOD / day</text>
+<rect x="1194" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="1249.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle">Details</text>
+<text x="120" y="1370" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="start">How it works</text>
+<rect x="120" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="164" cy="1450" r="22" fill="#F97316"/>
+<text x="164" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="202" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="start">Search</text>
+<text x="144" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="start">Choose city, dates and car type</text>
+<rect x="528" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="572" cy="1450" r="22" fill="#F97316"/>
+<text x="572" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="610" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="start">Book</text>
+<text x="552" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="start">Compare prices and book directly with the company</text>
+<rect x="936" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="980" cy="1450" r="22" fill="#F97316"/>
+<text x="980" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1018" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="start">Pick up</text>
+<text x="960" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="start">Collect the car and return it easily</text>
+<text x="120" y="1650" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="start">Partner rental companies</text>
+<rect x="120" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="230" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">Ram Rentals</text>
+<rect x="365" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="475" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">Petra Car</text>
+<rect x="610" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="720" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">Amman Rent</text>
+<rect x="855" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="965" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">Nukhba Car</text>
+<rect x="1100" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1210" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">Aqaba Drive</text>
+<rect x="0" y="1810" width="1440" height="170" rx="0" fill="#EFF6FF"/>
+<circle cx="140" cy="1895" r="16" fill="#F97316"/>
+<text x="168" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="start">Clear prices, no hidden fees</text>
+<circle cx="548" cy="1895" r="16" fill="#F97316"/>
+<text x="576" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="start">Licensed and approved companies</text>
+<circle cx="956" cy="1895" r="16" fill="#F97316"/>
+<text x="984" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="start">Two languages: Arabic and English</text>
+<rect x="0" y="2040" width="1440" height="260" rx="0" fill="#1E3A8A"/>
+<text x="120" y="2110" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" text-anchor="start"><tspan fill="#FFFFFF">Yalla</tspan><tspan fill="#F97316"> Car</tspan></text>
+<text x="120" y="2150" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#CBD5E1" text-anchor="start">Cars from trusted Jordanian rental companies at clear prices</text>
+<text x="700" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="start">About</text>
+<text x="700" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">•••••</text>
+<text x="870" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="start">For companies</text>
+<text x="870" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">•••••</text>
+<text x="1040" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="start">Help</text>
+<text x="1040" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">•••••</text>
+<text x="1210" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="start">Terms</text>
+<text x="1210" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">•••••</text>
+<line x1="120" y1="2240" x2="1320" y2="2240" stroke="#3B5BB0" stroke-width="1"/>
+<text x="120" y="2275" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#CBD5E1" text-anchor="start">All rights reserved - Yalla Car</text>
+</svg>

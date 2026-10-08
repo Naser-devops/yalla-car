@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2300" viewBox="0 0 1440 2300">
+<title>Home AR</title>
+<rect id="Page-Background" width="1440" height="2300" fill="#F8FAFC"/>
+<rect x="0" y="0" width="1440" height="80" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1320" y="50" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="end" direction="rtl" unicode-bidi="embed"><tspan fill="#1E3A8A">يلا</tspan><tspan fill="#F97316"> كار</tspan></text>
+<text x="1110" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">الرئيسية</text>
+<text x="985" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">السيارات</text>
+<text x="860" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">الشركات</text>
+<text x="735" y="46" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">كيف يعمل</text>
+<rect x="120" y="16" width="60" height="48" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="150.0" y="46.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle">EN</text>
+<rect x="196" y="16" width="150" height="48" rx="8" fill="#F97316"/>
+<text x="271.0" y="46.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">تسجيل الدخول</text>
+<rect id="Hero" x="0" y="80" width="1440" height="560" rx="0" fill="#1E3A8A"/>
+<text x="720" y="225" font-family="Cairo, Arial, sans-serif" font-size="44" font-weight="700" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">احجز سيارتك في الأردن بكل سهولة</text>
+<text x="720" y="280" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="400" fill="#CBD5E1" text-anchor="middle" direction="rtl" unicode-bidi="embed">سيارات من شركات تأجير أردنية موثوقة، وبأسعار واضحة</text>
+<rect id="Search-box" x="220" y="340" width="1000" height="130" rx="16" fill="#FFFFFF"/>
+<text x="1196" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">مدينة الاستلام</text>
+<rect x="1006" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="1182" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">عمّان</text>
+<text x="990" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">تاريخ الاستلام</text>
+<rect x="800" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="976" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">اختر التاريخ</text>
+<text x="784" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">تاريخ التسليم</text>
+<rect x="594" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="770" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">اختر التاريخ</text>
+<text x="578" y="382" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">نوع السيارة</text>
+<rect x="388" y="390" width="190" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+<text x="564" y="420" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">الكل</text>
+<rect x="244" y="390" width="128" height="48" rx="8" fill="#F97316"/>
+<text x="308.0" y="420.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">بحث</text>
+<rect x="555.0" y="545" width="330" height="69.3" rx="20.79" fill="#3B5BB0"/>
+<rect x="627.5999999999999" y="500.648" width="184.8" height="58.211999999999996" rx="19.404" fill="#3B5BB0"/>
+<circle cx="809.1" cy="614.3" r="23.562" fill="#475569"/>
+<circle cx="630.9" cy="614.3" r="23.562" fill="#475569"/>
+<text x="1320" y="720" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">التصنيفات</text>
+<rect x="1100" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="1210" cy="785" r="18" fill="#EFF6FF"/>
+<text x="1210" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" direction="rtl" unicode-bidi="embed">اقتصادية</text>
+<rect x="855" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="965" cy="785" r="18" fill="#EFF6FF"/>
+<text x="965" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" direction="rtl" unicode-bidi="embed">عائلية</text>
+<rect x="610" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="720" cy="785" r="18" fill="#EFF6FF"/>
+<text x="720" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">SUV</text>
+<rect x="365" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="475" cy="785" r="18" fill="#EFF6FF"/>
+<text x="475" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" direction="rtl" unicode-bidi="embed">فاخرة</text>
+<rect x="120" y="750" width="220" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="230" cy="785" r="18" fill="#EFF6FF"/>
+<text x="230" y="835" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" direction="rtl" unicode-bidi="embed">دفع رباعي</text>
+<text x="1320" y="920" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">سيارات مميزة</text>
+<rect x="1038" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1050" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="1104.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="1137.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="1219.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="1138.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="1304" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end">Kia Picanto 2023</text>
+<text x="1304" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">رم للتأجير</text>
+<text x="1304" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">أوتوماتيك • 5 مقاعد</text>
+<text x="1304" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="end" direction="rtl" unicode-bidi="embed">22 د.أ / يوم</text>
+<rect x="1054" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="1109.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle" direction="rtl" unicode-bidi="embed">التفاصيل</text>
+<rect x="732" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="744" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="798.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="831.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="913.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="832.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="998" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end">Hyundai Tucson 2024</text>
+<text x="998" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">البتراء كار</text>
+<text x="998" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">أوتوماتيك • 5 مقاعد</text>
+<text x="998" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="end" direction="rtl" unicode-bidi="embed">45 د.أ / يوم</text>
+<rect x="748" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="803.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle" direction="rtl" unicode-bidi="embed">التفاصيل</text>
+<rect x="426" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="438" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="492.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="525.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="607.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="526.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="692" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end">Toyota Corolla 2023</text>
+<text x="692" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">عمّان رنت</text>
+<text x="692" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">أوتوماتيك • 5 مقاعد</text>
+<text x="692" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="end" direction="rtl" unicode-bidi="embed">28 د.أ / يوم</text>
+<rect x="442" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="497.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle" direction="rtl" unicode-bidi="embed">التفاصيل</text>
+<rect x="120" y="950" width="282" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="132" y="962" width="258" height="160" rx="8" fill="#E2E8F0"/>
+<rect x="186.0" y="1025" width="150" height="31.5" rx="9.45" fill="#94A3B8"/>
+<rect x="219.0" y="1004.84" width="84.00000000000001" height="26.459999999999997" rx="8.82" fill="#94A3B8"/>
+<circle cx="301.5" cy="1056.5" r="10.71" fill="#475569"/>
+<circle cx="220.5" cy="1056.5" r="10.71" fill="#475569"/>
+<text x="386" y="1155" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end">Mercedes C200</text>
+<text x="386" y="1182" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">نخبة كار</text>
+<text x="386" y="1208" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">أوتوماتيك • فاخرة</text>
+<text x="386" y="1252" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="700" fill="#F97316" text-anchor="end" direction="rtl" unicode-bidi="embed">85 د.أ / يوم</text>
+<rect x="136" y="1230" width="110" height="40" rx="8" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+<text x="191.0" y="1256.0" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A" text-anchor="middle" direction="rtl" unicode-bidi="embed">التفاصيل</text>
+<text x="1320" y="1370" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">كيف يعمل؟</text>
+<rect x="936" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="1276" cy="1450" r="22" fill="#F97316"/>
+<text x="1276" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1238" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">ابحث</text>
+<text x="1296" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">اختر المدينة والتواريخ ونوع السيارة</text>
+<rect x="528" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="868" cy="1450" r="22" fill="#F97316"/>
+<text x="868" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="830" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">احجز</text>
+<text x="888" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">قارن الأسعار واحجز مباشرة من الشركة</text>
+<rect x="120" y="1400" width="384" height="170" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<circle cx="460" cy="1450" r="22" fill="#F97316"/>
+<text x="460" y="1458" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="422" y="1457" font-family="Cairo, Arial, sans-serif" font-size="22" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">استلم</text>
+<text x="480" y="1512" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">استلم السيارة وسلّمها بسهولة</text>
+<text x="1320" y="1650" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">شركات التأجير الشريكة</text>
+<rect x="1100" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1210" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">رم للتأجير</text>
+<rect x="855" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="965" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">البتراء كار</text>
+<rect x="610" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="720" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">عمّان رنت</text>
+<rect x="365" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="475" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">نخبة كار</text>
+<rect x="120" y="1680" width="220" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="230" y="1727" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">العقبة درايف</text>
+<rect x="0" y="1810" width="1440" height="170" rx="0" fill="#EFF6FF"/>
+<circle cx="1300" cy="1895" r="16" fill="#F97316"/>
+<text x="1272" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">أسعار واضحة بدون رسوم مخفية</text>
+<circle cx="892" cy="1895" r="16" fill="#F97316"/>
+<text x="864" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">شركات مرخّصة ومعتمدة</text>
+<circle cx="484" cy="1895" r="16" fill="#F97316"/>
+<text x="456" y="1901" font-family="Cairo, Arial, sans-serif" font-size="17" font-weight="600" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">دعم لغتين: عربي وإنجليزي</text>
+<rect x="0" y="2040" width="1440" height="260" rx="0" fill="#1E3A8A"/>
+<text x="1320" y="2110" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" text-anchor="end" direction="rtl" unicode-bidi="embed"><tspan fill="#FFFFFF">يلا</tspan><tspan fill="#F97316"> كار</tspan></text>
+<text x="1320" y="2150" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">سيارات من شركات تأجير أردنية موثوقة، وبأسعار واضحة</text>
+<text x="740" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">عن المنصة</text>
+<text x="740" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">•••••</text>
+<text x="570" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">للشركات</text>
+<text x="570" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">•••••</text>
+<text x="400" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">المساعدة</text>
+<text x="400" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">•••••</text>
+<text x="230" y="2110" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">الشروط والأحكام</text>
+<text x="230" y="2145" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">•••••</text>
+<line x1="1320" y1="2240" x2="120" y2="2240" stroke="#3B5BB0" stroke-width="1"/>
+<text x="1320" y="2275" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">جميع الحقوق محفوظة - يلا كار</text>
+</svg>

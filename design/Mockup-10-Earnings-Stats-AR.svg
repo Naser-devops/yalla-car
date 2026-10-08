@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1100" viewBox="0 0 1440 1100">
+<title>Earnings and Stats</title>
+<rect id="Page-Background" width="1440" height="1100" fill="#F8FAFC"/>
+<rect x="1180" y="0" width="260" height="1100" rx="0" fill="#1E3A8A"/>
+<text x="1310" y="70" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" direction="rtl" unicode-bidi="embed"><tspan fill="#FFFFFF">يلا</tspan><tspan fill="#F97316"> كار</tspan></text>
+<text x="1400" y="161" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">لوحة التحكم</text>
+<text x="1400" y="221" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">سياراتي</text>
+<text x="1400" y="281" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">إضافة سيارة</text>
+<text x="1400" y="341" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">الحجوزات</text>
+<rect x="1196" y="370" width="228" height="48" rx="8" fill="#2F4FA8"/>
+<text x="1400" y="401" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">الأرباح</text>
+<text x="1400" y="1050" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">تسجيل الخروج</text>
+<text x="1140" y="75" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">الأرباح والإحصائيات</text>
+<circle cx="80" cy="62" r="20" fill="#E2E8F0"/>
+<text x="110" y="68" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="start" direction="rtl" unicode-bidi="embed">رم للتأجير</text>
+<rect x="883" y="130" width="257" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="170" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">إجمالي الأرباح</text>
+<text x="1120" y="222" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" fill="#F97316" text-anchor="end" direction="rtl" unicode-bidi="embed">12,450 د.أ</text>
+<rect x="602" y="130" width="257" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="839" y="170" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">حجوزات هذا الشهر</text>
+<text x="839" y="222" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" fill="#1E3A8A" text-anchor="end">38</text>
+<rect x="321" y="130" width="257" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="558" y="170" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">نسبة الإشغال</text>
+<text x="558" y="222" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" fill="#1E3A8A" text-anchor="end">72%</text>
+<rect x="40" y="130" width="257" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="277" y="170" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">متوسط التقييم</text>
+<text x="277" y="222" font-family="Cairo, Arial, sans-serif" font-size="30" font-weight="700" fill="#1E3A8A" text-anchor="end">4.7 ★</text>
+<rect x="440" y="280" width="700" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1116" y="320" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">الأرباح خلال 6 أشهر</text>
+<rect x="1030" y="500" width="60" height="120" rx="6" fill="#93A5D6"/>
+<text x="1060" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 1</text>
+<rect x="925" y="450" width="60" height="170" rx="6" fill="#93A5D6"/>
+<text x="955" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 2</text>
+<rect x="820" y="480" width="60" height="140" rx="6" fill="#93A5D6"/>
+<text x="850" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 3</text>
+<rect x="715" y="410" width="60" height="210" rx="6" fill="#93A5D6"/>
+<text x="745" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 4</text>
+<rect x="610" y="430" width="60" height="190" rx="6" fill="#93A5D6"/>
+<text x="640" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 5</text>
+<rect x="505" y="370" width="60" height="250" rx="6" fill="#1E3A8A"/>
+<text x="535" y="645" font-family="Cairo, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">شهر 6</text>
+<rect x="40" y="280" width="376" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="392" y="320" font-family="Cairo, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">أكثر السيارات ربحاً</text>
+<text x="392" y="380" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="end">Mercedes C200</text>
+<text x="64" y="380" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="700" fill="#F97316" text-anchor="start" direction="rtl" unicode-bidi="embed">3,400 د.أ</text>
+<line x1="392" y1="400" x2="64" y2="400" stroke="#E2E8F0" stroke-width="1"/>
+<text x="392" y="450" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="end">Hyundai Tucson</text>
+<text x="64" y="450" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="700" fill="#F97316" text-anchor="start" direction="rtl" unicode-bidi="embed">2,900 د.أ</text>
+<line x1="392" y1="470" x2="64" y2="470" stroke="#E2E8F0" stroke-width="1"/>
+<text x="392" y="520" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="end">Kia Picanto</text>
+<text x="64" y="520" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="700" fill="#F97316" text-anchor="start" direction="rtl" unicode-bidi="embed">2,100 د.أ</text>
+<line x1="392" y1="540" x2="64" y2="540" stroke="#E2E8F0" stroke-width="1"/>
+<text x="392" y="590" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="end">Toyota Corolla</text>
+<text x="64" y="590" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="700" fill="#F97316" text-anchor="start" direction="rtl" unicode-bidi="embed">1,800 د.أ</text>
+<line x1="392" y1="610" x2="64" y2="610" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1140" y="715" font-family="Cairo, Arial, sans-serif" font-size="20" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">آخر الدفعات</text>
+<rect x="40" y="735" width="1100" height="236" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="40" y="735" width="1100" height="56" rx="12" fill="#F1F5F9"/>
+<text x="1120" y="769" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">الزبون</text>
+<text x="845.0" y="769" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">السيارة</text>
+<text x="570.0" y="769" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">التاريخ</text>
+<text x="295.0" y="769" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">المبلغ</text>
+<line x1="1130" y1="791" x2="50" y2="791" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="827.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">أحمد خالد</text>
+<text x="845.0" y="827.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Kia Picanto</text>
+<text x="570.0" y="827.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">3 تشرين الأول</text>
+<text x="295.0" y="827.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">66 د.أ</text>
+<line x1="1130" y1="851" x2="50" y2="851" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="887.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Mark Evans</text>
+<text x="845.0" y="887.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Toyota Corolla</text>
+<text x="570.0" y="887.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">1 تشرين الأول</text>
+<text x="295.0" y="887.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">140 د.أ</text>
+<line x1="1130" y1="911" x2="50" y2="911" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="947.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">سارة محمود</text>
+<text x="845.0" y="947.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Hyundai Tucson</text>
+<text x="570.0" y="947.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">28 أيلول</text>
+<text x="295.0" y="947.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">90 د.أ</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="860" viewBox="0 0 1440 860">
+<title>Incoming Bookings</title>
+<rect id="Page-Background" width="1440" height="860" fill="#F8FAFC"/>
+<rect x="1180" y="0" width="260" height="860" rx="0" fill="#1E3A8A"/>
+<text x="1310" y="70" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" direction="rtl" unicode-bidi="embed"><tspan fill="#FFFFFF">يلا</tspan><tspan fill="#F97316"> كار</tspan></text>
+<text x="1400" y="161" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">لوحة التحكم</text>
+<text x="1400" y="221" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">سياراتي</text>
+<text x="1400" y="281" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">إضافة سيارة</text>
+<rect x="1196" y="310" width="228" height="48" rx="8" fill="#2F4FA8"/>
+<text x="1400" y="341" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="end" direction="rtl" unicode-bidi="embed">الحجوزات</text>
+<text x="1400" y="401" font-family="Cairo, Arial, sans-serif" font-size="16" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">الأرباح</text>
+<text x="1400" y="810" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#CBD5E1" text-anchor="end" direction="rtl" unicode-bidi="embed">تسجيل الخروج</text>
+<text x="1140" y="75" font-family="Cairo, Arial, sans-serif" font-size="32" font-weight="700" fill="#1E3A8A" text-anchor="end" direction="rtl" unicode-bidi="embed">الحجوزات الواردة</text>
+<circle cx="80" cy="62" r="20" fill="#E2E8F0"/>
+<text x="110" y="68" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A" text-anchor="start" direction="rtl" unicode-bidi="embed">رم للتأجير</text>
+<rect x="1022" y="130" width="118" height="40" rx="20" fill="#1E3A8A"/>
+<text x="1081" y="156" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">الكل (12)</text>
+<rect x="892" y="130" width="118" height="40" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="951" y="156" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">جديدة (4)</text>
+<rect x="762" y="130" width="118" height="40" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="821" y="156" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">مؤكدة</text>
+<rect x="632" y="130" width="118" height="40" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<text x="691" y="156" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="middle" direction="rtl" unicode-bidi="embed">منتهية</text>
+<rect x="40" y="200" width="1100" height="416" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="40" y="200" width="1100" height="56" rx="12" fill="#F1F5F9"/>
+<text x="1120" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">الزبون</text>
+<text x="933.0" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">السيارة</text>
+<text x="713.0" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">من - إلى</text>
+<text x="493.0" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">المبلغ</text>
+<text x="361.0" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">الحالة</text>
+<text x="218.0" y="234" font-family="Cairo, Arial, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="end" direction="rtl" unicode-bidi="embed">إجراء</text>
+<line x1="1130" y1="256" x2="50" y2="256" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">أحمد خالد</text>
+<text x="933.0" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Kia Picanto 2023</text>
+<text x="713.0" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">12 - 15 تشرين الأول</text>
+<text x="493.0" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">66 د.أ</text>
+<rect x="261.0" y="278.0" width="100" height="28" rx="14" fill="#FEF3C7"/>
+<text x="311.0" y="297.0" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="600" fill="#B45309" text-anchor="middle" direction="rtl" unicode-bidi="embed">جديد</text>
+<rect x="134.0" y="274.0" width="84" height="36" rx="8" fill="#16A34A"/>
+<text x="176.0" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">قبول</text>
+<rect x="40.0" y="274.0" width="84" height="36" rx="8" fill="none" stroke="#DC2626" stroke-width="2"/>
+<text x="82.0" y="298.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#DC2626" text-anchor="middle" direction="rtl" unicode-bidi="embed">رفض</text>
+<line x1="1130" y1="328" x2="50" y2="328" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">سارة محمود</text>
+<text x="933.0" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Hyundai Tucson</text>
+<text x="713.0" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">14 - 16 تشرين الأول</text>
+<text x="493.0" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">90 د.أ</text>
+<rect x="261.0" y="350.0" width="100" height="28" rx="14" fill="#FEF3C7"/>
+<text x="311.0" y="369.0" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="600" fill="#B45309" text-anchor="middle" direction="rtl" unicode-bidi="embed">جديد</text>
+<rect x="134.0" y="346.0" width="84" height="36" rx="8" fill="#16A34A"/>
+<text x="176.0" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">قبول</text>
+<rect x="40.0" y="346.0" width="84" height="36" rx="8" fill="none" stroke="#DC2626" stroke-width="2"/>
+<text x="82.0" y="370.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#DC2626" text-anchor="middle" direction="rtl" unicode-bidi="embed">رفض</text>
+<line x1="1130" y1="400" x2="50" y2="400" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="442.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Mark Evans</text>
+<text x="933.0" y="442.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Toyota Corolla</text>
+<text x="713.0" y="442.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">20 - 25 تشرين الأول</text>
+<text x="493.0" y="442.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">140 د.أ</text>
+<rect x="261.0" y="422.0" width="100" height="28" rx="14" fill="#DCFCE7"/>
+<text x="311.0" y="441.0" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="600" fill="#16A34A" text-anchor="middle" direction="rtl" unicode-bidi="embed">مؤكد</text>
+<text x="218.0" y="442.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">-</text>
+<line x1="1130" y1="472" x2="50" y2="472" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="514.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">ليث عمر</text>
+<text x="933.0" y="514.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Mercedes C200</text>
+<text x="713.0" y="514.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">1 - 3 تشرين الثاني</text>
+<text x="493.0" y="514.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">170 د.أ</text>
+<rect x="261.0" y="494.0" width="100" height="28" rx="14" fill="#DCFCE7"/>
+<text x="311.0" y="513.0" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="600" fill="#16A34A" text-anchor="middle" direction="rtl" unicode-bidi="embed">مؤكد</text>
+<text x="218.0" y="514.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">-</text>
+<line x1="1130" y1="544" x2="50" y2="544" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1120" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">نور حسن</text>
+<text x="933.0" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end">Kia Sportage</text>
+<text x="713.0" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">5 - 8 تشرين الثاني</text>
+<text x="493.0" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="400" fill="#0F172A" text-anchor="end" direction="rtl" unicode-bidi="embed">120 د.أ</text>
+<rect x="261.0" y="566.0" width="100" height="28" rx="14" fill="#FEF3C7"/>
+<text x="311.0" y="585.0" font-family="Cairo, Arial, sans-serif" font-size="13" font-weight="600" fill="#B45309" text-anchor="middle" direction="rtl" unicode-bidi="embed">جديد</text>
+<rect x="134.0" y="562.0" width="84" height="36" rx="8" fill="#16A34A"/>
+<text x="176.0" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" direction="rtl" unicode-bidi="embed">قبول</text>
+<rect x="40.0" y="562.0" width="84" height="36" rx="8" fill="none" stroke="#DC2626" stroke-width="2"/>
+<text x="82.0" y="586.0" font-family="Cairo, Arial, sans-serif" font-size="15" font-weight="600" fill="#DC2626" text-anchor="middle" direction="rtl" unicode-bidi="embed">رفض</text>
+</svg>
