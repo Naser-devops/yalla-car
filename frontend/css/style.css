@@ -1,11 +1,131 @@
 :root {
-    --color-primary: #1E3A8A; /*الهيدر والعناوين والروابط*/
-    --color-accent: #F97316;/*أزرار الحجز والبحث فقط*/
-    --color-text-dark: #0F172A;/*النصوص الأساسية*/
-    --color-text-gray: #64748B;/*النصوص الثانوية*/
-    --color-border: #E2E8F0;/*الخطوط والحدود*/
-    --color-background: #F8FAFC;/*خلفية الصفحات*/
-    --color-white: #FFFFFF;/*الكروت*/
-    --color-success: #16A34A;/*رسائل النجاح*/
-    --color-error: #DC2626;/*رسائل الخطأ*/
+    /* الألوان */
+    --color-primary: #1E3A8A;
+    /* الهيدر والعناوين والروابط */
+    --color-accent: #F97316;
+    /* أزرار الحجز والبحث فقط */
+    --color-text-dark: #0F172A;
+    /* النصوص الأساسية */
+    --color-text-gray: #64748B;
+    /* النصوص الثانوية */
+    --color-border: #E2E8F0;
+    /* الخطوط والحدود */
+    --color-background: #F8FAFC;
+    /* خلفية الصفحات */
+    --color-white: #FFFFFF;
+    /* الكروت */
+    --color-success: #16A34A;
+    /* رسائل النجاح */
+    --color-error: #DC2626;
+    /* رسائل الخطأ */
+
+    /* الخطوط */
+    --font-main: "Cairo", sans-serif;
+    --font-size-h1: 48px;
+    --font-size-h2: 32px;
+    --font-size-h3: 24px;
+    --font-size-body: 16px;
+    --font-size-small: 14px;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* المسافات (نظام الـ 8) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 64px;
+
+    /* الزوايا والأحجام */
+    --radius-card: 12px;
+    /* زوايا الكروت */
+    --radius-control: 8px;
+    /* زوايا الأزرار والحقول */
+    --height-control: 48px;
+    /* ارتفاع الأزرار والحقول */
+
+    /* الشبكة (Grid) */
+    --container-max: 1200px;
+    /* 1440 ناقص هامش 120 من كل جهة */
+    --gutter: 24px;
+    /* المسافة بين الأعمدة */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text-dark);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 120px;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.navigation {
+    display: flex;
+    margin-inline-start: var(--space-6);
+    gap: var(--space-6);
+   
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+.action {
+    display: flex;
+    gap: var(--space-2);
+    margin-inline-start: auto;
+
+}
+
+.navigation .active{
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+button{
+    height: var(--height-control);
+    padding: 0 var(--space-3);
+    border-radius: var(--radius-control);
+      font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    
+}
+
+.action .en{
+background: transparent;
+border: 2px solid var(--color-primary);
+color: var(--color-primary);
+}
+
+.action .login-btn{
+background: var(--color-accent);
+color: var(--color-white);
+border: none;
 }
