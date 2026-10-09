@@ -88,7 +88,7 @@ header {
     display: flex;
     margin-inline-start: var(--space-6);
     gap: var(--space-6);
-   
+
 }
 
 .navigation a {
@@ -103,29 +103,53 @@ header {
 
 }
 
-.navigation .active{
+.navigation .active {
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
 }
 
-button{
+button {
     height: var(--height-control);
     padding: 0 var(--space-3);
     border-radius: var(--radius-control);
-      font-size: var(--font-size-body);
+    font-size: var(--font-size-body);
     font-weight: var(--font-weight-semibold);
     cursor: pointer;
-    
+
 }
 
-.action .en{
-background: transparent;
-border: 2px solid var(--color-primary);
-color: var(--color-primary);
+.action .en {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
 }
 
-.action .login-btn{
-background: var(--color-accent);
-color: var(--color-white);
-border: none;
+.action .login-btn {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.hero {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-6) 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-2);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-body);
+    color: rgba(255, 255, 255, 0.85);
 }
