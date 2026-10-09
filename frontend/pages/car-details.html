@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل السيارة — يلا كار</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">يلا <span>كار</span></div>
+        <nav class="navigation">
+            <a href="../index.html">الرئيسية</a>
+            <a href="#">السيارات</a>
+            <a href="#">الشركات</a>
+            <a href="#">كيف يعمل</a>
+        </nav>
+        <div class="action">
+            <button class="en">EN</button>
+            <button class="login-btn">تسجيل الدخول</button>
+        </div>
+    </header>
+
+    <section class="categories" style="text-align: center; padding: 120px 0;">
+        <div class="container">
+            <h1 class="section-title" id="carTitle">جاري التحميل...</h1>
+            <p class="hero-subtitle" style="color: var(--color-text-gray);">
+                صفحة تفاصيل السيارة — قيد الإنشاء 🚧
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // قراءة id السيارة من الرابط
+        const params = new URLSearchParams(window.location.search);
+        const carId = params.get('id');
+
+        const cars = {
+            '1': 'Kia Picanto 2023',
+            '2': 'Toyota Corolla 2023',
+            '3': 'Hyundai Tucson 2024',
+            '4': 'Mercedes C200'
+        };
+
+        document.getElementById('carTitle').textContent = cars[carId] || 'سيارة غير موجودة';
+    </script>
+</body>
+
+</html>
