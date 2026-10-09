@@ -31,8 +31,35 @@
         <div class="container">
             <h1 class="hero-title">استأجر سيارتك في الأردن بكل بسهولة</h1>
             <p class="hero-subtitle">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
-            <form class="search-box">
 
+            <form class="search-box">
+                <div class="search-field">
+                    <label for="pickup-city">مدينة الاستلام</label>
+                    <input id="pickup-city" type="text" placeholder="عمان">
+                </div>
+
+                <div class="search-field">
+                    <label for="pickup-date">تاريخ الاستلام</label>
+                    <input id="pickup-date" type="date">
+                </div>
+
+                <div class="search-field">
+                    <label for="return-date">تاريخ الإرجاع</label>
+                    <input id="return-date" type="date">
+                </div>
+
+
+                <div class="search-field">
+                    <label for="car-type">نوع السيارة</label>
+                    <select id="car-type">
+                        <option>الكل</option>
+                        <option>اقتصادية</option>
+                        <option>عائلية</option>
+                        <option>SUV</option>
+                        <option>فخمة</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-search">بحث</button>
             </form>
         </div>
     </section>
