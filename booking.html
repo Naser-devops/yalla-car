@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="booking.metaTitle">الحجز — يلا كار</title>
+
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- الأنماط: المشترك + الخاص -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" class="active" data-i18n="nav.cars">السيارات</a>
+            <a href="index.html#partners" data-i18n="nav.companies">الشركات</a>
+            <a href="index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <button class="login-btn" data-i18n="auth.login">تسجيل الدخول</button>
+        </div>
+    </header>
+
+    <!-- ========== المحتوى ========== -->
+    <main class="booking-page container">
+
+        <!-- ========== Stepper ========== -->
+        <div class="stepper">
+            <div class="step active">
+                <div class="step-circle">1</div>
+                <span class="step-label" data-i18n="booking.step1">بيانات السائق</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">2</div>
+                <span class="step-label" data-i18n="booking.step2">التواريخ</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">3</div>
+                <span class="step-label" data-i18n="booking.step3">الدفع</span>
+            </div>
+        </div>
+
+        <!-- ========== التخطيط: النموذج (يسار) + الملخص (يمين) ========== -->
+        <div class="booking-layout">
+
+            <!-- ========== النموذج ========== -->
+            <div class="booking-form-wrap">
+
+                <h2 class="section-subtitle" data-i18n="booking.driverInfo">بيانات السائق</h2>
+
+                <form class="booking-form" id="bookingForm">
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label data-i18n="booking.fullName">الاسم الكامل</label>
+                            <input type="text" placeholder="محمد أحمد" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label data-i18n="booking.phone">رقم الهاتف</label>
+                            <input type="tel" placeholder="+962 7X XXX XXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label data-i18n="booking.email">البريد الإلكتروني</label>
+                            <input type="email" placeholder="name@email.com" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label data-i18n="booking.license">رقم رخصة القيادة</label>
+                            <input type="text" placeholder="1234567" required>
+                        </div>
+                    </div>
+
+                    <!-- التواريخ -->
+                    <h2 class="section-subtitle" data-i18n="booking.datesTitle">التواريخ</h2>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label data-i18n="booking.pickupDate">تاريخ الاستلام</label>
+                            <input type="date" id="pickupDate" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label data-i18n="booking.returnDate">تاريخ الإرجاع</label>
+                            <input type="date" id="returnDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label data-i18n="booking.pickupCity">مدينة الاستلام</label>
+                        <select required>
+                            <option data-i18n="booking.amman">عمّان</option>
+                            <option data-i18n="booking.aqaba">العقبة</option>
+                            <option data-i18n="booking.irbid">إربد</option>
+                        </select>
+                    </div>
+
+                    <!-- طريقة الدفع -->
+                    <h2 class="section-subtitle" data-i18n="booking.paymentMethod">طريقة الدفع</h2>
+
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cliq" checked>
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-name">CliQ</span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-name" data-i18n="booking.card">بطاقة ائتمان</span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cash">
+                            <span class="payment-icon">💵</span>
+                            <span class="payment-name" data-i18n="booking.cash">عند الاستلام</span>
+                        </label>
+                    </div>
+
+                    <label class="checkbox-terms">
+                        <input type="checkbox" required>
+                        <span data-i18n="booking.agree">أوافق على الشروط والأحكام</span>
+                    </label>
+
+                    <button type="submit" class="btn-primary-large" data-i18n="booking.confirm">تأكيد الحجز</button>
+
+                </form>
+            </div>
+
+            <!-- ========== الملخص ========== -->
+            <aside class="booking-summary">
+
+                <h3 class="summary-title" data-i18n="booking.summary">ملخص الحجز</h3>
+
+                <!-- بطاقة السيارة -->
+                <div class="summary-car">
+                    <img id="summaryImage" src="images/kia-picanto-2023.jpg" alt="Car">
+                    <div class="summary-car-info">
+                        <h4 id="summaryName">Kia Picanto 2023</h4>
+                        <p id="summaryCompany">Ram Rentals</p>
+                    </div>
+                </div>
+
+                <!-- التفاصيل -->
+                <div class="summary-details">
+                    <div class="summary-line">
+                        <span data-i18n="booking.pickup">الاستلام</span>
+                        <strong id="summaryPickup">— / — / —</strong>
+                    </div>
+
+                    <div class="summary-line">
+                        <span data-i18n="booking.return">الإرجاع</span>
+                        <strong id="summaryReturn">— / — / —</strong>
+                    </div>
+
+                    <div class="summary-line">
+                        <span data-i18n="booking.days">المدة</span>
+                        <strong>
+                            <span id="summaryDays">0</span>
+                            <span data-i18n="booking.daysUnit">أيام</span>
+                        </strong>
+                    </div>
+
+                    <div class="summary-line">
+                        <span data-i18n="booking.dailyPrice">سعر اليوم</span>
+                        <strong>
+                            <span id="summaryDailyPrice">22</span>
+                            <span data-i18n="car.currency">د.أ</span>
+                        </strong>
+                    </div>
+
+                    <div class="summary-line">
+                        <span data-i18n="booking.insurance">التأمين</span>
+                        <strong data-i18n="booking.included">مشمول</strong>
+                    </div>
+                </div>
+
+                <!-- المجموع -->
+                <div class="summary-total">
+                    <span data-i18n="booking.total">المجموع</span>
+                    <span class="summary-price">
+                        <span id="summaryTotal">22</span>
+                        <span data-i18n="car.currency">د.أ</span>
+                    </span>
+                </div>
+
+                <p class="summary-note" data-i18n="booking.note">لا يوجد رسم إضافي — السعر النهائي واضح</p>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

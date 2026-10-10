@@ -1,0 +1,310 @@
+/* ============================================
+   Yalla Car — أنماط صفحة حجوزاتي
+   ============================================ */
+
+
+/* ============================================
+   1. الصفحة العامة
+   ============================================ */
+.my-bookings-page {
+    padding: var(--space-6) 0;
+    min-height: 70vh;
+}
+
+
+/* ============================================
+   2. التابات
+   ============================================ */
+.bookings-tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+}
+
+.bookings-tab {
+    background: none;
+    border: none;
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-gray);
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    border-radius: 0;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.bookings-tab:hover {
+    color: var(--color-text-dark);
+}
+
+.bookings-tab.active {
+    color: var(--color-primary);
+}
+
+.bookings-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    inset-inline: 0;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+
+/* ============================================
+   3. قائمة الحجوزات
+   ============================================ */
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+
+/* ============================================
+   4. كارت الحجز
+   ============================================ */
+.booking-card {
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.booking-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+
+/* ---- 4.1 الصورة ---- */
+.booking-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ---- 4.2 الجسم ---- */
+.booking-card-body {
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.booking-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-1);
+}
+
+.booking-card-name {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.booking-card-company {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-1);
+}
+
+
+/* ---- 4.3 شارات الحالة ---- */
+.booking-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+.status-active {
+    background: #DCFCE7;
+    color: var(--color-success);
+}
+
+.status-pending {
+    background: #FEF3C7;
+    color: #B45309;
+}
+
+.status-completed {
+    background: #DBEAFE;
+    color: var(--color-primary);
+}
+
+.status-cancelled {
+    background: #FEE2E2;
+    color: var(--color-error);
+}
+
+
+/* ---- 4.4 التواريخ ---- */
+.booking-card-dates {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+}
+
+.booking-date {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.date-label {
+    font-size: 12px;
+    color: var(--color-text-gray);
+}
+
+.date-value {
+    font-size: var(--font-size-small);
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* ---- 4.5 الأسفل (السعر + الأزرار) ---- */
+.booking-card-footer {
+    padding: var(--space-3);
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-2);
+    min-width: 200px;
+}
+
+.booking-card-price {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
+.booking-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    width: 100%;
+}
+
+
+/* ============================================
+   5. الأزرار (Outline)
+   ============================================ */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 var(--space-3);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-control);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-outline.btn-danger {
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+.btn-outline.btn-danger:hover {
+    background: var(--color-error);
+    color: var(--color-white);
+}
+
+.btn-outline.btn-accent {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn-outline.btn-accent:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+
+/* ============================================
+   6. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .booking-card {
+        grid-template-columns: 180px 1fr auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card-image img {
+        height: 180px;
+    }
+
+    .booking-card-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .booking-card-actions {
+        flex-direction: row;
+        width: auto;
+    }
+}
+
+/* ============================================
+   7. كارت الحجز الملغى (Visual Feedback)
+   ============================================ */
+.booking-card.cancelled {
+    opacity: 0.65;
+    filter: grayscale(30%);
+}
+
+.booking-card.cancelled .booking-card-image img {
+    filter: grayscale(60%);
+}
+
+.booking-card.cancelled:hover {
+    opacity: 0.85;
+    filter: grayscale(0%);
+    border-color: var(--color-error);
+}
+
+.booking-card.cancelled:hover .booking-card-image img {
+    filter: grayscale(0%);
+}

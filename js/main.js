@@ -9,22 +9,24 @@ const fadeElements = document.querySelectorAll(
     '.car-card, .category-card, .step-card, .partner-card'
 );
 
-const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
+if (fadeElements.length > 0) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
 
-fadeElements.forEach(function (el) {
-    el.classList.add('fade-in');
-    observer.observe(el);
-});
+    fadeElements.forEach(function (el) {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+}
 
 
 // ============================================

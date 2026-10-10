@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalla Car — استأجر سيارتك في الأردن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span data-i18n="logo.second">كار</span></div>
+        <nav class="navigation">
+            <a href="#home" class="active" data-i18n="nav.home">الرئيسية</a>
+            <a href="#featured" data-i18n="nav.cars">السيارات</a>
+            <a href="#partners" data-i18n="nav.companies">الشركات</a>
+            <a href="#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+        </nav>
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+<a href="login.html" class="login-btn" data-i18n="auth.login" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">تسجيل الدخول</a>        </div>
+    </header>
+
+    <!-- ========== قسم الـ Hero ========== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="hero-title" data-i18n="hero.title">استأجر سيارتك في الأردن بكل سهولة</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
+
+            <form class="search-box" action="search.html" method="get">
+                <div class="search-field">
+                    <label for="pickup-city" data-i18n="search.city">مدينة الاستلام</label>
+                    <input id="pickup-city" type="text" placeholder="عمان" data-i18n-placeholder="search.cityPlaceholder" name="city">
+                </div>
+
+                <div class="search-field">
+                    <label for="pickup-date" data-i18n="search.pickupDate">تاريخ الاستلام</label>
+                    <input id="pickup-date" type="date" name="pickup">
+                </div>
+
+                <div class="search-field">
+                    <label for="return-date" data-i18n="search.returnDate">تاريخ الإرجاع</label>
+                    <input id="return-date" type="date" name="return">
+                </div>
+
+                <div class="search-field">
+                    <label for="car-type" data-i18n="search.carType">نوع السيارة</label>
+                    <select id="car-type" name="type">
+                        <option data-i18n="search.all">الكل</option>
+                        <option data-i18n="type.economy">اقتصادية</option>
+                        <option data-i18n="type.family">عائلية</option>
+                        <option data-i18n="type.suv">SUV</option>
+                        <option data-i18n="type.luxury">فخمة</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-search" data-i18n="search.button">بحث</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== قسم التصنيفات ========== -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title" data-i18n="categories.title">التصنيفات</h2>
+
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="type.economy">اقتصادية</span>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                            <path d="M12 7V5M9 7V5M15 7V5"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="type.family">عائلية</span>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                            <path d="M3 9h2l1-3h12l1 3h2"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="type.suv">SUV</span>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <path d="M9 17h6"/>
+                            <circle cx="17" cy="17" r="2"/>
+                            <path d="M12 4l1.5 2h2L14 8l.5 2-2.5-1-2.5 1 .5-2L8 6h2z"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="type.luxury">فخمة</span>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 17h18v-4l-2-4H5l-2 4z"/>
+                            <circle cx="7" cy="17" r="2"/>
+                            <circle cx="17" cy="17" r="2"/>
+                            <path d="M7 9V6h10v3"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="type.fourByFour">4x4</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== قسم السيارات المميزة ========== -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featured.title">سيارات مميزة</h2>
+
+            <div class="featured-grid">
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/kia-picanto-2023.jpg" alt="Kia Picanto 2023">
+                    </div>
+                    <div class="car-body">
+                        <h3 class="car-name">Kia Picanto 2023</h3>
+                        <p class="car-info">
+                            <span class="company">Ram Rentals</span>
+                            <span class="seats" data-i18n="car.seats">5 مقاعد</span>
+                        </p>
+                    </div>
+                    <div class="car-footer">
+                        <span class="car-price">22 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <a href="car-details.html?id=1" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/toyota-corolla-2023.jpg" alt="Toyota Corolla 2023">
+                    </div>
+                    <div class="car-body">
+                        <h3 class="car-name">Toyota Corolla 2023</h3>
+                        <p class="car-info">
+                            <span class="company">Amman Rent</span>
+                            <span class="seats" data-i18n="car.seats">5 مقاعد</span>
+                        </p>
+                    </div>
+                    <div class="car-footer">
+                        <span class="car-price">28 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <a href="car-details.html?id=2" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/hyundai-tucson-2024.jpg" alt="Hyundai Tucson 2024">
+                    </div>
+                    <div class="car-body">
+                        <h3 class="car-name">Hyundai Tucson 2024</h3>
+                        <p class="car-info">
+                            <span class="company">Petra Car</span>
+                            <span class="seats" data-i18n="car.seats">5 مقاعد</span>
+                        </p>
+                    </div>
+                    <div class="car-footer">
+                        <span class="car-price">45 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <a href="car-details.html?id=3" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/mercedes-c200.jpg" alt="Mercedes C200">
+                    </div>
+                    <div class="car-body">
+                        <h3 class="car-name">Mercedes C200</h3>
+                        <p class="car-info">
+                            <span class="company">Nukhba Car</span>
+                            <span class="seats" data-i18n="car.seats">5 مقاعد</span>
+                        </p>
+                    </div>
+                    <div class="car-footer">
+                        <span class="car-price">85 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <a href="car-details.html?id=4" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== قسم كيف يعمل ========== -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="how.title">كيف يعمل؟</h2>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title" data-i18n="how.step1.title">ابحث</h3>
+                    <p class="step-desc" data-i18n="how.step1.desc">اختر المدينة، التواريخ، ونوع السيارة المناسب لك</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title" data-i18n="how.step2.title">احجز</h3>
+                    <p class="step-desc" data-i18n="how.step2.desc">قارن الأسعار واحجز مباشرة مع الشركة بكل شفافية</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title" data-i18n="how.step3.title">استلم</h3>
+                    <p class="step-desc" data-i18n="how.step3.desc">استلم سيارتك من الموقع المحدد وأرجعها بسهولة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== قسم الشركات الشريكة ========== -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="section-title" data-i18n="partners.title">شركات شريكة</h2>
+
+            <div class="partners-grid">
+                <div class="partner-card">Ram Rentals</div>
+                <div class="partner-card">Petra Car</div>
+                <div class="partner-card">Amman Rent</div>
+                <div class="partner-card">Nukhba Car</div>
+                <div class="partner-card">Aqaba Drive</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== قسم شارات الثقة ========== -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <p class="trust-text" data-i18n="trust.prices">أسعار واضحة بدون رسوم مخفية</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <p class="trust-text" data-i18n="trust.licensed">شركات مرخصة ومعتمدة</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <p class="trust-text" data-i18n="trust.support">دعم بالعربي والإنجليزي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span data-i18n="logo.second">كار</span></div>
+                    <p data-i18n="footer.about">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1c-.2.2-.4.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M2 6l10 7L22 6"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.aboutTitle">من نحن</h4>
+                    <a href="#" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="#" data-i18n="footer.contact">تواصل معنا</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.companiesTitle">للشركات</h4>
+                    <a href="#" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="#" data-i18n="footer.dashboard">لوحة التحكم</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.helpTitle">مساعدة</h4>
+                    <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="#" data-i18n="footer.refund">سياسة الاسترجاع</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.legalTitle">الشروط</h4>
+                    <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

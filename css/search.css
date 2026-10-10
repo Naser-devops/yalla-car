@@ -1,0 +1,370 @@
+/* ============================================
+   Yalla Car — أنماط صفحة البحث
+   (خاص بهذه الصفحة فقط — المشترك في style.css)
+   ============================================ */
+
+
+/* ============================================
+   1. الصفحة العامة
+   ============================================ */
+.search-page {
+    padding: var(--space-6) 0;
+    min-height: 70vh;
+}
+
+
+/* ============================================
+   2. التخطيط: فلاتر (يمين) + نتائج (يسار)
+   ============================================ */
+.search-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+
+/* ============================================
+   3. صندوق الفلاتر
+   ============================================ */
+.search-filters {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.filter-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* ============================================
+   4. مجموعة الفلاتر
+   ============================================ */
+.filter-group {
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.filter-group:last-of-type {
+    border-bottom: none;
+    margin-bottom: var(--space-2);
+    padding-bottom: 0;
+}
+
+.filter-group h4 {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-2);
+}
+
+
+/* ============================================
+   5. فلتر السعر (Range slider)
+   ============================================ */
+.price-range {
+    width: 100%;
+    height: 6px;
+    accent-color: var(--color-accent);
+    margin-bottom: var(--space-1);
+    cursor: pointer;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+}
+
+
+/* ============================================
+   6. فلتر الخيارات (Checkboxes)
+   ============================================ */
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-check:hover {
+    color: var(--color-text-dark);
+}
+
+.filter-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.filter-check span {
+    user-select: none;
+}
+
+
+/* ============================================
+   7. زر تطبيق الفلاتر
+   ============================================ */
+.btn-apply-filter {
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    height: var(--height-control);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: var(--space-2);
+}
+
+.btn-apply-filter:hover {
+    background: #152C6B;
+    transform: translateY(-1px);
+}
+
+
+/* ============================================
+   8. منطقة النتائج
+   ============================================ */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.results-sort {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sort-select {
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    background: var(--color-white);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    color: var(--color-text-dark);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.sort-select:focus {
+    border-color: var(--color-primary);
+}
+
+
+/* ============================================
+   9. كارت النتيجة (أفقي)
+   ============================================ */
+.result-card {
+    direction: ltr;
+    /* ← السطر الجديد */
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    gap: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.result-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+}
+
+.result-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.result-body {
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    direction: rtl;
+}
+
+.result-name {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.result-info {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+}
+
+.result-info .company {
+    direction: ltr;
+}
+
+.result-info .seats::before {
+    content: "•";
+    margin-inline-end: var(--space-1);
+}
+
+.result-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.rating-star {
+    color: var(--color-accent);
+}
+
+.rating-count {
+    color: var(--color-text-gray);
+    font-weight: var(--font-weight-regular);
+}
+
+.result-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold);
+    width: fit-content;
+    margin-top: var(--space-1);
+}
+
+.result-badge.available {
+    background: #DCFCE7;
+    color: var(--color-success);
+}
+
+
+
+/* ============================================
+   10. أسفل الكارت (السعر + الزر)
+   ============================================ */
+.result-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: var(--color-background);
+    min-width: 160px;
+    direction: rtl;
+}
+
+.result-price {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
+.result-price small {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-gray);
+}
+
+
+/* ============================================
+   12. زر التفاصيل (نفس زر btn-book بالرئيسية)
+   ============================================ */
+.btn-book {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    padding: 0 var(--space-3);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    height: var(--height-control);
+    border-radius: var(--radius-control);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-book:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   11. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .search-layout {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .result-card {
+        grid-template-columns: 180px 1fr auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .search-filters {
+        position: static;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+    }
+
+    .result-image img {
+        height: 200px;
+    }
+
+    .result-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

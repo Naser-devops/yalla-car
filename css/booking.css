@@ -1,0 +1,389 @@
+/* ============================================
+   Yalla Car — أنماط صفحة الحجز
+   ============================================ */
+
+
+/* ============================================
+   1. الصفحة العامة
+   ============================================ */
+.booking-page {
+    padding: var(--space-5) 0 var(--space-6);
+    min-height: 70vh;
+}
+
+
+/* ============================================
+   2. الـ Stepper (شريط الخطوات)
+   ============================================ */
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-5);
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.step-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-border);
+    color: var(--color-text-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    transition: background 0.3s, color 0.3s;
+}
+
+.step.active .step-circle {
+    background: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.15);
+}
+
+.step-label {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    white-space: nowrap;
+}
+
+.step.active .step-label {
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: var(--color-border);
+    max-width: 100px;
+    margin: 0 var(--space-3);
+    margin-bottom: 24px;
+}
+
+
+/* ============================================
+   3. التخطيط: النموذج (يسار) + الملخص (يمين)
+   ============================================ */
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+
+/* ============================================
+   4. صندوق النموذج
+   ============================================ */
+.booking-form-wrap {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section-subtitle:not(:first-child) {
+    margin-top: var(--space-4);
+}
+
+
+/* ============================================
+   5. النموذج
+   ============================================ */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.form-field label {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.form-field input,
+.form-field select {
+    height: var(--height-control);
+    padding: 0 var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: var(--color-primary);
+}
+
+
+/* ============================================
+   6. طرق الدفع
+   ============================================ */
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-2);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    text-align: center;
+}
+
+.payment-option input {
+    display: none;
+}
+
+.payment-option:hover {
+    border-color: var(--color-text-gray);
+}
+
+.payment-option:has(input:checked) {
+    border-color: var(--color-accent);
+    background: #FFF7ED;
+}
+
+.payment-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.payment-name {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+
+/* ============================================
+   7. الشروط + الزر
+   ============================================ */
+.checkbox-terms {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    cursor: pointer;
+}
+
+.checkbox-terms input {
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.btn-primary-large {
+    display: block;
+    width: 100%;
+    height: 56px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    text-align: center;
+    line-height: 56px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: var(--space-2);
+}
+
+.btn-primary-large:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   8. ملخص الحجز (Sidebar)
+   ============================================ */
+.booking-summary {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.summary-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summary-car {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summary-car img {
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: var(--radius-control);
+    flex-shrink: 0;
+}
+
+.summary-car-info h4 {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: 2px;
+}
+
+.summary-car-info p {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-small);
+}
+
+.summary-line span:first-child {
+    color: var(--color-text-gray);
+}
+
+.summary-line strong {
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+    background: var(--color-trust-bg);
+    border-radius: var(--radius-control);
+}
+
+.summary-total > span:first-child {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.summary-price {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
+.summary-note {
+    font-size: var(--font-size-small);
+    color: var(--color-success);
+    text-align: center;
+}
+
+
+/* ============================================
+   9. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .stepper {
+        max-width: 100%;
+    }
+
+    .step-line {
+        max-width: 40px;
+        margin: 0 var(--space-1);
+        margin-bottom: 24px;
+    }
+
+    .step-label {
+        font-size: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-options {
+        grid-template-columns: 1fr;
+    }
+}

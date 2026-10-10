@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="login.metaTitle">تسجيل الدخول — يلا كار</title>
+
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- الأنماط: المشترك + الخاص -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="auth-body">
+
+    <!-- ========== زر اللغة (ثابت بالزاوية) ========== -->
+    <button class="auth-lang-switch en" data-i18n="lang.switch">EN</button>
+
+    <!-- ========== الحاوية الرئيسية (نصين) ========== -->
+    <div class="auth-container">
+
+        <!-- ========== الجهة اليمنى: النموذج ========== -->
+        <div class="auth-form-side">
+
+            <!-- الشعار (يرجع للرئيسية) -->
+            <a href="index.html" class="auth-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </a>
+
+            <!-- التابين -->
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" data-tab="login" data-i18n="login.tabLogin">
+                    تسجيل الدخول
+                </button>
+                <button type="button" class="auth-tab" data-tab="register" data-i18n="login.tabRegister">
+                    حساب جديد
+                </button>
+            </div>
+
+            <!-- ========== نموذج تسجيل الدخول ========== -->
+            <form class="auth-form active" id="loginForm">
+
+                <div class="auth-field">
+                    <label for="loginEmail" data-i18n="login.email">البريد الإلكتروني</label>
+                    <input id="loginEmail" type="email" placeholder="name@email.com" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="loginPassword" data-i18n="login.password">كلمة المرور</label>
+                    <input id="loginPassword" type="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="auth-extras">
+                    <label class="auth-checkbox">
+                        <input type="checkbox">
+                        <span data-i18n="login.remember">تذكرني</span>
+                    </label>
+                    <a href="#" class="auth-link" data-i18n="login.forgot">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" class="auth-submit" data-i18n="login.submit">تسجيل الدخول</button>
+
+                <p class="auth-bottom-text">
+                    <span data-i18n="login.noAccount">ما عندك حساب؟</span>
+                    <a href="#" class="auth-link" data-tab-switch="register" data-i18n="login.createAccount">أنشئ حساب</a>
+                </p>
+            </form>
+
+            <!-- ========== نموذج حساب جديد ========== -->
+            <form class="auth-form" id="registerForm">
+
+                <div class="auth-field">
+                    <label for="registerName" data-i18n="login.fullName">الاسم الكامل</label>
+                    <input id="registerName" type="text" placeholder="محمد أحمد" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerEmail" data-i18n="login.email">البريد الإلكتروني</label>
+                    <input id="registerEmail" type="email" placeholder="name@email.com" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerPassword" data-i18n="login.password">كلمة المرور</label>
+                    <input id="registerPassword" type="password" placeholder="••••••••" required>
+                </div>
+
+                <label class="auth-checkbox auth-checkbox-terms">
+                    <input type="checkbox" required>
+                    <span data-i18n="login.agreeTerms">أوافق على الشروط والأحكام</span>
+                </label>
+
+                <button type="submit" class="auth-submit" data-i18n="login.createAccount">إنشاء حساب</button>
+
+                <p class="auth-bottom-text">
+                    <span data-i18n="login.haveAccount">عندك حساب؟</span>
+                    <a href="#" class="auth-link" data-tab-switch="login" data-i18n="login.submit">تسجيل الدخول</a>
+                </p>
+            </form>
+
+        </div>
+
+        <!-- ========== الجهة اليسرى: التصميم ========== -->
+        <div class="auth-visual-side">
+
+            <div class="auth-visual-content">
+                <div class="auth-visual-logo">
+                    <span data-i18n="logo.first">يلا</span>
+                    <span class="visual-accent" data-i18n="logo.second">كار</span>
+                </div>
+                <p class="auth-visual-text" data-i18n="login.welcomeDesc">
+                    استأجر سيارتك من أفضل الشركات الأردنية الموثوقة
+                </p>
+            </div>
+
+            <!-- رسمة سيارة -->
+            <div class="auth-car-svg">
+                <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="80" y="60" width="240" height="55" rx="18" fill="#3B5BA9" />
+                    <rect x="130" y="30" width="140" height="45" rx="15" fill="#3B5BA9" />
+                    <circle cx="130" cy="120" r="22" fill="#1E2A4A" />
+                    <circle cx="270" cy="120" r="22" fill="#1E2A4A" />
+                </svg>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
