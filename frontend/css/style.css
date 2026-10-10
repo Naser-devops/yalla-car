@@ -167,7 +167,7 @@ header {
 }
 
 /* ============================================
-   7. قسم الـ Hero (مع خلفية صورة)
+   7. قسم الـ Hero
    ============================================ */
 .hero {
     background:
@@ -184,6 +184,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: 80px;
 }
 
 .hero .container {
@@ -324,6 +325,7 @@ header {
    ============================================ */
 .featured {
     padding: var(--space-6) 0;
+    scroll-margin-top: 80px;
 }
 
 .featured-grid {
@@ -366,7 +368,20 @@ header {
 }
 
 .car-info {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
     font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+}
+
+.car-info .company {
+    direction: ltr;
+}
+
+.car-info .seats::before {
+    content: "•";
+    margin-inline-end: var(--space-1);
     color: var(--color-text-gray);
 }
 
@@ -407,6 +422,7 @@ header {
    ============================================ */
 .how-it-works {
     padding: var(--space-6) 0;
+    scroll-margin-top: 80px;
 }
 
 .steps-grid {
@@ -456,6 +472,7 @@ header {
    ============================================ */
 .partners {
     padding: var(--space-6) 0;
+    scroll-margin-top: 80px;
 }
 
 .partners-grid {
@@ -605,13 +622,14 @@ header {
    ============================================ */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    translate: 0 20px;
+    transition: opacity 0.6s ease, translate 0.6s ease,
+        transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
 }
 
 /* ============================================
@@ -672,12 +690,6 @@ header {
     .hero {
         padding: 60px 0;
         min-height: 560px;
-        background:
-            linear-gradient(180deg,
-                rgba(30, 58, 138, 0.92) 0%,
-                rgba(30, 58, 138, 0.80) 40%,
-                rgba(30, 58, 138, 0.65) 100%),
-            url('../images/hero-bg.jpg') center bottom / cover no-repeat;
     }
 
     .hero-title {
