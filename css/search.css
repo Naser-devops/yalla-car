@@ -333,6 +333,80 @@
 }
 
 /* ============================================
+   13. زر إعادة تعيين الفلاتر
+   ============================================ */
+.btn-reset-filter {
+    width: 100%;
+    background: transparent;
+    color: var(--color-text-gray);
+    border: 2px solid var(--color-border);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    height: 40px;
+    border-radius: var(--radius-control);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    margin-top: var(--space-1);
+}
+
+.btn-reset-filter:hover {
+    background: var(--color-background);
+    color: var(--color-text-dark);
+    border-color: var(--color-text-gray);
+}
+
+/* ============================================
+   14. عدّاد النتائج
+   ============================================ */
+.results-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.results-count span:first-child {
+    font-weight: 800;
+    color: var(--color-primary);
+    font-size: var(--font-size-body);
+}
+
+/* ============================================
+   15. رسالة "لا نتائج"
+   ============================================ */
+.no-results-message {
+    padding: var(--space-5) var(--space-3);
+    text-align: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+}
+
+.no-results-icon {
+    font-size: 64px;
+    line-height: 1;
+    opacity: 0.3;
+    margin-bottom: var(--space-2);
+}
+
+.no-results-message h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-1);
+}
+
+.no-results-message p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+}
+
+/* ============================================
    11. Responsive
    ============================================ */
 @media (max-width: 1024px) {

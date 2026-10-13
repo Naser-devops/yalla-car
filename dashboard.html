@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="dashboardHome.metaTitle">لوحة التحكم — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-home.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <!-- ========== لوحة التحكم ========== -->
+    <div class="dashboard-layout container">
+
+        <main class="dashboard-content">
+
+            <!-- ========== الترحيب ========== -->
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h1 class="welcome-title">
+                        <span data-i18n="dashboardHome.welcome">مرحباً،</span>
+                        <span class="welcome-company">Ram Rentals</span>
+                        👋
+                    </h1>
+                    <p class="welcome-subtitle" data-i18n="dashboardHome.welcomeSubtitle">
+                        إليك نظرة سريعة على أداء شركتك اليوم
+                    </p>
+                </div>
+
+                <div class="welcome-date">
+                    <span class="welcome-date-day" id="welcomeDay">10</span>
+                    <span class="welcome-date-month" id="welcomeMonth">أكتوبر</span>
+                    <span class="welcome-date-year" id="welcomeYear">2026</span>
+                </div>
+            </div>
+
+            <!-- ========== بطاقات KPI ========== -->
+            <div class="kpi-grid">
+
+                <div class="kpi-card kpi-gradient-blue">
+                    <div class="kpi-icon-circle">🚗</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="dashboardHome.kpi.cars">السيارات</span>
+                        <span class="kpi-number">5</span>
+                    </div>
+                    <div class="kpi-bg-icon">🚗</div>
+                </div>
+
+                <div class="kpi-card kpi-gradient-green">
+                    <div class="kpi-icon-circle">📋</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="dashboardHome.kpi.activeBookings">الحجوزات النشطة</span>
+                        <span class="kpi-number">12</span>
+                    </div>
+                    <div class="kpi-bg-icon">📋</div>
+                </div>
+
+                <div class="kpi-card kpi-gradient-orange">
+                    <div class="kpi-icon-circle">💰</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="dashboardHome.kpi.monthEarnings">أرباح الشهر</span>
+                        <span class="kpi-number">4,100 <span class="kpi-unit">د.أ</span></span>
+                    </div>
+                    <div class="kpi-bg-icon">💰</div>
+                </div>
+
+                <div class="kpi-card kpi-gradient-purple">
+                    <div class="kpi-icon-circle">⭐</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="dashboardHome.kpi.rating">التقييم</span>
+                        <span class="kpi-number">4.7 <span class="kpi-unit">/ 5</span></span>
+                    </div>
+                    <div class="kpi-bg-icon">⭐</div>
+                </div>
+
+            </div>
+
+            <!-- ========== Quick Actions ========== -->
+            <div class="quick-actions-section">
+                <h2 class="section-subtitle" data-i18n="dashboardHome.quickActions">إجراءات سريعة</h2>
+
+                <div class="quick-actions-grid">
+
+                    <a href="add-car.html" class="quick-action-card">
+                        <span class="quick-action-icon">➕</span>
+                        <div class="quick-action-text">
+                            <strong data-i18n="dashboardHome.action.addCar">إضافة سيارة</strong>
+                            <small data-i18n="dashboardHome.action.addCarDesc">أضف سيارة جديدة للأسطول</small>
+                        </div>
+                    </a>
+
+                    <a href="incoming-bookings.html" class="quick-action-card">
+                        <span class="quick-action-icon">📥</span>
+                        <div class="quick-action-text">
+                            <strong data-i18n="dashboardHome.action.reviewBookings">مراجعة الحجوزات</strong>
+                            <small data-i18n="dashboardHome.action.reviewBookingsDesc">4 حجوزات قيد الانتظار</small>
+                        </div>
+                    </a>
+
+                    <a href="earnings.html" class="quick-action-card">
+                        <span class="quick-action-icon">📊</span>
+                        <div class="quick-action-text">
+                            <strong data-i18n="dashboardHome.action.viewEarnings">عرض الأرباح</strong>
+                            <small data-i18n="dashboardHome.action.viewEarningsDesc">تحليل مفصل للأداء</small>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ========== الرسم البياني ========== -->
+            <div class="chart-section">
+                <div class="chart-header">
+                    <h2 class="section-subtitle" data-i18n="dashboardHome.weeklyBookings">الحجوزات هذا الأسبوع</h2>
+                    <span class="chart-total">
+                        <strong>24</strong>
+                        <span data-i18n="dashboardHome.totalBookings">حجز</span>
+                    </span>
+                </div>
+
+                <div class="weekly-chart">
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 45%" data-value="3"></div>
+                        <span class="chart-day-label" data-i18n="day.sat">السبت</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 65%" data-value="4"></div>
+                        <span class="chart-day-label" data-i18n="day.sun">الأحد</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 80%" data-value="5"></div>
+                        <span class="chart-day-label" data-i18n="day.mon">الاثنين</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 55%" data-value="3"></div>
+                        <span class="chart-day-label" data-i18n="day.tue">الثلاثاء</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 95%" data-value="6"></div>
+                        <span class="chart-day-label" data-i18n="day.wed">الأربعاء</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini chart-bar-mini-active" style="height: 70%" data-value="4"></div>
+                        <span class="chart-day-label chart-day-label-active" data-i18n="day.thu">الخميس</span>
+                    </div>
+                    <div class="chart-day">
+                        <div class="chart-bar-mini" style="height: 35%" data-value="2"></div>
+                        <span class="chart-day-label" data-i18n="day.fri">الجمعة</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== آخر الحجوزات ========== -->
+            <div class="recent-section">
+                <div class="chart-header">
+                    <h2 class="section-subtitle" data-i18n="dashboardHome.recentBookings">آخر الحجوزات</h2>
+                    <a href="incoming-bookings.html" class="view-all-link">
+                        <span data-i18n="dashboardHome.viewAll">عرض الكل</span>
+                        <span>←</span>
+                    </a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="incoming.table.customer">العميل</th>
+                                <th data-i18n="incoming.table.car">السيارة</th>
+                                <th data-i18n="incoming.table.dates">المدة</th>
+                                <th data-i18n="incoming.table.price">السعر</th>
+                                <th data-i18n="incoming.table.status">الحالة</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="cell-name">محمد أحمد</td>
+                                <td>Kia Picanto 2023</td>
+                                <td class="cell-date">12 - 15 أكتوبر</td>
+                                <td class="cell-price">66 <span data-i18n="car.currency">د.أ</span></td>
+                                <td>
+                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">Mark Evans</td>
+                                <td>Toyota Corolla 2023</td>
+                                <td class="cell-date">20 - 25 أكتوبر</td>
+                                <td class="cell-price">140 <span data-i18n="car.currency">د.أ</span></td>
+                                <td>
+                                    <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">سارة خليل</td>
+                                <td>Hyundai Tucson 2024</td>
+                                <td class="cell-date">20 - 22 أكتوبر</td>
+                                <td class="cell-price">90 <span data-i18n="car.currency">د.أ</span></td>
+                                <td>
+                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">عمر سالم</td>
+                                <td>Kia Picanto 2023</td>
+                                <td class="cell-date">01 - 05 نوفمبر</td>
+                                <td class="cell-price">88 <span data-i18n="car.currency">د.أ</span></td>
+                                <td>
+                                    <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">ليلى حسن</td>
+                                <td>Mercedes C200</td>
+                                <td class="cell-date">10 - 13 أكتوبر</td>
+                                <td class="cell-price">255 <span data-i18n="car.currency">د.أ</span></td>
+                                <td>
+                                    <span class="status-badge status-cancelled" data-i18n="incoming.status.cancelled">ملغى</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ========== Sidebar ========== -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span data-i18n="dashboard.overview">لوحة التحكم</span>
+                </a>
+                <a href="manage-cars.html" class="sidebar-link">
+                    <span data-i18n="dashboard.cars">السيارات</span>
+                </a>
+                <a href="incoming-bookings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.bookings">الحجوزات</span>
+                </a>
+                <a href="earnings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.earnings">الأرباح</span>
+                </a>
+            </nav>
+
+            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

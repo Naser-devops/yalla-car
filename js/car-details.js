@@ -13,7 +13,7 @@ if (yearElement) {
 
 
 // ============================================
-// 2. بيانات السيارات (مؤقتاً — حتى نبني الـ Backend)
+// 2. بيانات السيارات (مؤقتاً — حتى الباك إند)
 // ============================================
 const carsData = {
     '1': {
@@ -76,64 +76,136 @@ const carsData = {
 
 
 // ============================================
-// 3. قراءة id السيارة من الرابط
+// 3. قراءة id السيارة من الرابط (مع تحقق)
 // ============================================
 const params = new URLSearchParams(window.location.search);
-const carId = params.get('id') || '1';
-const car = carsData[carId] || carsData['1'];
+const rawId = params.get('id');
+const carId = (rawId && carsData[rawId]) ? rawId : '1';
+const car = carsData[carId];
+
+console.log('🚗 تحميل سيارة:', carId, '-', car.name);
 
 
 // ============================================
-// 4. تعبئة بيانات السيارة في الصفحة
+// 4. ✅ تعيين صورة بديلة (fallback) عند الخطأ
+// ============================================
+function setupImageFallback(imgElement, fallbackSrc) {
+    if (!imgElement) return;
+
+    imgElement.onerror = function () {
+        // منع الحلقة اللانهائية
+        this.onerror = null;
+
+        // استخدم الصورة الأساسية للسيارة
+        if (this.src !== fallbackSrc) {
+            this.src = fallbackSrc;
+        }
+    };
+}
+
+
+// ============================================
+// 5. تعبئة بيانات السيارة في الصفحة
 // ============================================
 function fillCarData() {
-    document.getElementById('carName').textContent = car.name;
-    document.getElementById('breadcrumbName').textContent = car.name;
-    document.getElementById('carCompany').textContent = car.company;
-    document.getElementById('carPrice').textContent = car.price;
-    document.getElementById('specSeats').textContent = car.seats;
-    document.getElementById('specYear').textContent = car.year;
-    document.getElementById('companyName').textContent = car.company;
-    document.getElementById('companyAvatar').textContent = car.companyInitial;
-    document.getElementById('companySince').textContent = car.companySince;
+    // --- تحديث العنوان في المتصفح ---
+    document.title = car.name + ' — يلا كار';
 
-    // زر الحجز — يودّي لصفحة الحجز (لاحقاً)
-    document.getElementById('bookBtn').href = 'booking.html?id=' + carId;
+    // --- العناصر الرئيسية ---
+    const carNameEl = document.getElementById('carName');
+    const breadcrumbNameEl = document.getElementById('breadcrumbName');
+    const carCompanyEl = document.getElementById('carCompany');
+    const carPriceEl = document.getElementById('carPrice');
+    const specSeatsEl = document.getElementById('specSeats');
+    const specYearEl = document.getElementById('specYear');
+    const companyNameEl = document.getElementById('companyName');
+    const companyAvatarEl = document.getElementById('companyAvatar');
+    const companySinceEl = document.getElementById('companySince');
 
-    // تحديث صور المعرض
+    if (carNameEl) carNameEl.textContent = car.name;
+    if (breadcrumbNameEl) breadcrumbNameEl.textContent = car.name;
+    if (carCompanyEl) carCompanyEl.textContent = car.company;
+    if (carPriceEl) carPriceEl.textContent = car.price;
+    if (specSeatsEl) specSeatsEl.textContent = car.seats;
+    if (specYearEl) specYearEl.textContent = car.year;
+    if (companyNameEl) companyNameEl.textContent = car.company;
+    if (companyAvatarEl) companyAvatarEl.textContent = car.companyInitial;
+    if (companySinceEl) companySinceEl.textContent = car.companySince;
+
+    // --- زر الحجز ---
+    const bookBtn = document.getElementById('bookBtn');
+    if (bookBtn) {
+        bookBtn.href = 'booking.html?id=' + carId;
+    }
+
+    // --- الصورة الرئيسية + Fallback ---
     const mainImage = document.getElementById('mainImage');
-    mainImage.src = car.images[0];
+    if (mainImage) {
+        mainImage.src = car.images[0];
+        setupImageFallback(mainImage, car.images[0]);
+    }
 
+    // --- الصور المصغّرة ---
     const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
     thumbs.forEach(function (thumb, index) {
         if (car.images[index]) {
             thumb.src = car.images[index];
+            thumb.setAttribute('data-idx', index);
+            setupImageFallback(thumb, car.images[0]);
+        } else {
+            // لو ما في صورة → أخفِ المصغّرة
+            thumb.style.display = 'none';
         }
     });
 }
 
+// تشغيل التعبئة
 if (car) {
     fillCarData();
 }
 
 
 // ============================================
-// 5. معرض الصور — التبديل بين الصور
+// 6. ✅ معرض الصور — التبديل بين الصور
 // ============================================
-const mainImage = document.getElementById('mainImage');
-const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+const mainImageEl = document.getElementById('mainImage');
+const thumbsEl = document.querySelectorAll('.gallery-thumbs .thumb');
 
-if (mainImage && thumbs.length > 0) {
-    thumbs.forEach(function (thumb) {
+if (mainImageEl && thumbsEl.length > 0) {
+    thumbsEl.forEach(function (thumb) {
         thumb.addEventListener('click', function () {
-            // تغيير الصورة الكبيرة
-            mainImage.src = this.src;
+            // لو الصورة مخفية → لا تفعل شي
+            if (this.style.display === 'none') return;
 
-            // تحديث الـ active
-            thumbs.forEach(function (t) {
+            // لو نفس الصورة الحالية → لا تفعل شي
+            if (mainImageEl.src === this.src) return;
+
+            // تغيير الصورة الكبيرة
+            mainImageEl.src = this.src;
+
+            // إزالة active من كل المصغرات
+            thumbsEl.forEach(function (t) {
                 t.classList.remove('active');
             });
+
+            // إضافة active للمصغّرة المختارة
             this.classList.add('active');
+
+            console.log('🖼️ تم اختيار الصورة:', this.getAttribute('data-idx'));
         });
     });
 }
+
+
+// ============================================
+// 7. ✅ ملاحظة أمان (تعليق تعليمي)
+// ============================================
+/*
+ * ملاحظة: هذه الصفحة عامة (لا تحتاج تسجيل دخول)
+ * 
+ * لكن زر "احجز الآن" يودّي لصفحة الحجز
+ * صفحة الحجز تحتاج تسجيل دخول (لاحقاً في الباك إند)
+ * 
+ * حالياً: أي زائر يقدر يكبس "احجز الآن" ويفتح booking.html
+ * المستقبل: نضيف تحقق في booking.js + الباك إند
+ */

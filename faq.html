@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="faq.metaTitle">الأسئلة الشائعة — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="about.html" data-i18n="nav.about">من نحن</a>
+            <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+        </div>
+    </header>
+
+    <!-- ========== Hero ========== -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1 class="faq-hero-title" data-i18n="faq.hero.title">كيف نساعدك؟</h1>
+            <p class="faq-hero-subtitle" data-i18n="faq.hero.subtitle">
+                ابحث في الأسئلة الشائعة، أو تواصل معنا مباشرة إن لم تجد إجابة
+            </p>
+
+            <!-- شريط البحث -->
+            <div class="faq-search-wrap">
+                <span class="faq-search-icon">🔍</span>
+                <input
+                    type="text"
+                    id="faqSearchInput"
+                    class="faq-search-input"
+                    placeholder="ابحث عن سؤال..."
+                    data-i18n-placeholder="faq.searchPlaceholder">
+                <button type="button" class="faq-search-clear" id="faqSearchClear" aria-label="مسح">
+                    ✕
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== التصنيفات + القائمة ========== -->
+    <section class="faq-main">
+        <div class="container">
+
+            <!-- التصنيفات -->
+            <div class="faq-categories" id="faqCategories">
+                <button type="button" class="faq-cat active" data-cat="all">
+                    <span data-i18n="faq.cat.all">الكل</span>
+                </button>
+                <button type="button" class="faq-cat" data-cat="booking">
+                    <span data-i18n="faq.cat.booking">الحجز والاستئجار</span>
+                </button>
+                <button type="button" class="faq-cat" data-cat="payment">
+                    <span data-i18n="faq.cat.payment">الدفع والرسوم</span>
+                </button>
+                <button type="button" class="faq-cat" data-cat="cancel">
+                    <span data-i18n="faq.cat.cancel">الإلغاء والتعديل</span>
+                </button>
+                <button type="button" class="faq-cat" data-cat="companies">
+                    <span data-i18n="faq.cat.companies">الشركات</span>
+                </button>
+                <button type="button" class="faq-cat" data-cat="safety">
+                    <span data-i18n="faq.cat.safety">السلامة والأمان</span>
+                </button>
+            </div>
+
+            <!-- قائمة الأسئلة -->
+            <div class="faq-list" id="faqList">
+
+                <!-- ============ الحجز ============ -->
+                <div class="faq-group" data-category="booking">
+                    <h2 class="faq-group-title">
+                        <span class="faq-group-icon">📋</span>
+                        <span data-i18n="faq.cat.booking">الحجز والاستئجار</span>
+                    </h2>
+
+                    <details class="faq-item" data-question="كيف أحجز سيارة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.booking1">كيف أحجز سيارة من الموقع؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.booking1">
+                            اختر المدينة وتواريخ الاستلام والإرجاع من الصفحة الرئيسية، اضغط "بحث"، ثم اختر السيارة المناسبة واضغط "احجز الآن". ستحتاج لتعبئة بياناتك ثم تأكيد الحجز.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="ما هي الشروط المطلوبة للحجز؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.booking2">ما هي الشروط المطلوبة للحجز؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.booking2">
+                            الحد الأدنى للعمر 21 سنة، رخصة قيادة سارية المفعول لمدة سنة على الأقل، وبطاقة هوية أو جواز سفر. بعض الشركات قد تشترط عمراً أكبر لفئات معينة من السيارات.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="كم من الوقت يستغرق تأكيد الحجز؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.booking3">كم من الوقت يستغرق تأكيد الحجز؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.booking3">
+                            عادةً ما يتم تأكيد الحجز خلال 15 دقيقة كحد أقصى. ستصلك رسالة واتساب بتأكيد الحجز وبيانات استلام السيارة.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="هل يمكنني اختيار سيارة محددة بالصور؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.booking4">هل يمكنني اختيار سيارة محددة بالصور؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.booking4">
+                            نعم، كل سيارة معروضة بصور حقيقية لموديلها وسنتها المحددة. لن تحصل على "سيارة مماثلة" بل نفس السيارة تماماً كما في الصور.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- ============ الدفع ============ -->
+                <div class="faq-group" data-category="payment">
+                    <h2 class="faq-group-title">
+                        <span class="faq-group-icon">💳</span>
+                        <span data-i18n="faq.cat.payment">الدفع والرسوم</span>
+                    </h2>
+
+                    <details class="faq-item" data-question="ما هي طرق الدفع المتاحة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.payment1">ما هي طرق الدفع المتاحة؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.payment1">
+                            نوفر ثلاث طرق: CliQ (الدفع الفوري الأردني)، بطاقات الائتمان، والدفع النقدي عند الاستلام. كل الخيارات مذكورة بوضوح في صفحة الحجز.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="هل هناك رسوم مخفية؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.payment2">هل هناك رسوم مخفية؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.payment2">
+                            لا. سياستنا هي "السعر الصادق" — المجموع النهائي واضح قبل الدفع، ويشمل الإيجار والتأمين والوديعة والمسافة المسموحة. لا مفاجآت عند الاستلام.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="متى تُرجع الوديعة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.payment3">متى تُرجع الوديعة؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.payment3">
+                            تُرجع الوديعة خلال 3-7 أيام عمل من تاريخ إرجاع السيارة، بعد التأكد من عدم وجود أضرار أو مخالفات. المبلغ وتاريخ الإرجاع موثقان في صفحة الحجز.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- ============ الإلغاء ============ -->
+                <div class="faq-group" data-category="cancel">
+                    <h2 class="faq-group-title">
+                        <span class="faq-group-icon">🔄</span>
+                        <span data-i18n="faq.cat.cancel">الإلغاء والتعديل</span>
+                    </h2>
+
+                    <details class="faq-item" data-question="هل يمكنني إلغاء الحجز؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.cancel1">هل يمكنني إلغاء الحجز؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.cancel1">
+                            نعم، يمكنك إلغاء الحجز من صفحة "حجوزاتي". الإلغاء قبل 48 ساعة من وقت الاستلام مجاني تماماً. الإلغاء الأقرب قد تترتب عليه رسوم بسيطة.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="كيف أعدّل تواريخ الحجز؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.cancel2">كيف أعدّل تواريخ الحجز؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.cancel2">
+                            تواصل معنا عبر واتساب أو من صفحة "حجوزاتي" — سنساعدك في تعديل التواريخ حسب توفر السيارة. التعديل قبل 24 ساعة عادةً بدون رسوم.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- ============ الشركات ============ -->
+                <div class="faq-group" data-category="companies">
+                    <h2 class="faq-group-title">
+                        <span class="faq-group-icon">🏢</span>
+                        <span data-i18n="faq.cat.companies">الشركات</span>
+                    </h2>
+
+                    <details class="faq-item" data-question="كيف أسجّل شركتي في يلا كار؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.companies1">كيف أسجّل شركتي في يلا كار؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.companies1">
+                            اذهب لصفحة "سجّل شركتك"، املأ بيانات الشركة وارفع الوثائق (السجل التجاري وشهادة الضريبة). فريقنا سيراجع طلبك خلال 48 ساعة.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="كم تبلغ عمولة المنصة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.companies2">كم تبلغ عمولة المنصة؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.companies2">
+                            العمولة تبدأ من 8% على كل حجز مؤكد. لا رسوم على الإدراج — تدفع فقط عند حصولك على حجز فعلي. لا مخاطرة، لا رأس مال.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="هل هناك رسوم اشتراك شهرية؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.companies3">هل هناك رسوم اشتراك شهرية؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.companies3">
+                            لا، الإدراج مجاني تماماً. نقدم أيضاً خطة SaaS اختيارية (15-30 د.أ/شهر) بميزات متقدمة لإدارة السيارات والعقود، لكنها ليست إلزامية.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- ============ السلامة ============ -->
+                <div class="faq-group" data-category="safety">
+                    <h2 class="faq-group-title">
+                        <span class="faq-group-icon">🛡️</span>
+                        <span data-i18n="faq.cat.safety">السلامة والأمان</span>
+                    </h2>
+
+                    <details class="faq-item" data-question="كيف تتأكدون أن الشركات موثوقة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.safety1">كيف تتأكدون أن الشركات موثوقة؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.safety1">
+                            كل شركة شريكة يجب أن تقدم سجلها التجاري ورخصتها البلدية. نتحقق من الوثائق يدوياً قبل الموافقة، ونمنح الشركة شارة "موثّق".
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="ماذا لو تعرضت السيارة لضرر؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.safety2">ماذا لو تعرضت السيارة لضرر؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.safety2">
+                            كل السيارات مؤمنة تأميناً شاملاً. عند الاستلام والإرجاع، نصور السيارة بالكامل ونحفظ الصور في الحجز. هذا يحمي الطرفين من أي خلاف.
+                        </div>
+                    </details>
+
+                    <details class="faq-item" data-question="هل بياناتي آمنة؟">
+                        <summary class="faq-question">
+                            <span data-i18n="faq.q.safety3">هل بياناتي آمنة على المنصة؟</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer" data-i18n="faq.a.safety3">
+                            نعم. نستخدم تشفير SSL، ولا نشارك بياناتك مع أي طرف ثالث. بيانات الدفع تُعالج عبر بوابات دفع معتمدة (PayTabs / CliQ).
+                        </div>
+                    </details>
+                </div>
+
+                <!-- ========== لا نتائج ========== -->
+                <div class="faq-no-results" id="faqNoResults">
+                    <div class="no-results-icon">🔍</div>
+                    <h3 data-i18n="faq.noResults.title">لم نجد نتائج</h3>
+                    <p data-i18n="faq.noResults.text">جرّب كلمات أخرى أو تصفح التصنيفات</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="faq-cta">
+        <div class="container">
+            <div class="faq-cta-box">
+                <h2 class="faq-cta-title" data-i18n="faq.cta.title">لم تجد إجابتك؟</h2>
+                <p class="faq-cta-text" data-i18n="faq.cta.text">فريق الدعم جاهز للرد عليك خلال 24 ساعة</p>
+                <div class="faq-cta-actions">
+                    <a href="contact.html" class="faq-cta-btn faq-cta-primary" data-i18n="faq.cta.contact">تواصل معنا</a>
+                    <a href="search.html" class="faq-cta-btn faq-cta-secondary" data-i18n="faq.cta.browse">تصفّح السيارات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-first" data-i18n="logo.first">يلا</span>
+                        <span data-i18n="logo.second">كار</span>
+                    </div>
+                    <p data-i18n="footer.about">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1c-.2.2-.4.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7L22 6"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.aboutTitle">من نحن</h4>
+                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.companiesTitle">للشركات</h4>
+                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.helpTitle">مساعدة</h4>
+                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.legalTitle">الشروط</h4>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+
+</html>

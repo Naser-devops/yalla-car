@@ -279,6 +279,7 @@ header {
     translate: 0 0;
 }
 
+
 /* ============================================
    9. Responsive — الهيدر والفوتر
    ============================================ */
@@ -332,5 +333,295 @@ header {
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--space-2);
+    }
+}
+
+/* ============================================
+   10. Dark Mode (الوضع الليلي)
+   ============================================ */
+
+/* تطبيق المتغيرات الداكنة */
+[data-theme="dark"] {
+    --color-background: #0F172A;
+    --color-text-dark: #F1F5F9;
+    --color-text-gray: #94A3B8;
+    --color-border: #334155;
+    --color-trust-bg: #1E293B;
+}
+
+/* بديل اللون الأبيض للـ backgrounds */
+[data-theme="dark"] header,
+[data-theme="dark"] .search-box,
+[data-theme="dark"] .category-card,
+[data-theme="dark"] .car-card,
+[data-theme="dark"] .step-card,
+[data-theme="dark"] .partner-card,
+[data-theme="dark"] .search-filters,
+[data-theme="dark"] .result-card,
+[data-theme="dark"] .result-footer,
+[data-theme="dark"] .table-wrapper,
+[data-theme="dark"] .dashboard-search,
+[data-theme="dark"] .dashboard-table,
+[data-theme="dark"] .auth-container,
+[data-theme="dark"] .auth-field input,
+[data-theme="dark"] .auth-lang-switch,
+[data-theme="dark"] .admin-search,
+[data-theme="dark"] .admin-tabs,
+[data-theme="dark"] .admin-table-wrap,
+[data-theme="dark"] .form-field input,
+[data-theme="dark"] .form-field select,
+[data-theme="dark"] .form-field textarea,
+[data-theme="dark"] .doc-label,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .stat-item,
+[data-theme="dark"] .value-card,
+[data-theme="dark"] .faq-item,
+[data-theme="dark"] .faq-cat,
+[data-theme="dark"] .legal-content,
+[data-theme="dark"] .legal-toc,
+[data-theme="dark"] .booking-card,
+[data-theme="dark"] .booking-form-wrap,
+[data-theme="dark"] .booking-summary,
+[data-theme="dark"] .summary-car img,
+[data-theme="dark"] .payment-option,
+[data-theme="dark"] .filters {
+    background: #1E293B;
+    color: var(--color-text-dark);
+}
+
+/* الكروت والنصوص المتداخلة */
+[data-theme="dark"] .car-name,
+[data-theme="dark"] .category-card span,
+[data-theme="dark"] .step-title,
+[data-theme="dark"] .partner-card,
+[data-theme="dark"] .result-name,
+[data-theme="dark"] .result-body,
+[data-theme="dark"] .car-body,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .about-hero-title,
+[data-theme="dark"] .contact-hero-title,
+[data-theme="dark"] .faq-hero-title,
+[data-theme="dark"] .legal-hero-title,
+[data-theme="dark"] .pending-title,
+[data-theme="dark"] .story-title,
+[data-theme="dark"] .vm-title,
+[data-theme="dark"] .value-title,
+[data-theme="dark"] .stat-number,
+[data-theme="dark"] .legal-section-title,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .dashboard-title,
+[data-theme="dark"] .form-section-title,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+    color: var(--color-text-dark);
+}
+
+/* حقول الإدخال */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: #1E293B;
+    color: var(--color-text-dark);
+    border-color: #334155;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #64748B;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: #3B82F6;
+}
+
+/* الشارات والحدود */
+[data-theme="dark"] .status-available,
+[data-theme="dark"] .result-badge.available,
+[data-theme="dark"] .badge-active,
+[data-theme="dark"] .doc-success {
+    background: #064E3B;
+    color: #6EE7B7;
+}
+
+[data-theme="dark"] .status-pending,
+[data-theme="dark"] .result-badge.pending,
+[data-theme="dark"] .badge-pending {
+    background: #78350F;
+    color: #FCD34D;
+}
+
+[data-theme="dark"] .status-cancelled,
+[data-theme="dark"] .badge-cancelled {
+    background: #7F1D1D;
+    color: #FCA5A5;
+}
+
+/* الجداول */
+[data-theme="dark"] .dashboard-table thead,
+[data-theme="dark"] .admin-table thead {
+    background: #0F172A;
+}
+
+[data-theme="dark"] .dashboard-table td,
+[data-theme="dark"] .admin-table td {
+    border-color: #334155;
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .dashboard-table tbody tr:hover,
+[data-theme="dark"] .admin-table tbody tr:hover {
+    background: #1E293B;
+}
+
+/* الفوتر */
+[data-theme="dark"] .footer {
+    background: #020617;
+}
+
+[data-theme="dark"] .admin-header,
+[data-theme="dark"] .admin-footer {
+    background: #020617;
+}
+
+/* الـ Modal */
+[data-theme="dark"] .modal-box {
+    background: #1E293B;
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .modal-title {
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .modal-text {
+    color: #94A3B8;
+}
+
+/* الـ Drawer */
+[data-theme="dark"] .review-drawer {
+    background: #1E293B;
+}
+
+[data-theme="dark"] .drawer-header {
+    background: #0F172A;
+}
+
+/* أزرار outline */
+[data-theme="dark"] .btn-outline {
+    border-color: #3B82F6;
+    color: #3B82F6;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background: #3B82F6;
+    color: white;
+}
+
+/* الفوتر links */
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-brand p,
+[data-theme="dark"] .footer-bottom p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* انتقالات سلسة عند التبديل */
+body,
+header,
+.footer,
+.car-card,
+.category-card,
+.step-card,
+.partner-card,
+.result-card,
+.search-filters,
+.form-field input,
+.form-field select,
+.form-field textarea,
+.table-wrapper,
+.auth-container,
+.info-card,
+.stat-item,
+.value-card,
+.faq-item,
+.legal-content,
+.legal-toc,
+.booking-card {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* ============================================
+   11. زر تبديل الوضع (Theme Toggle Button)
+   ============================================ */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.3s;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: rotate(20deg);
+}
+
+/* في الوضع الليلي */
+[data-theme="dark"] .theme-toggle {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--color-accent);
+    color: white;
+}
+
+/* الزر الثابت (في login/register) */
+.theme-toggle-fixed {
+    position: fixed;
+    top: var(--space-3);
+    inset-inline-end: var(--space-3);
+    background: var(--color-white);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle-fixed {
+    background: #1E293B;
+}
+
+/* في الـ admin header */
+[data-theme="dark"] .admin-header .theme-toggle {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .theme-toggle-fixed {
+        top: 12px;
+        inset-inline-end: 12px;
     }
 }

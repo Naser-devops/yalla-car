@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact.metaTitle">تواصل معنا — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="about.html" data-i18n="nav.about">من نحن</a>
+            <a href="contact.html" class="active" data-i18n="nav.contact">تواصل معنا</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+        </div>
+    </header>
+
+    <!-- ========== Hero ========== -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="contact-hero-title" data-i18n="contact.hero.title">نحن هنا لمساعدتك</h1>
+            <p class="contact-hero-subtitle" data-i18n="contact.hero.subtitle">
+                عندك سؤال، اقتراح، أو تبحث عن تعاون؟ فريق يلا كار جاهز للرد عليك خلال 24 ساعة
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== المحتوى ========== -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- ========== النموذج (يمين) ========== -->
+                <div class="contact-form-wrap">
+
+                    <h2 class="contact-form-title" data-i18n="contact.form.title">أرسل رسالة</h2>
+                    <p class="contact-form-subtitle" data-i18n="contact.form.subtitle">
+                        املأ النموذج وسنرد عليك في أقرب وقت ممكن
+                    </p>
+
+                    <form class="contact-form" id="contactForm">
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="contactName" data-i18n="contact.field.name">الاسم الكامل</label>
+                                <input id="contactName" type="text" placeholder="محمد أحمد" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contactEmail" data-i18n="contact.field.email">البريد الإلكتروني</label>
+                                <input id="contactEmail" type="email" placeholder="name@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="contactPhone" data-i18n="contact.field.phone">رقم الهاتف (اختياري)</label>
+                                <input id="contactPhone" type="tel" placeholder="+962 7X XXX XXXX">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contactSubject" data-i18n="contact.field.subject">الموضوع</label>
+                                <select id="contactSubject" required>
+                                    <option value="" disabled selected data-i18n="contact.subject.select">اختر الموضوع</option>
+                                    <option value="general" data-i18n="contact.subject.general">استفسار عام</option>
+                                    <option value="booking" data-i18n="contact.subject.booking">مشكلة في حجز</option>
+                                    <option value="company" data-i18n="contact.subject.company">تسجيل شركة</option>
+                                    <option value="partnership" data-i18n="contact.subject.partnership">شراكة</option>
+                                    <option value="complaint" data-i18n="contact.subject.complaint">شكوى</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="contactMessage" data-i18n="contact.field.message">الرسالة</label>
+                            <textarea id="contactMessage" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit" data-i18n="contact.form.submit">
+                            إرسال الرسالة
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- ========== معلومات التواصل (يسار) ========== -->
+                <aside class="contact-info-side">
+
+                    <h2 class="contact-info-title" data-i18n="contact.info.title">معلومات التواصل</h2>
+
+                    <!-- بطاقة الهاتف -->
+                    <div class="info-card">
+                        <div class="info-card-icon info-icon-phone">📞</div>
+                        <div class="info-card-content">
+                            <span class="info-card-label" data-i18n="contact.info.phone">الهاتف</span>
+                            <a href="tel:+962790000000" class="info-card-value" dir="ltr">+962 79 000 0000</a>
+                        </div>
+                    </div>
+
+                    <!-- بطاقة الإيميل -->
+                    <div class="info-card">
+                        <div class="info-card-icon info-icon-email">✉️</div>
+                        <div class="info-card-content">
+                            <span class="info-card-label" data-i18n="contact.info.email">البريد الإلكتروني</span>
+                            <a href="mailto:info@yallacar.jo" class="info-card-value" dir="ltr">info@yallacar.jo</a>
+                        </div>
+                    </div>
+
+                    <!-- بطاقة العنوان -->
+                    <div class="info-card">
+                        <div class="info-card-icon info-icon-address">📍</div>
+                        <div class="info-card-content">
+                            <span class="info-card-label" data-i18n="contact.info.address">العنوان</span>
+                            <span class="info-card-value" data-i18n="contact.info.addressValue">عمّان، الأردن</span>
+                        </div>
+                    </div>
+
+                    <!-- بطاقة ساعات العمل -->
+                    <div class="info-card info-card-hours">
+                        <div class="info-card-icon info-icon-hours">🕐</div>
+                        <div class="info-card-content">
+                            <span class="info-card-label" data-i18n="contact.info.hours">ساعات العمل</span>
+                            <span class="info-card-value" data-i18n="contact.info.hoursValue">الأحد - الخميس: 9ص - 6م</span>
+                        </div>
+                    </div>
+
+                    <!-- التواصل السريع -->
+                    <div class="quick-contacts">
+                        <h3 class="quick-title" data-i18n="contact.quick.title">تواصل سريع</h3>
+
+                        <div class="quick-buttons">
+                            <a href="#" class="quick-btn quick-btn-whatsapp" aria-label="WhatsApp">
+                                <span class="quick-icon">💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+
+                            <a href="#" class="quick-btn quick-btn-instagram" aria-label="Instagram">
+                                <span class="quick-icon">📷</span>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ مصغّر ========== -->
+    <section class="mini-faq">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.faq.title">أسئلة سريعة</h2>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span data-i18n="contact.faq.q1">كم من الوقت يستغرق الرد؟</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer" data-i18n="contact.faq.a1">
+                        فريقنا يرد عادة خلال 24 ساعة كحد أقصى. للحالات المستعجلة، تواصل معنا عبر واتساب.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span data-i18n="contact.faq.q2">كيف أسجّل شركتي؟</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer" data-i18n="contact.faq.a2">
+                        اذهب لصفحة "تسجيل شركة"، املأ النموذج وأرفق الوثائق المطلوبة. سيراجع فريقنا طلبك خلال 48 ساعة.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span data-i18n="contact.faq.q3">هل يمكنني إلغاء حجزي؟</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer" data-i18n="contact.faq.a3">
+                        نعم، يمكنك إلغاء الحجز من صفحة "حجوزاتي". سياسة الإلغاء تعتمد على وقت الإلغاء وشروط الشركة.
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="faq-more-link">
+                <a href="faq.html" data-i18n="contact.faq.more">شاهد كل الأسئلة الشائعة →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-first" data-i18n="logo.first">يلا</span>
+                        <span data-i18n="logo.second">كار</span>
+                    </div>
+                    <p data-i18n="footer.about">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1c-.2.2-.4.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7L22 6"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.aboutTitle">من نحن</h4>
+                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.companiesTitle">للشركات</h4>
+                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.helpTitle">مساعدة</h4>
+                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-i18n="footer.legalTitle">الشروط</h4>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== Toast ========== -->
+    <div class="contact-toast" id="contactToast">
+        <span class="contact-toast-ico">✓</span>
+        <span id="contactToastMsg"></span>
+    </div>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

@@ -69,8 +69,6 @@
     flex-direction: column;
 }
 
-
-/* ---- 4.1 الشعار ---- */
 .auth-logo {
     font-size: 28px;
     font-weight: var(--font-weight-bold);
@@ -84,8 +82,6 @@
     color: var(--color-accent);
 }
 
-
-/* ---- 4.2 التابين ---- */
 .auth-tabs {
     display: flex;
     gap: var(--space-3);
@@ -126,8 +122,6 @@
     border-radius: 2px;
 }
 
-
-/* ---- 4.3 النماذج ---- */
 .auth-form {
     display: none;
     flex-direction: column;
@@ -138,8 +132,6 @@
     display: flex;
 }
 
-
-/* ---- 4.4 الحقول ---- */
 .auth-field {
     display: flex;
     flex-direction: column;
@@ -169,8 +161,6 @@
     border-color: var(--color-primary);
 }
 
-
-/* ---- 4.5 سطر "تذكرني / نسيت" ---- */
 .auth-extras {
     display: flex;
     justify-content: space-between;
@@ -210,8 +200,6 @@
     color: var(--color-accent);
 }
 
-
-/* ---- 4.6 زر الإرسال ---- */
 .auth-submit {
     width: 100%;
     height: 52px;
@@ -232,13 +220,34 @@
     transform: translateY(-1px);
 }
 
-
-/* ---- 4.7 النص السفلي ---- */
 .auth-bottom-text {
     text-align: center;
     font-size: var(--font-size-small);
     color: var(--color-text-gray);
     margin-top: var(--space-2);
+}
+
+
+/* ============================================
+   4.1 رابط دخول الأدمن
+   ============================================ */
+.admin-access-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    font-size: 13px;
+    color: var(--color-text-gray);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: color 0.2s;
+    align-self: center;
+}
+
+.admin-access-link:hover {
+    color: var(--color-primary);
 }
 
 
@@ -292,7 +301,149 @@
 
 
 /* ============================================
-   6. Responsive
+   6. Toast Notification
+   ============================================ */
+.auth-toast {
+    position: fixed;
+    top: 40px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--color-text-dark);
+    color: var(--color-white);
+    padding: 14px var(--space-4);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.auth-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.auth-toast.success {
+    background: linear-gradient(135deg, #047857, #10B981);
+}
+
+.auth-toast.error {
+    background: linear-gradient(135deg, #B91C1C, #EF4444);
+}
+
+.auth-toast-ico {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   8. روابط إضافية (سجل شركة + حسابات تجريبية)
+   ============================================ */
+.auth-extra-links {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+}
+
+.auth-register-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    background: var(--color-trust-bg);
+    color: var(--color-primary);
+    border-radius: var(--radius-control);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: var(--space-3);
+}
+
+.auth-register-company:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.auth-test-accounts {
+    background: var(--color-background);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-control);
+    padding: var(--space-2);
+    font-size: 13px;
+}
+
+.test-accounts-title {
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.test-accounts-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.test-accounts-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-gray);
+}
+
+.test-accounts-list strong {
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+.test-accounts-list code {
+    font-family: 'Courier New', monospace;
+    background: var(--color-white);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--color-primary);
+    font-size: 11px;
+    direction: ltr;
+}
+
+/* Dark mode */
+[data-theme="dark"] .auth-register-company {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60A5FA;
+}
+
+[data-theme="dark"] .auth-test-accounts {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .test-accounts-list code {
+    background: #0F172A;
+}
+
+/* ============================================
+   7. Responsive
    ============================================ */
 @media (max-width: 768px) {
     .auth-container {
@@ -310,5 +461,15 @@
 
     .auth-logo {
         font-size: 24px;
+    }
+
+    .auth-toast {
+        inset-inline: var(--space-2);
+        transform: translateX(0) translateY(-100px);
+        width: calc(100% - 2 * var(--space-2));
+    }
+
+    .auth-toast.show {
+        transform: translateX(0) translateY(0);
     }
 }

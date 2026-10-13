@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalla Car — استأجر سيارتك في الأردن</title>
+    <title data-i18n="meta.title">Yalla Car — استأجر سيارتك في الأردن</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
     <!-- ========== الهيدر ========== -->
     <header>
-        <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span data-i18n="logo.second">كار</span></div>
+        <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span
+                data-i18n="logo.second">كار</span></div>
         <nav class="navigation">
             <a href="#home" class="active" data-i18n="nav.home">الرئيسية</a>
             <a href="#featured" data-i18n="nav.cars">السيارات</a>
@@ -25,7 +28,8 @@
         </nav>
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-<a href="login.html" class="login-btn" data-i18n="auth.login" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">تسجيل الدخول</a>        </div>
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+        </div>
     </header>
 
     <!-- ========== قسم الـ Hero ========== -->
@@ -37,7 +41,8 @@
             <form class="search-box" action="search.html" method="get">
                 <div class="search-field">
                     <label for="pickup-city" data-i18n="search.city">مدينة الاستلام</label>
-                    <input id="pickup-city" type="text" placeholder="عمان" data-i18n-placeholder="search.cityPlaceholder" name="city">
+                    <input id="pickup-city" type="text" placeholder="عمان"
+                        data-i18n-placeholder="search.cityPlaceholder" name="city">
                 </div>
 
                 <div class="search-field">
@@ -74,11 +79,13 @@
             <div class="categories-grid">
                 <a href="#" class="category-card">
                     <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                            <circle cx="7" cy="17" r="2"/>
-                            <path d="M9 17h6"/>
-                            <circle cx="17" cy="17" r="2"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                            <circle cx="7" cy="17" r="2" />
+                            <path d="M9 17h6" />
+                            <circle cx="17" cy="17" r="2" />
                         </svg>
                     </div>
                     <span data-i18n="type.economy">اقتصادية</span>
@@ -86,12 +93,14 @@
 
                 <a href="#" class="category-card">
                     <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                            <circle cx="7" cy="17" r="2"/>
-                            <path d="M9 17h6"/>
-                            <circle cx="17" cy="17" r="2"/>
-                            <path d="M12 7V5M9 7V5M15 7V5"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                            <circle cx="7" cy="17" r="2" />
+                            <path d="M9 17h6" />
+                            <circle cx="17" cy="17" r="2" />
+                            <path d="M12 7V5M9 7V5M15 7V5" />
                         </svg>
                     </div>
                     <span data-i18n="type.family">عائلية</span>
@@ -99,12 +108,14 @@
 
                 <a href="#" class="category-card">
                     <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                            <circle cx="7" cy="17" r="2"/>
-                            <path d="M9 17h6"/>
-                            <circle cx="17" cy="17" r="2"/>
-                            <path d="M3 9h2l1-3h12l1 3h2"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                            <circle cx="7" cy="17" r="2" />
+                            <path d="M9 17h6" />
+                            <circle cx="17" cy="17" r="2" />
+                            <path d="M3 9h2l1-3h12l1 3h2" />
                         </svg>
                     </div>
                     <span data-i18n="type.suv">SUV</span>
@@ -112,12 +123,14 @@
 
                 <a href="#" class="category-card">
                     <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                            <circle cx="7" cy="17" r="2"/>
-                            <path d="M9 17h6"/>
-                            <circle cx="17" cy="17" r="2"/>
-                            <path d="M12 4l1.5 2h2L14 8l.5 2-2.5-1-2.5 1 .5-2L8 6h2z"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                            <circle cx="7" cy="17" r="2" />
+                            <path d="M9 17h6" />
+                            <circle cx="17" cy="17" r="2" />
+                            <path d="M12 4l1.5 2h2L14 8l.5 2-2.5-1-2.5 1 .5-2L8 6h2z" />
                         </svg>
                     </div>
                     <span data-i18n="type.luxury">فخمة</span>
@@ -125,11 +138,12 @@
 
                 <a href="#" class="category-card">
                     <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 17h18v-4l-2-4H5l-2 4z"/>
-                            <circle cx="7" cy="17" r="2"/>
-                            <circle cx="17" cy="17" r="2"/>
-                            <path d="M7 9V6h10v3"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 17h18v-4l-2-4H5l-2 4z" />
+                            <circle cx="7" cy="17" r="2" />
+                            <circle cx="17" cy="17" r="2" />
+                            <path d="M7 9V6h10v3" />
                         </svg>
                     </div>
                     <span data-i18n="type.fourByFour">4x4</span>
@@ -157,7 +171,8 @@
                         </p>
                     </div>
                     <div class="car-footer">
-                        <span class="car-price">22 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <span class="car-price">22 <span data-i18n="car.currency">د.أ</span> <small
+                                data-i18n="car.perDay">/ يوم</small></span>
                         <a href="car-details.html?id=1" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
@@ -174,7 +189,8 @@
                         </p>
                     </div>
                     <div class="car-footer">
-                        <span class="car-price">28 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <span class="car-price">28 <span data-i18n="car.currency">د.أ</span> <small
+                                data-i18n="car.perDay">/ يوم</small></span>
                         <a href="car-details.html?id=2" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
@@ -191,7 +207,8 @@
                         </p>
                     </div>
                     <div class="car-footer">
-                        <span class="car-price">45 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <span class="car-price">45 <span data-i18n="car.currency">د.أ</span> <small
+                                data-i18n="car.perDay">/ يوم</small></span>
                         <a href="car-details.html?id=3" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
@@ -208,7 +225,8 @@
                         </p>
                     </div>
                     <div class="car-footer">
-                        <span class="car-price">85 <span data-i18n="car.currency">د.أ</span> <small data-i18n="car.perDay">/ يوم</small></span>
+                        <span class="car-price">85 <span data-i18n="car.currency">د.أ</span> <small
+                                data-i18n="car.perDay">/ يوم</small></span>
                         <a href="car-details.html?id=4" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
@@ -259,6 +277,122 @@
         </div>
     </section>
 
+    <!-- ========== قسم آراء العملاء ========== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-head">
+                <div>
+                    <span class="testimonials-badge" data-i18n="testimonials.badge">⭐ 4.8 / 5</span>
+                    <h2 class="section-title" data-i18n="testimonials.title">ماذا يقول عملاؤنا؟</h2>
+                    <p class="testimonials-subtitle" data-i18n="testimonials.subtitle">
+                        أكثر من 5,000 عميل استأجروا سياراتهم عبر يلا كار
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonials-slider" id="testimonialsSlider">
+
+                <button type="button" class="slider-arrow slider-prev" id="sliderPrev" aria-label="السابق">
+                    <span>›</span>
+                </button>
+
+                <div class="testimonials-track-wrap">
+                    <div class="testimonials-track" id="testimonialsTrack">
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text" data-i18n="testimonials.t1.text">
+                                تجربة ممتازة من البداية للنهاية. السعر واضح، السيارة مطابقة للصور تماماً، والتأكيد جاء
+                                خلال دقائق عبر واتساب. أنصح بها بشدة!
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"
+                                    style="background: linear-gradient(135deg, #F97316, #EA580C);">م</div>
+                                <div class="author-info">
+                                    <strong>محمد العمري</strong>
+                                    <small data-i18n="testimonials.t1.role">عميل من عمّان</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text" data-i18n="testimonials.t2.text">
+                                كنت خايفة من مواقع التأجير، لكن يلا كار غيّرت فكرتي. كل التفاصيل واضحة قبل الدفع،
+                                والشركة كانت محترمة جداً.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"
+                                    style="background: linear-gradient(135deg, #8B5CF6, #6366F1);">س</div>
+                                <div class="author-info">
+                                    <strong>سارة الخليل</strong>
+                                    <small data-i18n="testimonials.t2.role">عميلة من إربد</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text" data-i18n="testimonials.t3.text">
+                                Best car rental experience in Jordan. Transparent pricing, real photos, and fast
+                                WhatsApp confirmation. Highly recommended for tourists!
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"
+                                    style="background: linear-gradient(135deg, #059669, #10B981);">M</div>
+                                <div class="author-info">
+                                    <strong>Mark Evans</strong>
+                                    <small data-i18n="testimonials.t3.role">سائح من بريطانيا</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text" data-i18n="testimonials.t4.text">
+                                حجزت سيارة لرحلة عائلية. الخدمة كانت سريعة، والسيارة نظيفة تماماً. أكثر ما أعجبني هو
+                                وضوح السعر النهائي بدون أي رسوم مخفية.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"
+                                    style="background: linear-gradient(135deg, #D97706, #F59E0B);">ل</div>
+                                <div class="author-info">
+                                    <strong>ليلى حسن</strong>
+                                    <small data-i18n="testimonials.t4.role">عميلة من العقبة</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★☆</div>
+                            <p class="testimonial-text" data-i18n="testimonials.t5.text">
+                                منصة عملية جداً، واجهة عربية سلسة، والدعم يرد بسرعة. تجربة إيجابية أوصي بها لأي شخص يبحث
+                                عن سيارة للإيجار في الأردن.
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"
+                                    style="background: linear-gradient(135deg, #1E3A8A, #3B5BA9);">ع</div>
+                                <div class="author-info">
+                                    <strong>عمر السالم</strong>
+                                    <small data-i18n="testimonials.t5.role">مقيم في الأردن</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button type="button" class="slider-arrow slider-next" id="sliderNext" aria-label="التالي">
+                    <span>‹</span>
+                </button>
+
+            </div>
+
+            <div class="slider-dots" id="sliderDots"></div>
+
+        </div>
+    </section>
+
     <!-- ========== قسم شارات الثقة ========== -->
     <section class="trust">
         <div class="container">
@@ -284,25 +418,27 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span data-i18n="logo.second">كار</span></div>
+                    <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span
+                            data-i18n="logo.second">كار</span></div>
                     <p data-i18n="footer.about">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
                     <div class="footer-social">
                         <a href="#" aria-label="WhatsApp">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1c-.2.2-.4.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+                                <path
+                                    d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.2s-.8.9-1 1.1c-.2.2-.4.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
                             </svg>
                         </a>
                         <a href="#" aria-label="Email">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                <path d="M2 6l10 7L22 6"/>
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="M2 6l10 7L22 6" />
                             </svg>
                         </a>
                         <a href="#" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                                <circle cx="12" cy="12" r="4"/>
-                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
                             </svg>
                         </a>
                     </div>
@@ -310,26 +446,26 @@
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.aboutTitle">من نحن</h4>
-                    <a href="#" data-i18n="footer.aboutUs">عن يلا كار</a>
-                    <a href="#" data-i18n="footer.contact">تواصل معنا</a>
+                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.companiesTitle">للشركات</h4>
-                    <a href="#" data-i18n="footer.register">سجّل شركتك</a>
-                    <a href="#" data-i18n="footer.dashboard">لوحة التحكم</a>
+                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.helpTitle">مساعدة</h4>
-                    <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
-                    <a href="#" data-i18n="footer.refund">سياسة الاسترجاع</a>
+                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.legalTitle">الشروط</h4>
-                    <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
-                    <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
                 </div>
             </div>
 
@@ -338,9 +474,10 @@
             </div>
         </div>
     </footer>
-
+    <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/testimonials.js"></script>
 </body>
 
 </html>

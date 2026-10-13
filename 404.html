@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="notFound.metaTitle">الصفحة غير موجودة — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/404.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="index.html#partners" data-i18n="nav.companies">الشركات</a>
+            <a href="index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <!-- ✅ تم التحويل من button إلى a -->
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+        </div>
+    </header>
+
+    <!-- ========== المحتوى ========== -->
+    <main class="not-found-page">
+        <div class="container not-found-container">
+
+            <!-- زخارف الخلفية -->
+            <div class="bg-decoration bg-deco-1"></div>
+            <div class="bg-decoration bg-deco-2"></div>
+            <div class="bg-decoration bg-deco-3"></div>
+
+            <!-- 404 + السيارة -->
+            <div class="not-found-graphic">
+                <span class="digit">4</span>
+
+                <div class="car-zero">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M20 75 Q20 55, 45 55 L60 55 L80 30 Q85 22, 95 22 L140 22 Q150 22, 155 30 L175 55 L185 55 Q200 55, 200 75 L200 90 Q200 100, 190 100 L175 100 A15 15 0 0 0 145 100 L65 100 A15 15 0 0 0 35 100 L10 100 Q0 100, 0 90 L0 75 Q0 55, 20 75 Z"
+                              fill="#1E3A8A" opacity="0.15"/>
+                        <path d="M20 75 Q20 60, 45 60 L175 60 Q195 60, 195 78 L195 88 Q195 96, 188 96 L15 96 Q5 96, 5 88 L5 78 Q5 60, 20 75 Z"
+                              fill="#1E3A8A"/>
+                        <path d="M70 60 L85 32 Q90 25, 100 25 L135 25 Q145 25, 150 32 L165 60 Z"
+                              fill="#3B82F6"/>
+                        <path d="M90 58 L98 32 L118 32 L118 58 Z" fill="#93C5FD" opacity="0.9"/>
+                        <path d="M125 58 L125 32 L142 32 L155 58 Z" fill="#93C5FD" opacity="0.9"/>
+                        <circle cx="50" cy="96" r="18" fill="#0F172A"/>
+                        <circle cx="50" cy="96" r="10" fill="#94A3B8"/>
+                        <circle cx="50" cy="96" r="3" fill="#0F172A"/>
+                        <circle cx="155" cy="96" r="18" fill="#0F172A"/>
+                        <circle cx="155" cy="96" r="10" fill="#94A3B8"/>
+                        <circle cx="155" cy="96" r="3" fill="#0F172A"/>
+                        <ellipse cx="185" cy="78" rx="6" ry="4" fill="#FCD34D"/>
+                    </svg>
+                </div>
+
+                <span class="digit">4</span>
+            </div>
+
+            <!-- الرسالة -->
+            <h1 class="not-found-title" data-i18n="notFound.title">عذراً، الصفحة غير موجودة</h1>
+            <p class="not-found-text" data-i18n="notFound.text">
+                يبدو أن السيارة تاهت في الطريق. الرابط الذي تبحث عنه لم يعد متوفراً أو تم نقله.
+            </p>
+
+            <!-- الأزرار -->
+            <div class="not-found-actions">
+                <a href="index.html" class="btn-home">
+                    <span data-i18n="notFound.home">العودة للرئيسية</span>
+                </a>
+                <a href="search.html" class="btn-browse">
+                    <span data-i18n="notFound.browse">تصفّح السيارات</span>
+                </a>
+            </div>
+
+            <!-- روابط سريعة -->
+            <div class="quick-links">
+                <span class="quick-links-label" data-i18n="notFound.orExplore">أو جرّب:</span>
+                <a href="index.html#featured" data-i18n="notFound.featured">سيارات مميزة</a>
+                <span class="quick-sep">•</span>
+                <a href="index.html#how-it-works" data-i18n="notFound.how">كيف يعمل</a>
+                <span class="quick-sep">•</span>
+                <a href="index.html#partners" data-i18n="notFound.partners">شركات شريكة</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/404.js"></script>
+</body>
+
+</html>

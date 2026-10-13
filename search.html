@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="searchPage.title">نتائج البحث — يلا كار</title>
 
-    <!-- الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- الأنماط: المشترك أولاً، ثم الخاص بالصفحة -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/search.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر (نفس الرئيسية) ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -34,22 +32,20 @@
 
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-            <button class="login-btn" data-i18n="auth.login">تسجيل الدخول</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
         </div>
     </header>
 
-    <!-- ========== المحتوى ========== -->
     <main class="search-page container">
 
         <h1 class="section-title" data-i18n="search.resultsTitle">نتائج البحث</h1>
 
         <div class="search-layout">
 
-            <!-- ========== الفلاتر (Sidebar) ========== -->
             <aside class="search-filters">
                 <h3 class="filter-title" data-i18n="filters.title">الفلاتر</h3>
 
-                <!-- 1. فلتر السعر -->
+                <!-- ========== فلتر السعر ========== -->
                 <div class="filter-group">
                     <h4 data-i18n="filters.price">السعر اليومي</h4>
                     <input type="range" min="10" max="150" value="150" class="price-range" id="priceRange">
@@ -59,7 +55,7 @@
                     </div>
                 </div>
 
-                <!-- 2. فلتر نوع السيارة -->
+                <!-- ========== فلتر النوع ========== -->
                 <div class="filter-group">
                     <h4 data-i18n="filters.type">نوع السيارة</h4>
 
@@ -89,7 +85,7 @@
                     </label>
                 </div>
 
-                <!-- 3. فلتر عدد المقاعد -->
+                <!-- ========== فلتر المقاعد ========== -->
                 <div class="filter-group">
                     <h4 data-i18n="filters.seats">عدد المقاعد</h4>
 
@@ -114,7 +110,7 @@
                     </label>
                 </div>
 
-                <!-- 4. فلتر الشركة -->
+                <!-- ========== فلتر الشركة ========== -->
                 <div class="filter-group">
                     <h4 data-i18n="filters.company">الشركة</h4>
 
@@ -139,27 +135,43 @@
                     </label>
                 </div>
 
-                <!-- زر التطبيق -->
+                <!-- ========== أزرار التطبيق والإعادة ========== -->
                 <button type="button" class="btn-apply-filter" id="applyFilters" data-i18n="filters.apply">
                     تطبيق الفلاتر
                 </button>
+
+                <button type="button" class="btn-reset-filter" id="resetFilters" data-i18n="filters.reset">
+                    إعادة تعيين
+                </button>
             </aside>
 
-            <!-- ========== النتائج ========== -->
             <section class="search-results">
 
-                <!-- الترتيب -->
                 <div class="results-sort">
                     <span data-i18n="results.sortBy">ترتيب حسب:</span>
                     <select class="sort-select" id="sortSelect">
-                        <option value="newest" data-i18n="results.newest">الأحدث</option>
+                        <option value="default" data-i18n="results.default">الافتراضي</option>
                         <option value="cheapest" data-i18n="results.cheapest">الأرخص</option>
+                        <option value="expensive" data-i18n="results.expensive">الأغلى</option>
                         <option value="rating" data-i18n="results.rating">الأعلى تقييماً</option>
                     </select>
                 </div>
 
-                <!-- كارت 1: Kia Picanto -->
-                <article class="result-card">
+                <!-- عدّاد النتائج -->
+                <div class="results-count">
+                    <span id="resultsCount">4</span>
+                    <span data-i18n="results.carsFound">سيارات متوفرة</span>
+                </div>
+
+                <!-- ========== كارت 1: Kia Picanto ========== -->
+                <article class="result-card"
+                         data-id="1"
+                         data-name="Kia Picanto 2023"
+                         data-type="economy"
+                         data-seats="5"
+                         data-company="ram"
+                         data-price="22"
+                         data-rating="4.8">
                     <div class="result-image">
                         <img src="images/kia-picanto-2023.jpg" alt="Kia Picanto 2023">
                     </div>
@@ -187,8 +199,15 @@
                     </div>
                 </article>
 
-                <!-- كارت 2: Toyota Corolla -->
-                <article class="result-card">
+                <!-- ========== كارت 2: Toyota Corolla ========== -->
+                <article class="result-card"
+                         data-id="2"
+                         data-name="Toyota Corolla 2023"
+                         data-type="family"
+                         data-seats="5"
+                         data-company="amman"
+                         data-price="28"
+                         data-rating="4.7">
                     <div class="result-image">
                         <img src="images/toyota-corolla-2023.jpg" alt="Toyota Corolla 2023">
                     </div>
@@ -216,8 +235,15 @@
                     </div>
                 </article>
 
-                <!-- كارت 3: Hyundai Tucson -->
-                <article class="result-card">
+                <!-- ========== كارت 3: Hyundai Tucson ========== -->
+                <article class="result-card"
+                         data-id="3"
+                         data-name="Hyundai Tucson 2024"
+                         data-type="suv"
+                         data-seats="5"
+                         data-company="petra"
+                         data-price="45"
+                         data-rating="4.9">
                     <div class="result-image">
                         <img src="images/hyundai-tucson-2024.jpg" alt="Hyundai Tucson 2024">
                     </div>
@@ -245,8 +271,15 @@
                     </div>
                 </article>
 
-                <!-- كارت 4: Mercedes C200 -->
-                <article class="result-card">
+                <!-- ========== كارت 4: Mercedes C200 ========== -->
+                <article class="result-card"
+                         data-id="4"
+                         data-name="Mercedes C200"
+                         data-type="luxury"
+                         data-seats="5"
+                         data-company="nukhba"
+                         data-price="85"
+                         data-rating="5.0">
                     <div class="result-image">
                         <img src="images/mercedes-c200.jpg" alt="Mercedes C200">
                     </div>
@@ -274,11 +307,17 @@
                     </div>
                 </article>
 
+                <!-- ========== رسالة "لا نتائج" ========== -->
+                <div class="no-results-message" id="noResults" style="display: none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3 data-i18n="results.noResultsTitle">لا توجد نتائج مطابقة</h3>
+                    <p data-i18n="results.noResultsText">جرّب توسيع نطاق السعر أو إزالة بعض الفلاتر</p>
+                </div>
+
             </section>
         </div>
     </main>
 
-    <!-- ========== الفوتر (نفس الرئيسية) ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -304,26 +343,26 @@
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.aboutTitle">من نحن</h4>
-                    <a href="#" data-i18n="footer.aboutUs">عن يلا كار</a>
-                    <a href="#" data-i18n="footer.contact">تواصل معنا</a>
+                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.companiesTitle">للشركات</h4>
-                    <a href="#" data-i18n="footer.register">سجّل شركتك</a>
-                    <a href="#" data-i18n="footer.dashboard">لوحة التحكم</a>
+                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.helpTitle">مساعدة</h4>
-                    <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
-                    <a href="#" data-i18n="footer.refund">سياسة الاسترجاع</a>
+                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.legalTitle">الشروط</h4>
-                    <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
-                    <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
                 </div>
             </div>
 
@@ -333,7 +372,7 @@
         </div>
     </footer>
 
-    <!-- السكربتات: المشترك أولاً، ثم الخاص بالصفحة -->
+    <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/search.js"></script>
 </body>

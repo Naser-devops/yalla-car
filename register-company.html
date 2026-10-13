@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="registerCompany.metaTitle">تسجيل شركة — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register-company.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body class="register-body">
+
+    <button class="auth-lang-switch en" data-i18n="lang.switch">EN</button>
+
+    <div class="register-container">
+
+        <!-- ========== الجهة اليمنى: النموذج ========== -->
+        <div class="register-form-side">
+
+            <a href="index.html" class="auth-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </a>
+
+            <div class="register-header">
+                <h1 class="register-title" data-i18n="registerCompany.title">سجّل شركتك</h1>
+                <p class="register-subtitle" data-i18n="registerCompany.subtitle">انضم لمنصة يلا كار وابدأ باستقبال الحجوزات</p>
+            </div>
+
+            <form class="register-form" id="companyForm">
+
+                <!-- ============ القسم 1: معلومات الشركة ============ -->
+                <div class="form-section">
+                    <h2 class="form-section-title" data-i18n="registerCompany.section.basic">معلومات الشركة</h2>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="companyName" data-i18n="registerCompany.field.companyName">اسم الشركة</label>
+                            <input id="companyName" type="text" placeholder="Ram Rentals" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="crNumber" data-i18n="registerCompany.field.crNumber">السجل التجاري</label>
+                            <input id="crNumber" type="text" placeholder="CR-2026-XXXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="yearFounded" data-i18n="registerCompany.field.yearFounded">سنة التأسيس</label>
+                            <input id="yearFounded" type="number" min="1990" max="2026" placeholder="2023" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="carsCount" data-i18n="registerCompany.field.carsCount">عدد السيارات</label>
+                            <input id="carsCount" type="number" min="1" max="500" placeholder="6" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ القسم 2: معلومات التواصل ============ -->
+                <div class="form-section">
+                    <h2 class="form-section-title" data-i18n="registerCompany.section.contact">معلومات التواصل</h2>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="companyEmail" data-i18n="registerCompany.field.email">البريد الإلكتروني</label>
+                            <input id="companyEmail" type="email" placeholder="info@company.jo" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="companyPhone" data-i18n="registerCompany.field.phone">رقم الهاتف</label>
+                            <input id="companyPhone" type="tel" placeholder="+962 7X XXX XXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="companyCity" data-i18n="registerCompany.field.city">المدينة</label>
+                            <select id="companyCity" required>
+                                <option value="" disabled selected data-i18n="registerCompany.city.select">اختر المدينة</option>
+                                <option value="amman" data-i18n="booking.amman">عمّان</option>
+                                <option value="aqaba" data-i18n="booking.aqaba">العقبة</option>
+                                <option value="irbid" data-i18n="booking.irbid">إربد</option>
+                                <option value="zarqa" data-i18n="registerCompany.city.zarqa">الزرقاء</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="companyAddress" data-i18n="registerCompany.field.address">العنوان التفصيلي</label>
+                            <input id="companyAddress" type="text" placeholder="شارع المدينة، بناية رقم..." required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ القسم 3: كلمة المرور ============ -->
+                <div class="form-section">
+                    <h2 class="form-section-title" data-i18n="registerCompany.section.password">كلمة المرور</h2>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="companyPassword" data-i18n="registerCompany.field.password">كلمة المرور</label>
+                            <input id="companyPassword" type="password" placeholder="••••••••" required minlength="8">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="companyPasswordConfirm" data-i18n="registerCompany.field.confirmPassword">تأكيد كلمة المرور</label>
+                            <input id="companyPasswordConfirm" type="password" placeholder="••••••••" required minlength="8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ القسم 4: الوثائق ============ -->
+                <div class="form-section">
+                    <h2 class="form-section-title" data-i18n="registerCompany.section.documents">الوثائق المطلوبة</h2>
+
+                    <div class="documents-upload">
+
+                        <div class="doc-upload-box">
+                            <label class="doc-label">
+                                <input type="file" accept=".pdf,image/*" id="docCR" class="doc-input">
+                                <div class="doc-placeholder" id="docCRPlaceholder">
+                                    <span class="doc-icon">📄</span>
+                                    <span class="doc-text" data-i18n="registerCompany.doc.cr">السجل التجاري</span>
+                                    <span class="doc-hint" data-i18n="registerCompany.doc.hint">PDF أو صورة</span>
+                                </div>
+                                <div class="doc-success" id="docCRSuccess">
+                                    <span class="doc-icon">✓</span>
+                                    <span class="doc-filename" id="docCRName">تم الرفع</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="doc-upload-box">
+                            <label class="doc-label">
+                                <input type="file" accept=".pdf,image/*" id="docTax" class="doc-input">
+                                <div class="doc-placeholder" id="docTaxPlaceholder">
+                                    <span class="doc-icon">📄</span>
+                                    <span class="doc-text" data-i18n="registerCompany.doc.tax">شهادة ضريبة</span>
+                                    <span class="doc-hint" data-i18n="registerCompany.doc.hint">PDF أو صورة</span>
+                                </div>
+                                <div class="doc-success" id="docTaxSuccess">
+                                    <span class="doc-icon">✓</span>
+                                    <span class="doc-filename" id="docTaxName">تم الرفع</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ============ الشروط + الزر ============ -->
+                <label class="checkbox-terms">
+                    <input type="checkbox" required>
+                    <span data-i18n="registerCompany.agreeTerms">أوافق على الشروط والأحكام وسياسة الخصوصية</span>
+                </label>
+
+                <button type="submit" class="register-submit" data-i18n="registerCompany.submit">إرسال الطلب</button>
+
+                <p class="register-login-link">
+                    <span data-i18n="registerCompany.haveAccount">عندك حساب؟</span>
+                    <a href="login.html" data-i18n="login.submit">تسجيل الدخول</a>
+                </p>
+
+            </form>
+
+        </div>
+
+        <!-- ========== الجهة اليسرى: التصميم ========== -->
+        <aside class="register-visual-side">
+
+            <div class="visual-content">
+                <div class="visual-logo">
+                    <span data-i18n="logo.first">يلا</span>
+                    <span class="visual-accent" data-i18n="logo.second">كار</span>
+                </div>
+
+                <h2 class="visual-title" data-i18n="registerCompany.visual.title">انضم لأكبر منصة تأجير سيارات في الأردن</h2>
+                <p class="visual-subtitle" data-i18n="registerCompany.visual.subtitle">آلاف العملاء يبحثون عن سيارات للاستئجار كل شهر</p>
+
+                <ul class="visual-benefits">
+                    <li>
+                        <span class="benefit-icon">📈</span>
+                        <div>
+                            <strong data-i18n="registerCompany.benefit1.title">زيادة الحجوزات</strong>
+                            <small data-i18n="registerCompany.benefit1.desc">اوصل لآلاف العملاء المحليين والسياح</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">💰</span>
+                        <div>
+                            <strong data-i18n="registerCompany.benefit2.title">عمولة منخفضة</strong>
+                            <small data-i18n="registerCompany.benefit2.desc">ابدأ بـ 8% فقط على كل حجز</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">🛠️</span>
+                        <div>
+                            <strong data-i18n="registerCompany.benefit3.title">أدوات مجانية</strong>
+                            <small data-i18n="registerCompany.benefit3.desc">لوحة تحكم كاملة لإدارة سياراتك</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <div>
+                            <strong data-i18n="registerCompany.benefit4.title">شركة موثقة</strong>
+                            <small data-i18n="registerCompany.benefit4.desc">شارة "موثّق" تبني ثقة العملاء</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ========== Toast ========== -->
+    <div class="auth-toast" id="registerToast">
+        <span class="auth-toast-ico">✓</span>
+        <span id="registerToastMsg"></span>
+    </div>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/register-company.js"></script>
+</body>
+
+</html>

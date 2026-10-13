@@ -1,0 +1,521 @@
+/* ============================================
+   Yalla Car — أنماط صفحة "تواصل معنا"
+   ============================================ */
+
+
+/* ============================================
+   1. Hero
+   ============================================ */
+.contact-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: var(--color-white);
+    padding: 70px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    inset-inline-end: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact-hero-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   2. التخطيط الرئيسي
+   ============================================ */
+.contact-main {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+
+/* ============================================
+   3. نموذج التواصل
+   ============================================ */
+.contact-form-wrap {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form-title {
+    font-size: var(--font-size-h2);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.contact-form-subtitle {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.form-field label {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-field input,
+.form-field select {
+    height: var(--height-control);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.7;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--color-primary);
+}
+
+/* إصلاح select */
+.form-field select {
+    direction: rtl;
+    text-align: right;
+    line-height: var(--height-control);
+}
+
+.form-field select option {
+    direction: rtl;
+    text-align: right;
+    padding: var(--space-1);
+}
+
+.contact-submit {
+    width: 100%;
+    height: 56px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.5px;
+    margin-top: var(--space-1);
+}
+
+.contact-submit:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(249, 115, 22, 0.3);
+}
+
+
+/* ============================================
+   4. معلومات التواصل (Side)
+   ============================================ */
+.contact-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    position: sticky;
+    top: 100px;
+}
+
+.contact-info-title {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.info-icon-phone {
+    background: #DBEAFE;
+}
+
+.info-icon-email {
+    background: #FEF3C7;
+}
+
+.info-icon-address {
+    background: #DCFCE7;
+}
+
+.info-icon-hours {
+    background: #FFEDD5;
+}
+
+.info-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.info-card-label {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    font-weight: 600;
+}
+
+.info-card-value {
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-word;
+}
+
+a.info-card-value:hover {
+    color: var(--color-accent);
+}
+
+
+/* ============================================
+   5. التواصل السريع
+   ============================================ */
+.quick-contacts {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: var(--space-3);
+    margin-top: var(--space-1);
+}
+
+.quick-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quick-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.quick-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 48px;
+    border-radius: var(--radius-control);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quick-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.quick-btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.quick-btn-instagram {
+    background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+}
+
+.quick-icon {
+    font-size: 16px;
+}
+
+
+/* ============================================
+   6. FAQ مصغّر
+   ============================================ */
+.mini-faq {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.faq-item[open] {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    color: var(--color-primary);
+}
+
+.faq-icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-accent);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 var(--space-3) var(--space-3);
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.8;
+}
+
+.faq-more-link {
+    text-align: center;
+    margin-top: var(--space-4);
+}
+
+.faq-more-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.faq-more-link a:hover {
+    color: var(--color-accent);
+}
+
+
+/* ============================================
+   7. Toast
+   ============================================ */
+.contact-toast {
+    position: fixed;
+    top: 40px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--color-text-dark);
+    color: var(--color-white);
+    padding: 14px var(--space-4);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.contact-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.contact-toast.success {
+    background: linear-gradient(135deg, #047857, #10B981);
+}
+
+.contact-toast.error {
+    background: linear-gradient(135deg, #B91C1C, #EF4444);
+}
+
+.contact-toast-ico {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   8. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-side {
+        position: static;
+    }
+
+    .contact-hero-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 50px 0 40px;
+    }
+
+    .contact-hero-title {
+        font-size: 26px;
+    }
+
+    .contact-hero-subtitle {
+        font-size: var(--font-size-body);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-wrap {
+        padding: var(--space-3);
+    }
+
+    .contact-toast {
+        inset-inline: var(--space-2);
+        transform: translateX(0) translateY(-100px);
+        width: calc(100% - 2 * var(--space-2));
+    }
+
+    .contact-toast.show {
+        transform: translateX(0) translateY(0);
+    }
+}

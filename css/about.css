@@ -1,0 +1,523 @@
+/* ============================================
+   Yalla Car — أنماط صفحة "من نحن"
+   ============================================ */
+
+
+/* ============================================
+   1. Hero
+   ============================================ */
+.about-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: var(--color-white);
+    padding: 80px 0 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    inset-inline-end: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    inset-inline-start: -80px;
+    width: 240px;
+    height: 240px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.about-hero-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   2. قصتنا
+   ============================================ */
+.about-story {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.story-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-5);
+    align-items: center;
+}
+
+.story-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: var(--space-2);
+}
+
+.story-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.story-paragraph {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    line-height: 1.9;
+    margin-bottom: var(--space-2);
+}
+
+.story-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.story-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.story-card {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: var(--space-4);
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    inset-inline-end: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.story-icon {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+    position: relative;
+    z-index: 1;
+}
+
+.story-card strong {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--color-accent);
+    position: relative;
+    z-index: 1;
+}
+
+.story-card small {
+    font-size: var(--font-size-body);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   3. الرؤية والرسالة
+   ============================================ */
+.vision-mission {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.vm-card {
+    border-radius: 20px;
+    padding: var(--space-5) var(--space-4);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.vm-card:hover {
+    transform: translateY(-6px);
+}
+
+.vm-vision {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+}
+
+.vm-mission {
+    background: linear-gradient(135deg, #C2410C 0%, #F97316 100%);
+}
+
+.vm-card::before {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    inset-inline-end: -60px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.vm-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.vm-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 1;
+}
+
+.vm-text {
+    font-size: var(--font-size-body);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   4. الأرقام
+   ============================================ */
+.stats {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--space-4) var(--space-2);
+    border-radius: 16px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+    letter-spacing: -1.5px;
+}
+
+.stat-label {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    font-weight: 600;
+}
+
+
+/* ============================================
+   5. قيمنا
+   ============================================ */
+.values {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+}
+
+.value-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: var(--space-4);
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-trust-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto var(--space-3);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.value-card:hover .value-icon {
+    background: var(--color-accent);
+    transform: scale(1.05);
+}
+
+.value-title {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-1);
+}
+
+.value-desc {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   6. CTA
+   ============================================ */
+.about-cta {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: white;
+    border-radius: 24px;
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+}
+
+.cta-box::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    inset-inline-end: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-text {
+    font-size: var(--font-size-body);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 180px;
+}
+
+.cta-btn-primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.cta-btn-primary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+.cta-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-btn-secondary:hover {
+    background: white;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   7. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .story-visual {
+        order: -1;
+    }
+
+    .story-card {
+        max-width: 260px;
+    }
+
+    .stats-grid,
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-hero-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 0 50px;
+    }
+
+    .about-hero-title {
+        font-size: 26px;
+    }
+
+    .about-hero-subtitle {
+        font-size: var(--font-size-body);
+    }
+
+    .vm-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .story-title,
+    .cta-title {
+        font-size: 24px;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+}

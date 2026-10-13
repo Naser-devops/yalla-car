@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="admin.metaTitle">موافقة الشركات — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-approvals.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body class="admin-body">
+
+    <!-- ========== شريط الأدمن العلوي ========== -->
+    <header class="admin-header">
+        <div class="admin-header-left">
+            <div class="admin-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </div>
+            <span class="admin-badge" data-i18n="admin.badge">ADMIN</span>
+        </div>
+
+        <div class="admin-header-right">
+            <button class="en" data-i18n="lang.switch">EN</button>
+
+            <div class="admin-user">
+                <div class="admin-avatar">A</div>
+                <div class="admin-user-info">
+                    <strong data-i18n="admin.user.name">مدير النظام</strong>
+                    <small data-i18n="admin.user.role">Admin</small>
+                </div>
+            </div>
+
+            <a href="login.html" class="admin-logout-btn" data-logout>
+                <span>🚪</span>
+                <span data-i18n="auth.logout">تسجيل الخروج</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ========== المحتوى ========== -->
+    <main class="admin-main container">
+
+        <div class="admin-page-head">
+            <div>
+                <h1 class="admin-page-title" data-i18n="admin.title">موافقة الشركات</h1>
+                <p class="admin-page-subtitle" data-i18n="admin.subtitle">راجع طلبات التسجيل ووافق على الشركات الجديدة</p>
+            </div>
+        </div>
+
+        <div class="admin-kpi-grid">
+
+            <div class="admin-kpi-card kpi-gradient-blue">
+                <div class="kpi-icon-circle">🏢</div>
+                <div class="kpi-content">
+                    <span class="kpi-label" data-i18n="admin.kpi.total">إجمالي الشركات</span>
+                    <span class="kpi-number">18</span>
+                </div>
+                <div class="kpi-bg-icon">🏢</div>
+            </div>
+
+            <div class="admin-kpi-card kpi-gradient-yellow">
+                <div class="kpi-icon-circle">⏳</div>
+                <div class="kpi-content">
+                    <span class="kpi-label" data-i18n="admin.kpi.pending">قيد المراجعة</span>
+                    <span class="kpi-number">4</span>
+                </div>
+                <div class="kpi-bg-icon">⏳</div>
+            </div>
+
+            <div class="admin-kpi-card kpi-gradient-green">
+                <div class="kpi-icon-circle">✓</div>
+                <div class="kpi-content">
+                    <span class="kpi-label" data-i18n="admin.kpi.approved">مقبولة</span>
+                    <span class="kpi-number">12</span>
+                </div>
+                <div class="kpi-bg-icon">✓</div>
+            </div>
+
+            <div class="admin-kpi-card kpi-gradient-red">
+                <div class="kpi-icon-circle">✕</div>
+                <div class="kpi-content">
+                    <span class="kpi-label" data-i18n="admin.kpi.rejected">مرفوضة</span>
+                    <span class="kpi-number">2</span>
+                </div>
+                <div class="kpi-bg-icon">✕</div>
+            </div>
+
+        </div>
+
+        <div class="admin-toolbar">
+
+            <div class="admin-tabs">
+                <button type="button" class="admin-tab active" data-filter="all">
+                    <span data-i18n="admin.tab.all">الكل</span>
+                    <span class="tab-count">18</span>
+                </button>
+
+                <button type="button" class="admin-tab" data-filter="pending">
+                    <span data-i18n="admin.tab.pending">قيد المراجعة</span>
+                    <span class="tab-count tab-count-yellow">4</span>
+                </button>
+
+                <button type="button" class="admin-tab" data-filter="approved">
+                    <span data-i18n="admin.tab.approved">مقبولة</span>
+                    <span class="tab-count tab-count-green">12</span>
+                </button>
+
+                <button type="button" class="admin-tab" data-filter="rejected">
+                    <span data-i18n="admin.tab.rejected">مرفوضة</span>
+                    <span class="tab-count tab-count-red">2</span>
+                </button>
+            </div>
+
+            <div class="admin-search-wrap">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    class="admin-search"
+                    id="searchInput"
+                    placeholder="ابحث باسم الشركة..."
+                    data-i18n-placeholder="admin.searchPlaceholder">
+            </div>
+
+        </div>
+
+        <div class="admin-table-wrap">
+            <table class="admin-table" id="companiesTable">
+                <thead>
+                    <tr>
+                        <th data-i18n="admin.table.company">الشركة</th>
+                        <th data-i18n="admin.table.cr">السجل التجاري</th>
+                        <th data-i18n="admin.table.city">المدينة</th>
+                        <th data-i18n="admin.table.cars">السيارات</th>
+                        <th data-i18n="admin.table.date">تاريخ التقديم</th>
+                        <th data-i18n="admin.table.status">الحالة</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr data-status="pending" data-name="Al-Safwa Rentals" data-new="true">
+                        <td>
+                            <div class="company-cell">
+                                <div class="company-logo" style="background: linear-gradient(135deg, #F97316, #EA580C);">S</div>
+                                <div class="company-details">
+                                    <div class="company-name-row">
+                                        <strong>Al-Safwa Rentals</strong>
+                                        <span class="new-badge" data-i18n="admin.new">جديد</span>
+                                    </div>
+                                    <small>safwa@rentals.jo</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cell-mono">CR-2026-45821</td>
+                        <td>Amman</td>
+                        <td class="cell-center"><strong>6</strong></td>
+                        <td class="cell-date">2026 / 10 / 08</td>
+                        <td>
+                            <span class="admin-status status-pending">
+                                <span class="status-dot"></span>
+                                <span data-i18n="admin.status.pending">قيد المراجعة</span>
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-review" data-review="safwa">
+                                <span data-i18n="admin.review">مراجعة</span>
+                                <span class="arrow">←</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-status="pending" data-name="Petra Wheels" data-new="true">
+                        <td>
+                            <div class="company-cell">
+                                <div class="company-logo" style="background: linear-gradient(135deg, #8B5CF6, #6366F1);">P</div>
+                                <div class="company-details">
+                                    <div class="company-name-row">
+                                        <strong>Petra Wheels</strong>
+                                        <span class="new-badge" data-i18n="admin.new">جديد</span>
+                                    </div>
+                                    <small>info@petrawheels.jo</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cell-mono">CR-2026-51102</td>
+                        <td>Aqaba</td>
+                        <td class="cell-center"><strong>12</strong></td>
+                        <td class="cell-date">2026 / 10 / 07</td>
+                        <td>
+                            <span class="admin-status status-pending">
+                                <span class="status-dot"></span>
+                                <span data-i18n="admin.status.pending">قيد المراجعة</span>
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-review" data-review="petra">
+                                <span data-i18n="admin.review">مراجعة</span>
+                                <span class="arrow">←</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-status="approved" data-name="Ram Rentals">
+                        <td>
+                            <div class="company-cell">
+                                <div class="company-logo" style="background: linear-gradient(135deg, #1E3A8A, #3B5BA9);">R</div>
+                                <div class="company-details">
+                                    <div class="company-name-row">
+                                        <strong>Ram Rentals</strong>
+                                    </div>
+                                    <small>ram@rentals.jo</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cell-mono">CR-2025-33018</td>
+                        <td>Amman</td>
+                        <td class="cell-center"><strong>15</strong></td>
+                        <td class="cell-date">2025 / 09 / 22</td>
+                        <td>
+                            <span class="admin-status status-approved">
+                                <span class="status-dot"></span>
+                                <span data-i18n="admin.status.approved">مقبولة</span>
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-review btn-review-secondary" data-review="ram">
+                                <span data-i18n="admin.view">عرض</span>
+                                <span class="arrow">←</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-status="approved" data-name="Amman Rent">
+                        <td>
+                            <div class="company-cell">
+                                <div class="company-logo" style="background: linear-gradient(135deg, #059669, #10B981);">A</div>
+                                <div class="company-details">
+                                    <div class="company-name-row">
+                                        <strong>Amman Rent</strong>
+                                    </div>
+                                    <small>contact@ammanrent.jo</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cell-mono">CR-2025-28471</td>
+                        <td>Amman</td>
+                        <td class="cell-center"><strong>10</strong></td>
+                        <td class="cell-date">2025 / 06 / 15</td>
+                        <td>
+                            <span class="admin-status status-approved">
+                                <span class="status-dot"></span>
+                                <span data-i18n="admin.status.approved">مقبولة</span>
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-review btn-review-secondary" data-review="amman">
+                                <span data-i18n="admin.view">عرض</span>
+                                <span class="arrow">←</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-status="rejected" data-name="Quick Cars">
+                        <td>
+                            <div class="company-cell">
+                                <div class="company-logo" style="background: linear-gradient(135deg, #6B7280, #4B5563);">Q</div>
+                                <div class="company-details">
+                                    <div class="company-name-row">
+                                        <strong>Quick Cars</strong>
+                                    </div>
+                                    <small>quick@cars.jo</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cell-mono">CR-2026-40012</td>
+                        <td>Zarqa</td>
+                        <td class="cell-center"><strong>3</strong></td>
+                        <td class="cell-date">2026 / 09 / 30</td>
+                        <td>
+                            <span class="admin-status status-rejected">
+                                <span class="status-dot"></span>
+                                <span data-i18n="admin.status.rejected">مرفوضة</span>
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn-review btn-review-secondary" data-review="quick">
+                                <span data-i18n="admin.view">عرض</span>
+                                <span class="arrow">←</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- ========== Drawer المراجعة ========== -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <aside class="review-drawer" id="reviewDrawer">
+
+        <div class="drawer-header">
+            <button type="button" class="drawer-close" id="drawerClose">✕</button>
+            <div class="drawer-company-head">
+                <div class="drawer-logo" id="drawerLogo">S</div>
+                <div>
+                    <h2 class="drawer-company-name" id="drawerName">Al-Safwa Rentals</h2>
+                    <p class="drawer-company-cr">
+                        <span data-i18n="admin.drawer.cr">السجل التجاري:</span>
+                        <strong id="drawerCR">CR-2026-45821</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="drawer-body">
+
+            <div class="drawer-progress">
+                <div class="progress-head">
+                    <span data-i18n="admin.drawer.completeness">اكتمال الملف</span>
+                    <strong id="progressValue">85%</strong>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div class="drawer-section">
+                <h3 class="drawer-section-title" data-i18n="admin.drawer.contactInfo">معلومات الاتصال</h3>
+
+                <div class="info-row">
+                    <span class="info-icon">✉️</span>
+                    <div>
+                        <span class="info-label" data-i18n="admin.drawer.email">البريد الإلكتروني</span>
+                        <strong class="info-value" id="drawerEmail">safwa@rentals.jo</strong>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-icon">📱</span>
+                    <div>
+                        <span class="info-label" data-i18n="admin.drawer.phone">رقم الهاتف</span>
+                        <strong class="info-value" id="drawerPhone">+962 79 555 1234</strong>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <span class="info-label" data-i18n="admin.drawer.address">العنوان</span>
+                        <strong class="info-value" id="drawerAddress">Amman, Jordan</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="drawer-section">
+                <h3 class="drawer-section-title" data-i18n="admin.drawer.companyInfo">معلومات الشركة</h3>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <span class="info-box-label" data-i18n="admin.drawer.cars">عدد السيارات</span>
+                        <strong class="info-box-value" id="drawerCars">6</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-label" data-i18n="admin.drawer.years">سنوات الخبرة</span>
+                        <strong class="info-box-value" id="drawerYears">3</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-label" data-i18n="admin.drawer.founded">سنة التأسيس</span>
+                        <strong class="info-box-value" id="drawerFounded">2023</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="drawer-section">
+                <h3 class="drawer-section-title" data-i18n="admin.drawer.documents">الوثائق المرفقة</h3>
+
+                <div class="documents-list" id="drawerDocs">
+                    <!-- يتم ملؤها ديناميكياً من JS -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="drawer-footer" id="drawerFooter">
+            <button type="button" class="btn-drawer-reject" id="btnReject">
+                <span data-i18n="admin.drawer.reject">رفض الطلب</span>
+            </button>
+            <button type="button" class="btn-drawer-approve" id="btnApprove">
+                <span data-i18n="admin.drawer.approve">موافقة</span>
+                <span>✓</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- ========== Toast ========== -->
+    <div class="admin-toast" id="adminToast">
+        <span class="toast-ico">✓</span>
+        <span id="toastMsg"></span>
+    </div>
+
+    <footer class="admin-footer">
+        <div class="container">
+            <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/admin-approvals.js"></script>
+</body>
+
+</html>

@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="myBookings.metaTitle">حجوزاتي — يلا كار</title>
 
-    <!-- الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- الأنماط: المشترك + الخاص -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/my-bookings.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
@@ -34,7 +33,8 @@
 
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-            <button class="login-btn" data-i18n="auth.logout">تسجيل الخروج</button>
+            <!-- ✅ تم التحويل من button إلى a + إضافة data-logout -->
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
         </div>
     </header>
 
@@ -177,6 +177,7 @@
         </div>
     </footer>
 
+    <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/my-bookings.js"></script>
 </body>

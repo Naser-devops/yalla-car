@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="carDetails.metaTitle">تفاصيل السيارة — يلا كار</title>
 
-    <!-- الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- الأنماط: المشترك + الخاص -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/car-details.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -34,14 +32,12 @@
 
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-            <button class="login-btn" data-i18n="auth.login">تسجيل الدخول</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
         </div>
     </header>
 
-    <!-- ========== المحتوى ========== -->
     <main class="container car-details-page">
 
-        <!-- Breadcrumb -->
         <nav class="breadcrumb">
             <a href="index.html" data-i18n="nav.home">الرئيسية</a>
             <span class="sep">/</span>
@@ -52,7 +48,6 @@
 
         <div class="car-details-layout">
 
-            <!-- ========== العمود الأيسر: معرض الصور ========== -->
             <div class="car-gallery">
 
                 <div class="gallery-main">
@@ -67,10 +62,8 @@
 
             </div>
 
-            <!-- ========== العمود الأيمن: المعلومات ========== -->
             <div class="car-info-panel">
 
-                <!-- العنوان + التقييم + الشركة -->
                 <div class="car-title-block">
                     <h1 id="carName">Kia Picanto 2023</h1>
 
@@ -86,18 +79,15 @@
                     </p>
                 </div>
 
-                <!-- السعر -->
                 <div class="car-price-block">
                     <span class="car-price-value" id="carPrice">22</span>
                     <span class="car-price-currency" data-i18n="car.currency">د.أ</span>
                     <small data-i18n="car.perDay">/ يوم</small>
                 </div>
 
-                <!-- زر الحجز -->
-                <a href="#" class="btn-primary-large" id="bookBtn" data-i18n="car.book">احجز الآن</a>
+                <a href="booking.html?id=1" class="btn-primary-large" id="bookBtn" data-i18n="car.book">احجز الآن</a>
                 <p class="booking-note" data-i18n="carDetails.noCharge">لا يوجد رسم على الحجز حتى التأكيد</p>
 
-                <!-- المواصفات -->
                 <h3 class="section-subtitle" data-i18n="carDetails.specs">المواصفات</h3>
 
                 <div class="specs-grid">
@@ -122,7 +112,6 @@
                     </div>
                 </div>
 
-                <!-- المميزات -->
                 <h3 class="section-subtitle" data-i18n="carDetails.features">المميزات</h3>
 
                 <ul class="features-list">
@@ -132,7 +121,6 @@
                     <li data-i18n="carDetails.usb">منفذ USB</li>
                 </ul>
 
-                <!-- بطاقة الشركة -->
                 <div class="company-card">
                     <div class="company-avatar" id="companyAvatar">R</div>
 
@@ -151,7 +139,6 @@
         </div>
     </main>
 
-    <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -183,8 +170,8 @@
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.companiesTitle">للشركات</h4>
-                    <a href="#" data-i18n="footer.register">سجّل شركتك</a>
-                    <a href="#" data-i18n="footer.dashboard">لوحة التحكم</a>
+                    <a href="login.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
                 </div>
 
                 <div class="footer-links">
@@ -205,7 +192,7 @@
             </div>
         </div>
     </footer>
-
+<script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/car-details.js"></script>
 </body>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="earnings.metaTitle">الأرباح — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/earnings.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر (نسخة لوحة الشركة) ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout container">
+
+        <main class="dashboard-content">
+
+            <div class="dashboard-header">
+                <h1 class="dashboard-title" data-i18n="earnings.title">الأرباح والإحصائيات</h1>
+
+                <div class="period-filter">
+                    <button type="button" class="period-btn" data-period="month" data-i18n="earnings.period.month">هذا الشهر</button>
+                    <button type="button" class="period-btn active" data-period="quarter" data-i18n="earnings.period.quarter">آخر 3 شهور</button>
+                    <button type="button" class="period-btn" data-period="year" data-i18n="earnings.period.year">هذه السنة</button>
+                </div>
+            </div>
+
+            <div class="kpi-grid">
+
+                <!-- ✅ KPI 1: إجمالي الأرباح -->
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-blue">💰</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="earnings.kpi.total">إجمالي الأرباح</span>
+                        <span class="kpi-value" data-kpi="total">12,450 <span data-i18n="car.currency">د.أ</span></span>
+                        <span class="kpi-trend kpi-trend-up">↑ 12.5%</span>
+                    </div>
+                </div>
+
+                <!-- ✅ KPI 2: عمولة المنصة -->
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-orange">📊</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="earnings.kpi.commission">عمولة المنصة (10%)</span>
+                        <span class="kpi-value kpi-value-orange" data-kpi="commission">1,245 <span data-i18n="car.currency">د.أ</span></span>
+                        <span class="kpi-trend kpi-trend-up">↑ 12.5%</span>
+                    </div>
+                </div>
+
+                <!-- ✅ KPI 3: صافي الدخل -->
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-green">✓</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="earnings.kpi.net">صافي الدخل</span>
+                        <span class="kpi-value kpi-value-green" data-kpi="net">11,205 <span data-i18n="car.currency">د.أ</span></span>
+                        <span class="kpi-trend kpi-trend-up">↑ 12.5%</span>
+                    </div>
+                </div>
+
+                <!-- ✅ KPI 4: متوسط الحجز -->
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-yellow">📈</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="earnings.kpi.avg">متوسط الحجز</span>
+                        <span class="kpi-value kpi-value-yellow" data-kpi="avg">328 <span data-i18n="car.currency">د.أ</span></span>
+                        <span class="kpi-trend kpi-trend-down">↓ 3.2%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="earnings-grid">
+
+                <div class="chart-card">
+                    <h3 class="chart-title" data-i18n="earnings.chart.title">الأرباح الشهرية</h3>
+
+                    <div class="chart-bars">
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height: 55%" data-value="2,400"></div>
+                            <span class="chart-label" data-i18n="month.jan">يناير</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height: 72%" data-value="3,100"></div>
+                            <span class="chart-label" data-i18n="month.feb">فبراير</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height: 65%" data-value="2,850"></div>
+                            <span class="chart-label" data-i18n="month.mar">مارس</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height: 88%" data-value="3,800"></div>
+                            <span class="chart-label" data-i18n="month.apr">أبريل</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height: 78%" data-value="3,350"></div>
+                            <span class="chart-label" data-i18n="month.may">مايو</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar chart-bar-active" style="height: 95%" data-value="4,100"></div>
+                            <span class="chart-label chart-label-active" data-i18n="month.jun">يونيو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-cars-card">
+                    <h3 class="chart-title" data-i18n="earnings.topCars.title">أفضل السيارات</h3>
+
+                    <div class="top-cars-list">
+
+                        <div class="top-car-item">
+                            <span class="top-car-rank">1</span>
+                            <div class="top-car-info">
+                                <strong>Mercedes C200</strong>
+                                <span class="top-car-bookings">8 <span data-i18n="earnings.bookings">حجوزات</span></span>
+                            </div>
+                            <span class="top-car-revenue">3,400 <span data-i18n="car.currency">د.أ</span></span>
+                        </div>
+
+                        <div class="top-car-item">
+                            <span class="top-car-rank">2</span>
+                            <div class="top-car-info">
+                                <strong>Hyundai Tucson 2024</strong>
+                                <span class="top-car-bookings">10 <span data-i18n="earnings.bookings">حجوزات</span></span>
+                            </div>
+                            <span class="top-car-revenue">2,900 <span data-i18n="car.currency">د.أ</span></span>
+                        </div>
+
+                        <div class="top-car-item">
+                            <span class="top-car-rank">3</span>
+                            <div class="top-car-info">
+                                <strong>Kia Picanto 2023</strong>
+                                <span class="top-car-bookings">14 <span data-i18n="earnings.bookings">حجوزات</span></span>
+                            </div>
+                            <span class="top-car-revenue">2,100 <span data-i18n="car.currency">د.أ</span></span>
+                        </div>
+
+                        <div class="top-car-item">
+                            <span class="top-car-rank">4</span>
+                            <div class="top-car-info">
+                                <strong>Toyota Corolla 2023</strong>
+                                <span class="top-car-bookings">12 <span data-i18n="earnings.bookings">حجوزات</span></span>
+                            </div>
+                            <span class="top-car-revenue">1,800 <span data-i18n="car.currency">د.أ</span></span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="recent-section">
+
+                <h3 class="chart-title" data-i18n="earnings.recent.title">أحدث الحجوزات المكتملة</h3>
+
+                <div class="table-wrapper">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="earnings.table.customer">العميل</th>
+                                <th data-i18n="earnings.table.car">السيارة</th>
+                                <th data-i18n="earnings.table.days">الأيام</th>
+                                <th data-i18n="earnings.table.amount">المبلغ</th>
+                                <th data-i18n="earnings.table.date">التاريخ</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="cell-name">محمد أحمد</td>
+                                <td>Kia Picanto 2023</td>
+                                <td class="cell-center">3</td>
+                                <td class="cell-price">66 <span data-i18n="car.currency">د.أ</span></td>
+                                <td class="cell-date">15 / 10 / 2026</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">Mark Evans</td>
+                                <td>Toyota Corolla 2023</td>
+                                <td class="cell-center">5</td>
+                                <td class="cell-price">140 <span data-i18n="car.currency">د.أ</span></td>
+                                <td class="cell-date">14 / 10 / 2026</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">سارة خليل</td>
+                                <td>Hyundai Tucson 2024</td>
+                                <td class="cell-center">2</td>
+                                <td class="cell-price">90 <span data-i18n="car.currency">د.أ</span></td>
+                                <td class="cell-date">12 / 10 / 2026</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-name">عمر سالم</td>
+                                <td>Mercedes C200</td>
+                                <td class="cell-center">3</td>
+                                <td class="cell-price">255 <span data-i18n="car.currency">د.أ</span></td>
+                                <td class="cell-date">10 / 10 / 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </main>
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span data-i18n="dashboard.overview">لوحة التحكم</span>
+                </a>
+                <a href="manage-cars.html" class="sidebar-link">
+                    <span data-i18n="dashboard.cars">السيارات</span>
+                </a>
+                <a href="incoming-bookings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.bookings">الحجوزات</span>
+                </a>
+                <a href="earnings.html" class="sidebar-link active">
+                    <span data-i18n="dashboard.earnings">الأرباح</span>
+                </a>
+            </nav>
+
+            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/earnings.js"></script>
+</body>
+
+</html>

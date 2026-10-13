@@ -1,0 +1,90 @@
+/* ============================================
+   Yalla Car — أنماط صفحة إدارة السيارات
+   (خاص بهذه الصفحة فقط)
+   ============================================ */
+
+
+/* ============================================
+   1. صورة السيارة في الجدول
+   ============================================ */
+.cell-image img {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: var(--radius-control);
+    display: block;
+}
+
+.cell-name {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    min-width: 140px;
+}
+
+.cell-bookings {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-gray);
+    text-align: center;
+}
+
+.cell-price {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+    white-space: nowrap;
+}
+
+
+/* ============================================
+   2. شارات الحالة
+   ============================================ */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+.status-available {
+    background: #DCFCE7;
+    color: var(--color-success);
+}
+
+.status-booked {
+    background: #FEF3C7;
+    color: #B45309;
+}
+
+.status-maintenance {
+    background: #E2E8F0;
+    color: var(--color-text-gray);
+}
+
+
+/* ============================================
+   3. أزرار الإجراءات
+   ============================================ */
+.cell-actions {
+    display: flex;
+    gap: var(--space-1);
+    white-space: nowrap;
+}
+
+
+/* ============================================
+   4. رسالة "ما في نتائج"
+   ============================================ */
+.no-results {
+    padding: var(--space-5);
+    text-align: center;
+    color: var(--color-text-gray);
+    font-size: var(--font-size-body);
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    display: none;
+}
+
+.no-results.visible {
+    display: block;
+}

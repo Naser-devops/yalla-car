@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="incoming.metaTitle">الحجوزات الواردة — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/incoming-bookings.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر (نسخة لوحة الشركة) ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <div class="dashboard-layout container">
+
+        <main class="dashboard-content">
+
+            <div class="dashboard-header">
+                <h1 class="dashboard-title" data-i18n="incoming.title">الحجوزات الواردة</h1>
+            </div>
+
+            <div class="kpi-grid">
+
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-blue">📋</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="incoming.kpi.total">إجمالي الحجوزات</span>
+                        <span class="kpi-value">12</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-yellow">⏳</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="incoming.kpi.pending">قيد الانتظار</span>
+                        <span class="kpi-value kpi-value-yellow">4</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-green">✓</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="incoming.kpi.confirmed">مؤكدة</span>
+                        <span class="kpi-value kpi-value-green">7</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-icon-orange">💰</div>
+                    <div class="kpi-info">
+                        <span class="kpi-label" data-i18n="incoming.kpi.revenue">إيرادات الشهر</span>
+                        <span class="kpi-value kpi-value-orange">1,240 <span data-i18n="car.currency">د.أ</span></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bookings-tabs">
+                <button type="button" class="bookings-tab active" data-filter="all">
+                    <span data-i18n="incoming.tab.all">الكل</span>
+                    <span class="tab-count">12</span>
+                </button>
+
+                <button type="button" class="bookings-tab" data-filter="pending">
+                    <span data-i18n="incoming.tab.pending">قيد الانتظار</span>
+                    <span class="tab-count tab-count-yellow">4</span>
+                </button>
+
+                <button type="button" class="bookings-tab" data-filter="confirmed">
+                    <span data-i18n="incoming.tab.confirmed">مؤكد</span>
+                    <span class="tab-count tab-count-green">7</span>
+                </button>
+
+                <button type="button" class="bookings-tab" data-filter="cancelled">
+                    <span data-i18n="incoming.tab.cancelled">ملغى</span>
+                    <span class="tab-count tab-count-red">1</span>
+                </button>
+            </div>
+
+            <div class="dashboard-toolbar">
+                <input
+                    type="text"
+                    class="dashboard-search"
+                    id="searchInput"
+                    placeholder="ابحث باسم العميل أو السيارة..."
+                    data-i18n-placeholder="incoming.searchPlaceholder">
+            </div>
+
+            <div class="table-wrapper">
+                <table class="dashboard-table" id="bookingsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="incoming.table.customer">العميل</th>
+                            <th data-i18n="incoming.table.car">السيارة</th>
+                            <th data-i18n="incoming.table.dates">المدة</th>
+                            <th data-i18n="incoming.table.price">السعر</th>
+                            <th data-i18n="incoming.table.status">الحالة</th>
+                            <th data-i18n="incoming.table.actions">إجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr data-status="pending" data-customer="محمد أحمد" data-car="Kia Picanto 2023">
+                            <td class="cell-customer">
+                                <div class="customer-info">
+                                    <div class="customer-avatar">م</div>
+                                    <div>
+                                        <strong>محمد أحمد</strong>
+                                        <small>+962 79 123 4567</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cell-car">Kia Picanto 2023</td>
+                            <td class="cell-dates">
+                                <span>12 - 15 أكتوبر</span>
+                                <small>3 <span data-i18n="booking.daysUnit">أيام</span></small>
+                            </td>
+                            <td class="cell-price">66 <span data-i18n="car.currency">د.أ</span></td>
+                            <td>
+                                <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-accept" data-action="accept" data-i18n="incoming.accept">قبول</button>
+                                <button type="button" class="btn-reject" data-action="reject" data-i18n="incoming.reject">رفض</button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="pending" data-customer="سارة خليل" data-car="Hyundai Tucson 2024">
+                            <td class="cell-customer">
+                                <div class="customer-info">
+                                    <div class="customer-avatar">س</div>
+                                    <div>
+                                        <strong>سارة خليل</strong>
+                                        <small>+962 78 555 1122</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cell-car">Hyundai Tucson 2024</td>
+                            <td class="cell-dates">
+                                <span>20 - 22 أكتوبر</span>
+                                <small>2 <span data-i18n="booking.daysUnit">أيام</span></small>
+                            </td>
+                            <td class="cell-price">90 <span data-i18n="car.currency">د.أ</span></td>
+                            <td>
+                                <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-accept" data-action="accept" data-i18n="incoming.accept">قبول</button>
+                                <button type="button" class="btn-reject" data-action="reject" data-i18n="incoming.reject">رفض</button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="confirmed" data-customer="Mark Evans" data-car="Toyota Corolla 2023">
+                            <td class="cell-customer">
+                                <div class="customer-info">
+                                    <div class="customer-avatar">M</div>
+                                    <div>
+                                        <strong>Mark Evans</strong>
+                                        <small>+962 77 888 9900</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cell-car">Toyota Corolla 2023</td>
+                            <td class="cell-dates">
+                                <span>20 - 25 أكتوبر</span>
+                                <small>5 <span data-i18n="booking.daysUnit">أيام</span></small>
+                            </td>
+                            <td class="cell-price">140 <span data-i18n="car.currency">د.أ</span></td>
+                            <td>
+                                <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-details" data-i18n="incoming.details">تفاصيل</button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="confirmed" data-customer="عمر سالم" data-car="Kia Picanto 2023">
+                            <td class="cell-customer">
+                                <div class="customer-info">
+                                    <div class="customer-avatar">ع</div>
+                                    <div>
+                                        <strong>عمر سالم</strong>
+                                        <small>+962 79 111 2233</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cell-car">Kia Picanto 2023</td>
+                            <td class="cell-dates">
+                                <span>01 - 05 نوفمبر</span>
+                                <small>4 <span data-i18n="booking.daysUnit">أيام</span></small>
+                            </td>
+                            <td class="cell-price">88 <span data-i18n="car.currency">د.أ</span></td>
+                            <td>
+                                <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-details" data-i18n="incoming.details">تفاصيل</button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="cancelled" data-customer="ليلى حسن" data-car="Mercedes C200">
+                            <td class="cell-customer">
+                                <div class="customer-info">
+                                    <div class="customer-avatar">ل</div>
+                                    <div>
+                                        <strong>ليلى حسن</strong>
+                                        <small>+962 78 777 4455</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cell-car">Mercedes C200</td>
+                            <td class="cell-dates">
+                                <span>10 - 13 أكتوبر</span>
+                                <small>3 <span data-i18n="booking.daysUnit">أيام</span></small>
+                            </td>
+                            <td class="cell-price">255 <span data-i18n="car.currency">د.أ</span></td>
+                            <td>
+                                <span class="status-badge status-cancelled" data-i18n="incoming.status.cancelled">ملغى</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-details" data-i18n="incoming.details">تفاصيل</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span data-i18n="dashboard.overview">لوحة التحكم</span>
+                </a>
+                <a href="manage-cars.html" class="sidebar-link">
+                    <span data-i18n="dashboard.cars">السيارات</span>
+                </a>
+                <a href="incoming-bookings.html" class="sidebar-link active">
+                    <span data-i18n="dashboard.bookings">الحجوزات</span>
+                </a>
+                <a href="earnings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.earnings">الأرباح</span>
+                </a>
+            </nav>
+
+            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+        </aside>
+
+    </div>
+
+    <!-- ========== Modal التأكيد ========== -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal-box">
+            <div class="modal-icon" id="modalIcon">⚠️</div>
+            <h3 class="modal-title" id="modalTitle">تأكيد الإجراء</h3>
+            <p class="modal-text" id="modalText">هل أنت متأكد؟</p>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" id="modalCancel" data-i18n="modal.cancel">إلغاء</button>
+                <button type="button" class="btn-modal-confirm" id="modalConfirm" data-i18n="modal.confirm">تأكيد</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Toast ========== -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toastMessage"></span>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/incoming-bookings.js"></script>
+</body>
+
+</html>

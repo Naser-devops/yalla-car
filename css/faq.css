@@ -1,0 +1,522 @@
+/* ============================================
+   Yalla Car — أنماط صفحة الأسئلة الشائعة
+   ============================================ */
+
+
+/* ============================================
+   1. Hero
+   ============================================ */
+/* ============================================
+   Utility Classes
+   ============================================ */
+.hidden {
+    display: none !important;
+}
+   .faq-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: var(--color-white);
+    padding: 70px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    inset-inline-end: -100px;
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    inset-inline-start: -80px;
+    width: 240px;
+    height: 240px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq-hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   2. شريط البحث
+   ============================================ */
+.faq-search-wrap {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.faq-search-icon {
+    position: absolute;
+    inset-inline-start: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.faq-search-input {
+    width: 100%;
+    height: 60px;
+    padding: 0 56px;
+    border: none;
+    border-radius: 30px;
+    background: var(--color-white);
+    color: var(--color-text-dark);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 500;
+    outline: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.faq-search-input::placeholder {
+    color: var(--color-text-gray);
+}
+
+.faq-search-input:focus {
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.faq-search-clear {
+    position: absolute;
+    inset-inline-end: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-background);
+    border: none;
+    color: var(--color-text-gray);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s;
+}
+
+.faq-search-clear.visible {
+    display: flex;
+}
+
+.faq-search-clear:hover {
+    background: var(--color-error);
+    color: white;
+}
+
+
+/* ============================================
+   3. القسم الرئيسي
+   ============================================ */
+.faq-main {
+    padding: var(--space-5) 0 var(--space-6);
+    background: var(--color-background);
+}
+
+
+/* ============================================
+   4. التصنيفات
+   ============================================ */
+.faq-categories {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+}
+
+.faq-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 44px;
+    padding: 0 var(--space-3);
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: 22px;
+    color: var(--color-text-gray);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.faq-cat:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.faq-cat.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.25);
+}
+
+
+/* ============================================
+   5. مجموعة الأسئلة
+   ============================================ */
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-group {
+    margin-bottom: var(--space-5);
+}
+
+.faq-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.faq-group-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-border);
+    letter-spacing: -0.3px;
+}
+
+.faq-group-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-trust-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+
+/* ============================================
+   6. الأسئلة (accordion)
+   ============================================ */
+.faq-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    margin-bottom: var(--space-2);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.faq-item[open] {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
+}
+
+.faq-item:hover {
+    border-color: var(--color-primary);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s, background 0.2s;
+    user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    color: var(--color-primary);
+    background: var(--color-background);
+}
+
+.faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-trust-bg);
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+    line-height: 1;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    background: var(--color-accent);
+    color: white;
+}
+
+.faq-answer {
+    padding: 0 var(--space-3) var(--space-3);
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.9;
+    animation: faqSlideDown 0.3s ease-out;
+}
+
+@keyframes faqSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================
+   7. لا نتائج
+   ============================================ */
+.faq-no-results {
+    display: none;
+    text-align: center;
+    padding: var(--space-5) var(--space-3);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+}
+
+.faq-no-results.visible {
+    display: block;
+}
+
+.no-results-icon {
+    font-size: 64px;
+    line-height: 1;
+    opacity: 0.3;
+    margin-bottom: var(--space-2);
+}
+
+.faq-no-results h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-1);
+}
+
+.faq-no-results p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+}
+
+
+/* ============================================
+   8. CTA
+   ============================================ */
+.faq-cta {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.faq-cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: white;
+    border-radius: 24px;
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+}
+
+.faq-cta-box::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    inset-inline-end: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq-cta-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-cta-text {
+    font-size: var(--font-size-body);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.faq-cta-actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 180px;
+}
+
+.faq-cta-primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.faq-cta-primary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+.faq-cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.faq-cta-secondary:hover {
+    background: white;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   9. Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .faq-hero {
+        padding: 50px 0 40px;
+    }
+
+    .faq-hero-title {
+        font-size: 28px;
+    }
+
+    .faq-hero-subtitle {
+        font-size: var(--font-size-body);
+    }
+
+    .faq-search-input {
+        height: 52px;
+        padding: 0 48px;
+        font-size: var(--font-size-small);
+    }
+
+    .faq-categories {
+        gap: var(--space-1);
+        margin-bottom: var(--space-4);
+    }
+
+    .faq-cat {
+        height: 38px;
+        padding: 0 var(--space-2);
+        font-size: 12px;
+    }
+
+    .faq-group-title {
+        font-size: 18px;
+    }
+
+    .faq-group-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .faq-question {
+        padding: var(--space-2);
+        font-size: var(--font-size-small);
+    }
+
+    .faq-answer {
+        padding: 0 var(--space-2) var(--space-2);
+        font-size: 13px;
+    }
+
+    .faq-cta-title {
+        font-size: 24px;
+    }
+
+    .faq-cta-actions {
+        flex-direction: column;
+    }
+
+    .faq-cta-btn {
+        width: 100%;
+    }
+}

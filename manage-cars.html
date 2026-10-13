@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="manageCars.metaTitle">إدارة السيارات — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/manage-cars.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر (نسخة لوحة الشركة) ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <!-- ========== لوحة التحكم ========== -->
+    <div class="dashboard-layout container">
+
+        <!-- ========== المحتوى ========== -->
+        <main class="dashboard-content">
+
+            <div class="dashboard-header">
+                <h1 class="dashboard-title" data-i18n="manageCars.title">إدارة السيارات</h1>
+                <a href="add-car.html" class="btn-add-car" data-i18n="manageCars.addCar">+ إضافة سيارة</a>
+            </div>
+
+            <!-- شريط البحث -->
+            <div class="dashboard-toolbar">
+                <input
+                    type="text"
+                    class="dashboard-search"
+                    id="searchInput"
+                    placeholder="ابحث عن سيارة..."
+                    data-i18n-placeholder="manageCars.searchPlaceholder">
+            </div>
+
+            <!-- الجدول -->
+            <div class="table-wrapper">
+                <table class="dashboard-table" id="carsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="manageCars.table.image">الصورة</th>
+                            <th data-i18n="manageCars.table.car">السيارة</th>
+                            <th data-i18n="manageCars.table.bookings">الحجوزات</th>
+                            <th data-i18n="manageCars.table.price">السعر / اليوم</th>
+                            <th data-i18n="manageCars.table.status">الحالة</th>
+                            <th data-i18n="manageCars.table.actions">إجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr data-car-name="Kia Picanto 2023">
+                            <td class="cell-image">
+                                <img src="images/kia-picanto-2023.jpg" alt="Kia Picanto">
+                            </td>
+                            <td class="cell-name">Kia Picanto 2023</td>
+                            <td class="cell-bookings">14</td>
+                            <td class="cell-price">
+                                22 <span data-i18n="car.currency">د.أ</span>
+                            </td>
+                            <td>
+                                <span class="status-badge status-available" data-i18n="manageCars.status.available">متاحة</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-outline btn-sm" data-i18n="manageCars.edit">تعديل</button>
+                                <button type="button" class="btn-outline btn-danger btn-sm btn-delete" data-i18n="manageCars.delete">حذف</button>
+                            </td>
+                        </tr>
+
+                        <tr data-car-name="Hyundai Tucson 2024">
+                            <td class="cell-image">
+                                <img src="images/hyundai-tucson-2024.jpg" alt="Hyundai Tucson">
+                            </td>
+                            <td class="cell-name">Hyundai Tucson 2024</td>
+                            <td class="cell-bookings">9</td>
+                            <td class="cell-price">
+                                45 <span data-i18n="car.currency">د.أ</span>
+                            </td>
+                            <td>
+                                <span class="status-badge status-booked" data-i18n="manageCars.status.booked">محجوزة</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-outline btn-sm" data-i18n="manageCars.edit">تعديل</button>
+                                <button type="button" class="btn-outline btn-danger btn-sm btn-delete" data-i18n="manageCars.delete">حذف</button>
+                            </td>
+                        </tr>
+
+                        <tr data-car-name="Toyota Corolla 2023">
+                            <td class="cell-image">
+                                <img src="images/toyota-corolla-2023.jpg" alt="Toyota Corolla">
+                            </td>
+                            <td class="cell-name">Toyota Corolla 2023</td>
+                            <td class="cell-bookings">11</td>
+                            <td class="cell-price">
+                                28 <span data-i18n="car.currency">د.أ</span>
+                            </td>
+                            <td>
+                                <span class="status-badge status-available" data-i18n="manageCars.status.available">متاحة</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-outline btn-sm" data-i18n="manageCars.edit">تعديل</button>
+                                <button type="button" class="btn-outline btn-danger btn-sm btn-delete" data-i18n="manageCars.delete">حذف</button>
+                            </td>
+                        </tr>
+
+                        <tr data-car-name="Mercedes C200">
+                            <td class="cell-image">
+                                <img src="images/mercedes-c200.jpg" alt="Mercedes C200">
+                            </td>
+                            <td class="cell-name">Mercedes C200</td>
+                            <td class="cell-bookings">4</td>
+                            <td class="cell-price">
+                                85 <span data-i18n="car.currency">د.أ</span>
+                            </td>
+                            <td>
+                                <span class="status-badge status-maintenance" data-i18n="manageCars.status.maintenance">صيانة</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-outline btn-sm" data-i18n="manageCars.edit">تعديل</button>
+                                <button type="button" class="btn-outline btn-danger btn-sm btn-delete" data-i18n="manageCars.delete">حذف</button>
+                            </td>
+                        </tr>
+
+                        <tr data-car-name="Kia Sportage 2022">
+                            <td class="cell-image">
+                                <img src="images/kia-picanto-2023.jpg" alt="Kia Sportage">
+                            </td>
+                            <td class="cell-name">Kia Sportage 2022</td>
+                            <td class="cell-bookings">7</td>
+                            <td class="cell-price">
+                                40 <span data-i18n="car.currency">د.أ</span>
+                            </td>
+                            <td>
+                                <span class="status-badge status-available" data-i18n="manageCars.status.available">متاحة</span>
+                            </td>
+                            <td class="cell-actions">
+                                <button type="button" class="btn-outline btn-sm" data-i18n="manageCars.edit">تعديل</button>
+                                <button type="button" class="btn-outline btn-danger btn-sm btn-delete" data-i18n="manageCars.delete">حذف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <!-- ========== Sidebar ========== -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span data-i18n="dashboard.overview">لوحة التحكم</span>
+                </a>
+                <a href="manage-cars.html" class="sidebar-link active">
+                    <span data-i18n="dashboard.cars">السيارات</span>
+                </a>
+                <a href="incoming-bookings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.bookings">الحجوزات</span>
+                </a>
+                <a href="earnings.html" class="sidebar-link">
+                    <span data-i18n="dashboard.earnings">الأرباح</span>
+                </a>
+            </nav>
+
+            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+        </aside>
+
+    </div>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+<script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/manage-cars.js"></script>
+</body>
+
+</html>

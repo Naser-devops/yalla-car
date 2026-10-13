@@ -6,34 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="login.metaTitle">تسجيل الدخول — يلا كار</title>
 
-    <!-- الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- الأنماط: المشترك + الخاص -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body class="auth-body">
 
-    <!-- ========== زر اللغة (ثابت بالزاوية) ========== -->
     <button class="auth-lang-switch en" data-i18n="lang.switch">EN</button>
 
-    <!-- ========== الحاوية الرئيسية (نصين) ========== -->
     <div class="auth-container">
 
-        <!-- ========== الجهة اليمنى: النموذج ========== -->
         <div class="auth-form-side">
 
-            <!-- الشعار (يرجع للرئيسية) -->
             <a href="index.html" class="auth-logo">
                 <span class="logo-first" data-i18n="logo.first">يلا</span>
                 <span data-i18n="logo.second">كار</span>
             </a>
 
-            <!-- التابين -->
             <div class="auth-tabs">
                 <button type="button" class="auth-tab active" data-tab="login" data-i18n="login.tabLogin">
                     تسجيل الدخول
@@ -103,6 +97,36 @@
                 </p>
             </form>
 
+            <!-- ========== روابط إضافية ========== -->
+            <div class="auth-extra-links">
+
+                <!-- رابط تسجيل الشركة -->
+                <a href="register-company.html" class="auth-register-company">
+                    <span>🏢</span>
+                    <span data-i18n="login.registerCompany">سجّل شركتك معنا</span>
+                </a>
+
+                <!-- حسابات تجريبية -->
+                <div class="auth-test-accounts">
+                    <p class="test-accounts-title" data-i18n="login.testAccounts">🔑 حسابات تجريبية:</p>
+                    <ul class="test-accounts-list">
+                        <li>
+                            <strong>عميل:</strong>
+                            <code>user@test.com</code>
+                        </li>
+                        <li>
+                            <strong>شركة:</strong>
+                            <code>company@test.com</code>
+                        </li>
+                        <li>
+                            <strong>أدمن:</strong>
+                            <code>admin@yallacar.jo</code>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
 
         <!-- ========== الجهة اليسرى: التصميم ========== -->
@@ -118,7 +142,6 @@
                 </p>
             </div>
 
-            <!-- رسمة سيارة -->
             <div class="auth-car-svg">
                 <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <rect x="80" y="60" width="240" height="55" rx="18" fill="#3B5BA9" />
@@ -131,6 +154,13 @@
         </div>
     </div>
 
+    <!-- ========== Toast ========== -->
+    <div class="auth-toast" id="authToast">
+        <span class="auth-toast-ico">✓</span>
+        <span id="authToastMsg"></span>
+    </div>
+
+    <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/login.js"></script>
 </body>
