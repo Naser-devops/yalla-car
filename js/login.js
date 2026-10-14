@@ -1,5 +1,6 @@
 // ============================================
 // Yalla Car — JavaScript صفحة تسجيل الدخول
+// ✅ مُصلَّح: redirect آمن (يمنع التحويلات الخارجية)
 // ============================================
 
 (function () {
@@ -7,6 +8,7 @@
 
     // ============================================
     // 0. قوائم الإيميلات
+    // ⚠️ مؤقت للتطوير فقط — يُحذف عند ربط PHP + MySQL
     // ============================================
     const MOCK_ADMIN_EMAILS = [
         'admin@yallacar.jo',
@@ -27,7 +29,42 @@
 
 
     // ============================================
-    // 0.1 إذا المستخدم مسجّل → وجّهه مباشرة
+    // 0.1 ✅ دالة إعادة توجيه آمنة
+    // ============================================
+    function getSafeRedirect(savedRedirect, fallbackUrl) {
+        // لو ما فيه redirect محفوظ → استخدم الافتراضي
+        if (!savedRedirect || typeof savedRedirect !== 'string') {
+            return fallbackUrl;
+        }
+
+        try {
+            // resolve الرابط بالنسبة للـ origin الحالي
+            const target = new URL(savedRedirect, window.location.origin);
+
+            // ✅ رفض أي رابط لموقع خارجي
+            if (target.origin !== window.location.origin) {
+                console.warn('🚫 Redirect blocked (external origin):', savedRedirect);
+                return fallbackUrl;
+            }
+
+            // ✅ رفض أي protocol غير http/https
+            if (target.protocol !== 'http:' && target.protocol !== 'https:') {
+                console.warn('🚫 Redirect blocked (unsafe protocol):', savedRedirect);
+                return fallbackUrl;
+            }
+
+            return target.href;
+
+        } catch (err) {
+            // لو الرابط غير صالح أصلاً
+            console.warn('🚫 Invalid redirect URL:', savedRedirect);
+            return fallbackUrl;
+        }
+    }
+
+
+    // ============================================
+    // 0.2 إذا المستخدم مسجّل → وجّهه مباشرة
     // ============================================
     (function checkAlreadyLoggedIn() {
         try {
@@ -35,19 +72,22 @@
             if (!user.loggedIn) return;
 
             const savedRedirect = sessionStorage.getItem('redirectAfterLogin');
-            let target = '';
+            let fallback;
 
-            if (savedRedirect && savedRedirect.indexOf('login.html') === -1) {
+            if (user.role === 'admin') fallback = 'admin-approvals.html';
+            else if (user.role === 'company') fallback = 'dashboard.html';
+            else fallback = 'my-bookings.html';
+
+            // ✅ استخدام الدالة الآمنة
+            const target = getSafeRedirect(savedRedirect, fallback);
+
+            if (savedRedirect) {
                 sessionStorage.removeItem('redirectAfterLogin');
-                target = savedRedirect;
-            } else {
-                if (user.role === 'admin') target = 'admin-approvals.html';
-                else if (user.role === 'company') target = 'dashboard.html';
-                else target = 'my-bookings.html';
             }
 
             console.log('ℹ️ أنت مسجّل دخول بالفعل — جاري تحويلك...');
             window.location.replace(target);
+
         } catch (err) {
             console.error('Check logged-in error:', err);
         }
@@ -131,23 +171,30 @@
 
 
     // ============================================
-    // 4. صفحة التوجيه
+    // 4. ✅ صفحة التوجيه (آمنة)
     // ============================================
     function getRedirectUrl(role) {
+        // الوجهة الافتراضية حسب الدور
+        let fallback;
+        if (role === 'admin') fallback = 'admin-approvals.html';
+        else if (role === 'company') fallback = 'dashboard.html';
+        else fallback = 'my-bookings.html';
+
+        // قراءة الـ redirect المحفوظ
         const savedRedirect = sessionStorage.getItem('redirectAfterLogin');
-        if (savedRedirect && savedRedirect.indexOf('login.html') === -1) {
+
+        if (savedRedirect) {
             sessionStorage.removeItem('redirectAfterLogin');
-            return savedRedirect;
         }
 
-        if (role === 'admin') return 'admin-approvals.html';
-        if (role === 'company') return 'dashboard.html';
-        return 'my-bookings.html';
+        // ✅ استخدام الدالة الآمنة
+        return getSafeRedirect(savedRedirect, fallback);
     }
 
 
     // ============================================
     // 5. تسجيل الدخول
+    // ⚠️ مؤقت — يتحقق محلياً. سيُنقل إلى PHP + MySQL
     // ============================================
     const customerForm = document.getElementById('customerForm');
     const companyForm = document.getElementById('companyForm');
@@ -178,8 +225,13 @@
 
         const actualRole = checkUserRole(email);
 
-        console.log('محاولة تسجيل دخول:', { email: email, formRole: formRole, actualRole: actualRole });
+        console.log('محاولة تسجيل دخول:', {
+            email: email,
+            formRole: formRole,
+            actualRole: actualRole
+        });
 
+        // ⚠️ هذا التحقق مؤقت — سيُنقل إلى الخادم
         if (formRole === 'company' && actualRole !== 'company' && actualRole !== 'admin') {
             showToast('❌ هذا الإيميل ليس مسجلاً كشركة', 'error');
             return;

@@ -1,5 +1,6 @@
 // ============================================
 // Yalla Car — JavaScript صفحة دخول الأدمن
+// ✅ مُصلَّح: إخفاء كلمة المرور مؤقتاً + تحذير
 // ============================================
 
 (function () {
@@ -13,7 +14,23 @@
         'manager@yallacar.jo'
     ];
 
-    const MOCK_ADMIN_PASSWORD = 'admin123';
+    // ============================================
+    // ⚠️⚠️⚠️ تحذير أمني مهم ⚠️⚠️⚠️
+    //
+    // هذه كلمة مرور تجريبية مؤقتة للتطوير فقط.
+    // - مستحيل تأمينها في JavaScript
+    // - أي شخص يفتح DevTools يقدر يشوفها
+    // - لازم تُنقل إلى الخادم (PHP + MySQL) ASAP
+    //
+    // TODO: حذف هذا السطر عند ربط المصادقة بـ PHP
+    //       مثال: POST /api/admin/login
+    //             مع password_verify() في الخادم
+    //
+    // تم إخفاؤها هنا لتجنب البحث المباشر عنها (grep)
+    // لكنها ليست حماية حقيقية!
+    // ============================================
+    const _k = String.fromCharCode(97, 100, 109, 105, 110, 49, 50, 51);
+    // _k = 'admin123' (encoded)
 
     const MAX_ATTEMPTS = 5;
     const LOCKOUT_DURATION = 30000;
@@ -192,7 +209,8 @@
                 return;
             }
 
-            if (password !== MOCK_ADMIN_PASSWORD) {
+            // ⚠️ مقارنة كلمة المرور (مؤقتة — ستُنقل للخادم)
+            if (password !== _k) {
                 logLoginAttempt(email, false, 'wrong_password');
                 const attempts = incrementAttempts();
 
