@@ -1,0 +1,498 @@
+/* ============================================
+   Yalla Car — أنماط صفحة الملف الشخصي
+   ============================================ */
+
+.profile-page {
+    padding: var(--space-5) 0 var(--space-6);
+    min-height: 70vh;
+}
+
+
+/* ============================================
+   1. رأس الصفحة
+   ============================================ */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(30, 58, 138, 0.2);
+    margin-bottom: var(--space-4);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    inset-inline-end: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profile-avatar-big {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.profile-header-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.profile-header-email {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    direction: ltr;
+    word-break: break-all;
+}
+
+.profile-header-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    width: fit-content;
+    margin-top: 4px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* ============================================
+   2. التخطيط (sidebar + content)
+   ============================================ */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+
+/* ============================================
+   3. Sidebar (التبويبات)
+   ============================================ */
+.profile-sidebar {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: sticky;
+    top: 100px;
+}
+
+.profile-tab {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-gray);
+    cursor: pointer;
+    text-align: start;
+    transition: background 0.2s, color 0.2s;
+    height: auto;
+    width: 100%;
+}
+
+.profile-tab:hover {
+    background: var(--color-background);
+    color: var(--color-text-dark);
+}
+
+.profile-tab.active {
+    background: var(--color-trust-bg);
+    color: var(--color-primary);
+}
+
+.profile-tab .tab-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* ============================================
+   4. المحتوى
+   ============================================ */
+.profile-content {
+    min-width: 0;
+}
+
+.profile-panel {
+    display: none;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.3s ease;
+}
+
+.profile-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-panel-title {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-border);
+    letter-spacing: -0.3px;
+}
+
+.profile-panel-title-danger {
+    color: var(--color-error);
+    border-color: #FEE2E2;
+}
+
+.profile-panel-subtitle {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   5. النموذج
+   ============================================ */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.form-field input {
+    height: 48px;
+    padding: 0 var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);
+}
+
+.form-field input:disabled {
+    background: var(--color-background);
+    color: var(--color-text-gray);
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* ============================================
+   6. الأزرار
+   ============================================ */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 var(--space-4);
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    min-width: 180px;
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 var(--space-4);
+    background: var(--color-error);
+    color: white;
+    border: none;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.btn-danger:hover {
+    background: #B91C1C;
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   7. صندوق الخطر
+   ============================================ */
+.danger-box {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: #FEF2F2;
+    border: 2px solid #FEE2E2;
+    border-radius: var(--radius-card);
+    flex-wrap: wrap;
+}
+
+.danger-box-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #FEE2E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.danger-box-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.danger-box-content h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--color-error);
+    margin-bottom: 4px;
+}
+
+.danger-box-content p {
+    font-size: 13px;
+    color: var(--color-text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ============================================
+   8. أيقونة المستخدم في الهيدر (Avatar)
+   ============================================ */
+.user-avatar-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), #2A4FA8);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 800;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+
+.user-avatar-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+    border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .user-avatar-btn {
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+}
+
+
+/* ============================================
+   9. Dark Mode
+   ============================================ */
+[data-theme="dark"] .profile-sidebar,
+[data-theme="dark"] .profile-panel {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .profile-tab:hover {
+    background: #0F172A;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .profile-tab.active {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .profile-panel-title {
+    color: #F1F5F9;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .form-field input {
+    background: #0F172A;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .form-field input:disabled {
+    background: #0F172A;
+    color: #64748B;
+}
+
+[data-theme="dark"] .form-field input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+}
+
+[data-theme="dark"] .danger-box {
+    background: rgba(220, 38, 38, 0.08);
+    border-color: rgba(220, 38, 38, 0.3);
+}
+
+[data-theme="dark"] .danger-box-icon {
+    background: rgba(220, 38, 38, 0.15);
+}
+
+
+/* ============================================
+   10. Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-3);
+    }
+
+    .profile-header-info {
+        align-items: center;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-sidebar {
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 6px;
+    }
+
+    .profile-tab {
+        white-space: nowrap;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .form-actions .btn-primary {
+        width: 100%;
+    }
+
+    .danger-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .danger-box .btn-danger {
+        width: 100%;
+    }
+}

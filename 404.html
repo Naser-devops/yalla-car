@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/404.css">
+    <link rel="stylesheet" href="css/auth-ui.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
@@ -26,15 +27,14 @@
 
         <nav class="navigation">
             <a href="index.html" data-i18n="nav.home">الرئيسية</a>
-            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="pages/search.html" data-i18n="nav.cars">السيارات</a>
             <a href="index.html#partners" data-i18n="nav.companies">الشركات</a>
             <a href="index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
         </nav>
 
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-            <!-- ✅ تم التحويل من button إلى a -->
-            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+            <a href="pages/login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
         </div>
     </header>
 
@@ -85,7 +85,7 @@
                 <a href="index.html" class="btn-home">
                     <span data-i18n="notFound.home">العودة للرئيسية</span>
                 </a>
-                <a href="search.html" class="btn-browse">
+                <a href="pages/search.html" class="btn-browse">
                     <span data-i18n="notFound.browse">تصفّح السيارات</span>
                 </a>
             </div>
@@ -114,6 +114,8 @@
 
     <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/auth-ui.js"></script>
     <script src="js/404.js"></script>
 </body>
 

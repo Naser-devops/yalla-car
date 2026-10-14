@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/auth-ui.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
@@ -21,14 +22,15 @@
         <div class="logo"><span class="logo-first" data-i18n="logo.first">يلا</span> <span
                 data-i18n="logo.second">كار</span></div>
         <nav class="navigation">
-            <a href="#home" class="active" data-i18n="nav.home">الرئيسية</a>
-            <a href="#featured" data-i18n="nav.cars">السيارات</a>
+            <a href="index.html" class="active" data-i18n="nav.home">الرئيسية</a>
+            <a href="pages/search.html" data-i18n="nav.cars">السيارات</a>
             <a href="#partners" data-i18n="nav.companies">الشركات</a>
             <a href="#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+            <a href="pages/for-companies.html" class="nav-for-companies" data-i18n="nav.forCompanies">للشركات</a>
         </nav>
         <div class="action">
             <button class="en" data-i18n="lang.switch">EN</button>
-            <a href="login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
+            <a href="pages/login.html" class="login-btn" data-i18n="auth.login">تسجيل الدخول</a>
         </div>
     </header>
 
@@ -38,7 +40,7 @@
             <h1 class="hero-title" data-i18n="hero.title">استأجر سيارتك في الأردن بكل سهولة</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">سيارات من شركات تأجير أردنية موثوقة بأسعار واضحة</p>
 
-            <form class="search-box" action="search.html" method="get">
+            <form class="search-box" action="pages/search.html" method="get">
                 <div class="search-field">
                     <label for="pickup-city" data-i18n="search.city">مدينة الاستلام</label>
                     <input id="pickup-city" type="text" placeholder="عمان"
@@ -59,10 +61,10 @@
                     <label for="car-type" data-i18n="search.carType">نوع السيارة</label>
                     <select id="car-type" name="type">
                         <option data-i18n="search.all">الكل</option>
-                        <option data-i18n="type.economy">اقتصادية</option>
-                        <option data-i18n="type.family">عائلية</option>
-                        <option data-i18n="type.suv">SUV</option>
-                        <option data-i18n="type.luxury">فخمة</option>
+                        <option value="economy" data-i18n="type.economy">اقتصادية</option>
+                        <option value="family" data-i18n="type.family">عائلية</option>
+                        <option value="suv" data-i18n="type.suv">SUV</option>
+                        <option value="luxury" data-i18n="type.luxury">فخمة</option>
                     </select>
                 </div>
 
@@ -77,7 +79,7 @@
             <h2 class="section-title" data-i18n="categories.title">التصنيفات</h2>
 
             <div class="categories-grid">
-                <a href="#" class="category-card">
+                <a href="pages/search.html?type=economy" class="category-card">
                     <div class="category-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -91,7 +93,7 @@
                     <span data-i18n="type.economy">اقتصادية</span>
                 </a>
 
-                <a href="#" class="category-card">
+                <a href="pages/search.html?type=family" class="category-card">
                     <div class="category-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -106,7 +108,7 @@
                     <span data-i18n="type.family">عائلية</span>
                 </a>
 
-                <a href="#" class="category-card">
+                <a href="pages/search.html?type=suv" class="category-card">
                     <div class="category-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -121,7 +123,7 @@
                     <span data-i18n="type.suv">SUV</span>
                 </a>
 
-                <a href="#" class="category-card">
+                <a href="pages/search.html?type=luxury" class="category-card">
                     <div class="category-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -136,7 +138,7 @@
                     <span data-i18n="type.luxury">فخمة</span>
                 </a>
 
-                <a href="#" class="category-card">
+                <a href="pages/search.html?type=4x4" class="category-card">
                     <div class="category-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -155,7 +157,14 @@
     <!-- ========== قسم السيارات المميزة ========== -->
     <section class="featured" id="featured">
         <div class="container">
-            <h2 class="section-title" data-i18n="featured.title">سيارات مميزة</h2>
+
+            <div class="featured-head">
+                <h2 class="section-title" data-i18n="featured.title">سيارات مميزة</h2>
+                <a href="pages/search.html" class="featured-view-all">
+                    <span data-i18n="featured.viewAll">عرض كل السيارات</span>
+                    <span>←</span>
+                </a>
+            </div>
 
             <div class="featured-grid">
 
@@ -173,7 +182,7 @@
                     <div class="car-footer">
                         <span class="car-price">22 <span data-i18n="car.currency">د.أ</span> <small
                                 data-i18n="car.perDay">/ يوم</small></span>
-                        <a href="car-details.html?id=1" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                        <a href="pages/car-details.html?id=1" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
 
@@ -191,7 +200,7 @@
                     <div class="car-footer">
                         <span class="car-price">28 <span data-i18n="car.currency">د.أ</span> <small
                                 data-i18n="car.perDay">/ يوم</small></span>
-                        <a href="car-details.html?id=2" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                        <a href="pages/car-details.html?id=2" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
 
@@ -209,7 +218,7 @@
                     <div class="car-footer">
                         <span class="car-price">45 <span data-i18n="car.currency">د.أ</span> <small
                                 data-i18n="car.perDay">/ يوم</small></span>
-                        <a href="car-details.html?id=3" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                        <a href="pages/car-details.html?id=3" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
 
@@ -227,11 +236,20 @@
                     <div class="car-footer">
                         <span class="car-price">85 <span data-i18n="car.currency">د.أ</span> <small
                                 data-i18n="car.perDay">/ يوم</small></span>
-                        <a href="car-details.html?id=4" class="btn-book" data-i18n="car.book">احجز الآن</a>
+                        <a href="pages/car-details.html?id=4" class="btn-book" data-i18n="car.book">احجز الآن</a>
                     </div>
                 </div>
 
             </div>
+
+            <div class="featured-cta">
+                <a href="pages/search.html" class="btn-view-all-cars">
+                    <span>🚗</span>
+                    <span data-i18n="featured.viewAll">عرض كل السيارات</span>
+                    <span>←</span>
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -273,6 +291,11 @@
                 <div class="partner-card">Amman Rent</div>
                 <div class="partner-card">Nukhba Car</div>
                 <div class="partner-card">Aqaba Drive</div>
+            </div>
+
+            <div class="partners-join">
+                <span data-i18n="partners.joinText">هل أنت شركة تأجير؟</span>
+                <a href="pages/for-companies.html" data-i18n="partners.joinLink">انضم إلينا ←</a>
             </div>
         </div>
     </section>
@@ -413,6 +436,22 @@
         </div>
     </section>
 
+    <!-- ========== Teaser: للشركات ========== -->
+    <section class="for-companies-teaser">
+        <div class="container">
+            <div class="for-companies-teaser-content">
+                <div class="for-companies-teaser-icon">🏢</div>
+                <div class="for-companies-teaser-text">
+                    <h3 data-i18n="forCompaniesTeaser.title">هل أنت شركة تأجير سيارات؟</h3>
+                    <p data-i18n="forCompaniesTeaser.text">انضم لأكبر منصة تأجير في الأردن، وابدأ باستقبال الحجوزات من اليوم.</p>
+                </div>
+                <a href="pages/for-companies.html" class="for-companies-teaser-link" data-i18n="forCompaniesTeaser.link">
+                    اعرف المزيد ←
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
@@ -446,26 +485,26 @@
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.aboutTitle">من نحن</h4>
-                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
-                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
+                    <a href="pages/about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="pages/contact.html" data-i18n="footer.contact">تواصل معنا</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.companiesTitle">للشركات</h4>
-                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
-                    <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
+                    <a href="pages/register-company.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="pages/login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.helpTitle">مساعدة</h4>
-                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
-                    <a href="terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
+                    <a href="pages/faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="pages/terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.legalTitle">الشروط</h4>
-                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
-                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                    <a href="pages/terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="pages/privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
                 </div>
             </div>
 
@@ -474,8 +513,11 @@
             </div>
         </div>
     </footer>
+
     <script src="js/theme.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/auth-ui.js"></script>
     <script src="js/index.js"></script>
     <script src="js/testimonials.js"></script>
 </body>

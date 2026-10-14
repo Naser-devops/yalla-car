@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -25,7 +25,7 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" data-i18n="nav.cars">السيارات</a>
             <a href="about.html" data-i18n="nav.about">من نحن</a>
             <a href="contact.html" class="active" data-i18n="nav.contact">تواصل معنا</a>
@@ -37,7 +37,6 @@
         </div>
     </header>
 
-    <!-- ========== Hero ========== -->
     <section class="contact-hero">
         <div class="container">
             <h1 class="contact-hero-title" data-i18n="contact.hero.title">نحن هنا لمساعدتك</h1>
@@ -47,12 +46,10 @@
         </div>
     </section>
 
-    <!-- ========== المحتوى ========== -->
     <section class="contact-main">
         <div class="container">
             <div class="contact-layout">
 
-                <!-- ========== النموذج (يمين) ========== -->
                 <div class="contact-form-wrap">
 
                     <h2 class="contact-form-title" data-i18n="contact.form.title">أرسل رسالة</h2>
@@ -106,12 +103,10 @@
 
                 </div>
 
-                <!-- ========== معلومات التواصل (يسار) ========== -->
                 <aside class="contact-info-side">
 
                     <h2 class="contact-info-title" data-i18n="contact.info.title">معلومات التواصل</h2>
 
-                    <!-- بطاقة الهاتف -->
                     <div class="info-card">
                         <div class="info-card-icon info-icon-phone">📞</div>
                         <div class="info-card-content">
@@ -120,7 +115,6 @@
                         </div>
                     </div>
 
-                    <!-- بطاقة الإيميل -->
                     <div class="info-card">
                         <div class="info-card-icon info-icon-email">✉️</div>
                         <div class="info-card-content">
@@ -129,7 +123,6 @@
                         </div>
                     </div>
 
-                    <!-- بطاقة العنوان -->
                     <div class="info-card">
                         <div class="info-card-icon info-icon-address">📍</div>
                         <div class="info-card-content">
@@ -138,7 +131,6 @@
                         </div>
                     </div>
 
-                    <!-- بطاقة ساعات العمل -->
                     <div class="info-card info-card-hours">
                         <div class="info-card-icon info-icon-hours">🕐</div>
                         <div class="info-card-content">
@@ -147,7 +139,6 @@
                         </div>
                     </div>
 
-                    <!-- التواصل السريع -->
                     <div class="quick-contacts">
                         <h3 class="quick-title" data-i18n="contact.quick.title">تواصل سريع</h3>
 
@@ -170,7 +161,6 @@
         </div>
     </section>
 
-    <!-- ========== FAQ مصغّر ========== -->
     <section class="mini-faq">
         <div class="container">
             <h2 class="section-title" data-i18n="contact.faq.title">أسئلة سريعة</h2>
@@ -215,7 +205,6 @@
         </div>
     </section>
 
-    <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -254,7 +243,7 @@
                 <div class="footer-links">
                     <h4 data-i18n="footer.helpTitle">مساعدة</h4>
                     <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
-                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
                 </div>
 
                 <div class="footer-links">
@@ -270,14 +259,17 @@
         </div>
     </footer>
 
-    <!-- ========== Toast ========== -->
     <div class="contact-toast" id="contactToast">
         <span class="contact-toast-ico">✓</span>
         <span id="contactToastMsg"></span>
     </div>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/contact.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
 
 </html>

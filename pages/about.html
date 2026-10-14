@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -25,7 +25,7 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" data-i18n="nav.cars">السيارات</a>
             <a href="about.html" class="active" data-i18n="nav.about">من نحن</a>
             <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
@@ -37,7 +37,6 @@
         </div>
     </header>
 
-    <!-- ========== Hero ========== -->
     <section class="about-hero">
         <div class="container">
             <h1 class="about-hero-title" data-i18n="about.hero.title">نبني جسر الثقة بين العملاء وشركات التأجير</h1>
@@ -47,7 +46,6 @@
         </div>
     </section>
 
-    <!-- ========== قصتنا ========== -->
     <section class="about-story">
         <div class="container">
             <div class="story-layout">
@@ -81,7 +79,6 @@
         </div>
     </section>
 
-    <!-- ========== الرؤية والرسالة ========== -->
     <section class="vision-mission">
         <div class="container">
             <div class="vm-grid">
@@ -108,7 +105,6 @@
         </div>
     </section>
 
-    <!-- ========== الأرقام ========== -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -137,7 +133,6 @@
         </div>
     </section>
 
-    <!-- ========== قيمنا ========== -->
     <section class="values">
         <div class="container">
             <h2 class="section-title" data-i18n="about.values.title">قيمنا الأساسية</h2>
@@ -180,7 +175,6 @@
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
     <section class="about-cta">
         <div class="container">
             <div class="cta-box">
@@ -196,7 +190,6 @@
         </div>
     </section>
 
-    <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -250,9 +243,13 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/about.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 
 </html>

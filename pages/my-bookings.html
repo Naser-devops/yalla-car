@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="myBookings.metaTitle">حجوزاتي — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/my-bookings.css">
+    <link rel="stylesheet" href="../css/booking-details.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="my-bookings.html" class="active" data-i18n="nav.myBookings">حجوزاتي</a>
+            <a href="../index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <main class="my-bookings-page container">
+
+        <div class="bookings-page-header">
+            <h1 class="section-title" data-i18n="myBookings.title">حجوزاتي</h1>
+
+            <a href="search.html" class="btn-browse-cars">
+                <span>🔍</span>
+                <span data-i18n="myBookings.browseMore">تصفح السيارات</span>
+            </a>
+        </div>
+
+        <div class="bookings-tabs">
+            <button type="button" class="bookings-tab active" data-filter="all">
+                <span data-i18n="myBookings.all">الكل</span>
+                <span class="tab-count">0</span>
+            </button>
+
+            <button type="button" class="bookings-tab" data-filter="active">
+                <span data-i18n="myBookings.active">النشطة</span>
+                <span class="tab-count">0</span>
+            </button>
+
+            <button type="button" class="bookings-tab" data-filter="completed">
+                <span data-i18n="myBookings.completed">المكتملة</span>
+                <span class="tab-count">0</span>
+            </button>
+
+            <button type="button" class="bookings-tab" data-filter="cancelled">
+                <span data-i18n="myBookings.cancelled">الملغاة</span>
+                <span class="tab-count">0</span>
+            </button>
+        </div>
+
+        <div class="bookings-list">
+            <!-- JS يملأها ديناميكياً -->
+        </div>
+
+        <div class="bookings-browse-more" id="browseMoreWrap" style="display: none;">
+            <a href="search.html" class="btn-browse-more">
+                <span>🚗</span>
+                <span data-i18n="myBookings.browseMoreCars">تصفح المزيد من السيارات</span>
+                <span>←</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/booking-details.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/my-bookings.js"></script>
+</body>
+
+</html>

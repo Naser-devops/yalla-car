@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pending-approval.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pending-approval.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
@@ -20,21 +21,17 @@
     <main class="pending-page">
         <div class="pending-container">
 
-            <!-- أيقونة النجاح -->
             <div class="pending-icon">
                 <span>⏳</span>
             </div>
 
-            <!-- العنوان -->
             <h1 class="pending-title" data-i18n="pending.title">طلبك قيد المراجعة</h1>
 
-            <!-- النص -->
             <p class="pending-text" data-i18n="pending.text">
                 شكراً لك على تسجيل شركتك في يلا كار. فريقنا سيراجع طلبك خلال 24-48 ساعة،
                 وسيتم إشعارك عبر البريد الإلكتروني عند الموافقة.
             </p>
 
-            <!-- الخطوات -->
             <div class="pending-steps">
 
                 <div class="pending-step done">
@@ -58,7 +55,6 @@
 
             </div>
 
-            <!-- معلومات -->
             <div class="pending-info">
                 <div class="info-line">
                     <span class="info-icon">📧</span>
@@ -70,16 +66,21 @@
                 </div>
             </div>
 
-            <!-- الأزرار -->
             <div class="pending-actions">
-                <a href="index.html" class="btn-primary-pending" data-i18n="pending.home">العودة للرئيسية</a>
+                <a href="../index.html" class="btn-primary-pending" data-i18n="pending.home">العودة للرئيسية</a>
                 <a href="contact.html" class="btn-secondary-pending" data-i18n="pending.contact">تواصل معنا</a>
             </div>
 
+            <a href="login.html" class="pending-logout" data-logout data-i18n="auth.logout">تسجيل الخروج</a>
+
         </div>
     </main>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
+
+    <!-- ✅ السكربتات (تم حذف السكريبت المضمّن + إضافة notifications.js + auth-ui.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
 </body>
 
 </html>

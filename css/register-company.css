@@ -458,13 +458,13 @@
 
 
 /* ============================================
-   9. Toast
+   9. ✅ Toast (تحت يمين — تم التعديل)
    ============================================ */
 .auth-toast {
     position: fixed;
-    top: 40px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%) translateY(-100px);
+    bottom: 30px;
+    inset-inline-end: 30px;
+    transform: translateY(100px);
     background: var(--color-text-dark);
     color: var(--color-white);
     padding: 14px var(--space-4);
@@ -480,11 +480,12 @@
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
+    max-width: 340px;
 }
 
 .auth-toast.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .auth-toast.success {
@@ -541,5 +542,11 @@
 
     .register-title {
         font-size: 22px;
+    }
+
+    .auth-toast {
+        inset-inline: 16px;
+        inset-inline-end: 16px;
+        max-width: calc(100% - 32px);
     }
 }

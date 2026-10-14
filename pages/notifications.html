@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="notif.metaTitle">الإشعارات — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/notifications.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">  <!-- أو "css/auth-ui.css" لو بالجذر -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="my-bookings.html" data-i18n="nav.myBookings">حجوزاتي</a>
+            <a href="../index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <!-- ========== المحتوى ========== -->
+    <main class="notifications-page container">
+
+        <div class="notif-page-header">
+            <div>
+                <h1 class="notif-page-title" data-i18n="notif.title">الإشعارات</h1>
+                <p class="notif-page-subtitle" data-i18n="notif.subtitle">
+                    كل جديد يخصك يظهر هنا
+                </p>
+            </div>
+
+            <button type="button" class="notif-mark-all" id="markAllReadBtn">
+                <span>✓</span>
+                <span data-i18n="notif.markAllRead">تحديد الكل كمقروء</span>
+            </button>
+        </div>
+
+        <!-- التابات -->
+        <div class="notif-tabs">
+            <button type="button" class="notif-tab active" data-filter="all">
+                <span data-i18n="notif.tab.all">الكل</span>
+                <span class="notif-count" id="countAll">0</span>
+            </button>
+
+            <button type="button" class="notif-tab" data-filter="unread">
+                <span data-i18n="notif.tab.unread">غير مقروءة</span>
+                <span class="notif-count notif-count-unread" id="countUnread">0</span>
+            </button>
+        </div>
+
+        <!-- القائمة -->
+        <div class="notif-list" id="notifList"></div>
+
+        <!-- حالة فاضية -->
+        <div class="notif-empty" id="notifEmpty" style="display: none;">
+            <div class="notif-empty-icon">🔔</div>
+            <h3 data-i18n="notif.empty.title">ما عندك إشعارات</h3>
+            <p data-i18n="notif.empty.text">لما يصير في جديد، رح يظهر هنا</p>
+        </div>
+
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/auth-ui.js"></script>  <!-- أو "js/auth-ui.js" لو بالجذر -->
+    <script src="../js/notifications.js"></script>
+</body>
+
+</html>

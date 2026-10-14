@@ -121,7 +121,6 @@
 }
 
 
-/* ---- 2.1 زر تسجيل الخروج ---- */
 .admin-logout-btn {
     display: inline-flex;
     align-items: center;
@@ -205,21 +204,10 @@
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
-.kpi-gradient-blue {
-    background: linear-gradient(135deg, #1E40AF, #3B82F6);
-}
-
-.kpi-gradient-yellow {
-    background: linear-gradient(135deg, #D97706, #F59E0B);
-}
-
-.kpi-gradient-green {
-    background: linear-gradient(135deg, #047857, #10B981);
-}
-
-.kpi-gradient-red {
-    background: linear-gradient(135deg, #B91C1C, #EF4444);
-}
+.kpi-gradient-blue { background: linear-gradient(135deg, #1E40AF, #3B82F6); }
+.kpi-gradient-yellow { background: linear-gradient(135deg, #D97706, #F59E0B); }
+.kpi-gradient-green { background: linear-gradient(135deg, #047857, #10B981); }
+.kpi-gradient-red { background: linear-gradient(135deg, #B91C1C, #EF4444); }
 
 .kpi-icon-circle {
     width: 52px;
@@ -333,20 +321,9 @@
     color: var(--color-text-gray);
 }
 
-.tab-count-yellow {
-    background: #FEF3C7 !important;
-    color: #B45309 !important;
-}
-
-.tab-count-green {
-    background: #DCFCE7 !important;
-    color: #047857 !important;
-}
-
-.tab-count-red {
-    background: #FEE2E2 !important;
-    color: #B91C1C !important;
-}
+.tab-count-yellow { background: #FEF3C7 !important; color: #B45309 !important; }
+.tab-count-green { background: #DCFCE7 !important; color: #047857 !important; }
+.tab-count-red { background: #FEE2E2 !important; color: #B91C1C !important; }
 
 .admin-tab.active .tab-count-yellow,
 .admin-tab.active .tab-count-green,
@@ -526,12 +503,8 @@
 }
 
 @keyframes pulse-badge {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
-    }
-    50% {
-        box-shadow: 0 0 0 6px rgba(249, 115, 22, 0);
-    }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+    50% { box-shadow: 0 0 0 6px rgba(249, 115, 22, 0); }
 }
 
 
@@ -635,7 +608,7 @@
 
 
 /* ============================================
-   7. Drawer (مراجعة الشركة)
+   7. Drawer
    ============================================ */
 .drawer-overlay {
     position: fixed;
@@ -994,13 +967,13 @@
 
 
 /* ============================================
-   8. Toast
+   8. ✅ Toast (تحت يمين — تم التعديل)
    ============================================ */
 .admin-toast {
     position: fixed;
-    top: 100px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%) translateY(-100px);
+    bottom: 30px;
+    inset-inline-end: 30px;
+    transform: translateY(100px);
     background: #0F172A;
     color: white;
     padding: 14px var(--space-4);
@@ -1015,11 +988,12 @@
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
+    max-width: 340px;
 }
 
 .admin-toast.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .admin-toast.success {
@@ -1054,6 +1028,135 @@
     border-top: 3px solid var(--color-accent);
 }
 
+/* ============================================
+   9.1 ✅ Dark Mode (إصلاحات)
+   ============================================ */
+
+[data-theme="dark"] .admin-body {
+    background: #0F172A;
+}
+
+[data-theme="dark"] .admin-table-wrap {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .admin-table thead {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .admin-table th {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .admin-table td {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .admin-table tbody tr:hover {
+    background: #334155;
+}
+
+[data-theme="dark"] .cell-mono {
+    background: #0F172A;
+    color: #CBD5E1;
+    border: 1px solid #334155;
+}
+
+[data-theme="dark"] .btn-review-secondary {
+    background: #1E293B;
+    color: #F1F5F9;
+    border: 1px solid #334155;
+    box-shadow: none;
+}
+
+[data-theme="dark"] .btn-review-secondary:hover {
+    background: #334155;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .company-details strong {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .company-details small {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .cell-date {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .cell-center strong {
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .status-pending {
+    background: #78350F;
+    color: #FCD34D;
+}
+
+[data-theme="dark"] .status-approved {
+    background: #064E3B;
+    color: #6EE7B7;
+}
+
+[data-theme="dark"] .status-rejected {
+    background: #7F1D1D;
+    color: #FCA5A5;
+}
+
+[data-theme="dark"] .admin-footer {
+    background: #020617;
+}
+
+[data-theme="dark"] .admin-header {
+    background: #020617;
+    border-bottom-color: var(--color-accent);
+}
+
+[data-theme="dark"] .admin-user {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .admin-tabs {
+    background: #1E293B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .admin-tab {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .admin-tab:hover {
+    color: #F1F5F9;
+    background: #334155;
+}
+
+[data-theme="dark"] .admin-tab:not(.active) .tab-count {
+    background: #0F172A;
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .admin-search {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .admin-search::placeholder {
+    color: #64748B;
+}
+
+[data-theme="dark"] .admin-search:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+}
 
 /* ============================================
    10. Responsive
@@ -1109,5 +1212,11 @@
 
     .admin-logout-btn {
         padding: 0 10px;
+    }
+
+    .admin-toast {
+        inset-inline: 16px;
+        inset-inline-end: 16px;
+        max-width: calc(100% - 32px);
     }
 }

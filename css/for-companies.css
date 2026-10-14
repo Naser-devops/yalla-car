@@ -1,0 +1,835 @@
+/* ============================================
+   Yalla Car — أنماط صفحة "للشركات"
+   ============================================ */
+
+
+/* ============================================
+   1. Hero
+   ============================================ */
+.fc-hero {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2A4FA8 100%);
+    color: var(--color-white);
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fc-hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    inset-inline-end: -100px;
+    width: 500px;
+    height: 500px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.fc-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    inset-inline-start: -120px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.fc-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fc-hero-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(249, 115, 22, 0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-bottom: var(--space-3);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.fc-hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.5px;
+}
+
+.fc-hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto var(--space-5);
+}
+
+.fc-hero-actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+}
+
+.btn-primary-cta,
+.btn-secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 var(--space-5);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+}
+
+.btn-primary-cta {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+}
+
+.btn-primary-cta:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.45);
+}
+
+.btn-secondary-cta {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary-cta:hover {
+    background: white;
+    color: var(--color-primary);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+/* ---- إحصائيات Hero ---- */
+.fc-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fc-stat {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+.fc-stat strong {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.fc-stat small {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+
+/* ============================================
+   2. رأس القسم (مشترك)
+   ============================================ */
+.fc-section-head {
+    text-align: center;
+    margin-bottom: var(--space-5);
+}
+
+.fc-section-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: var(--space-2);
+}
+
+.fc-section-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.fc-section-subtitle {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   3. المميزات (6 بطاقات)
+   ============================================ */
+.fc-benefits {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.fc-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+}
+
+.fc-benefit-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: var(--shadow-sm);
+}
+
+.fc-benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.fc-benefit-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: var(--space-3);
+}
+
+.fc-icon-blue {
+    background: #DBEAFE;
+}
+
+.fc-icon-green {
+    background: #DCFCE7;
+}
+
+.fc-icon-orange {
+    background: #FFEDD5;
+}
+
+.fc-icon-purple {
+    background: #EDE9FE;
+}
+
+.fc-icon-yellow {
+    background: #FEF3C7;
+}
+
+.fc-icon-red {
+    background: #FEE2E2;
+}
+
+.fc-benefit-title {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-1);
+}
+
+.fc-benefit-desc {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   4. الخطوات (3 بطاقات)
+   ============================================ */
+.fc-steps {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.fc-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    position: relative;
+}
+
+.fc-step-card {
+    text-align: center;
+    padding: var(--space-4);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fc-step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.fc-step-number {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-3);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.fc-step-title {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-2);
+}
+
+.fc-step-desc {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   5. العمولة والأسعار
+   ============================================ */
+.fc-pricing {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.fc-pricing-grid {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.fc-pricing-card {
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 20px;
+    padding: var(--space-5);
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.fc-pricing-card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    inset-inline-end: -60px;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.fc-pricing-head {
+    text-align: center;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 1;
+}
+
+.fc-pricing-head h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+}
+
+.fc-pricing-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.fc-pricing-number {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.fc-pricing-price small {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    font-weight: 600;
+}
+
+.fc-pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.fc-pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+    padding: 4px 0;
+}
+
+.fc-pricing-features li::before {
+    content: "✓";
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-success);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.btn-pricing {
+    display: block;
+    width: 100%;
+    height: 56px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 800;
+    text-align: center;
+    line-height: 56px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-pricing:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ---- ملاحظة صغيرة ---- */
+.fc-pricing-note {
+    display: flex;
+    gap: var(--space-3);
+    background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+    border-inline-start: 4px solid var(--color-primary);
+    border-radius: 14px;
+    padding: var(--space-3);
+}
+
+.fc-pricing-note-icon {
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.fc-pricing-note strong {
+    display: block;
+    font-size: var(--font-size-body);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.fc-pricing-note p {
+    font-size: var(--font-size-small);
+    color: var(--color-text-dark);
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ============================================
+   6. الأسئلة الشائعة
+   ============================================ */
+.fc-faq {
+    padding: var(--space-6) 0;
+    background: var(--color-white);
+}
+
+.fc-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.fc-faq-item {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fc-faq-item[open] {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.fc-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.fc-faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.fc-faq-question:hover {
+    color: var(--color-primary);
+}
+
+.fc-faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-trust-bg);
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+    line-height: 1;
+}
+
+.fc-faq-item[open] .fc-faq-icon {
+    transform: rotate(45deg);
+    background: var(--color-accent);
+    color: white;
+}
+
+.fc-faq-answer {
+    padding: 0 var(--space-4) var(--space-3);
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.9;
+    animation: fcSlideDown 0.3s ease-out;
+}
+
+@keyframes fcSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================
+   7. CTA النهائي
+   ============================================ */
+.fc-cta {
+    padding: var(--space-6) 0;
+    background: var(--color-background);
+}
+
+.fc-cta-box {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2A4FA8 100%);
+    color: white;
+    border-radius: 24px;
+    padding: var(--space-6) var(--space-5);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+}
+
+.fc-cta-box::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    inset-inline-end: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.fc-cta-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.fc-cta-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.fc-cta-text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.fc-cta-actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    padding: 0 var(--space-5);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+}
+
+.btn-cta-primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.btn-cta-primary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-cta-secondary:hover {
+    background: white;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   8. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .fc-hero-title {
+        font-size: 36px;
+    }
+
+    .fc-hero-subtitle {
+        font-size: var(--font-size-body);
+    }
+
+    .fc-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fc-steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .fc-section-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fc-hero {
+        padding: 60px 0 50px;
+    }
+
+    .fc-hero-title {
+        font-size: 28px;
+    }
+
+    .fc-hero-subtitle {
+        font-size: var(--font-size-small);
+    }
+
+    .fc-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary-cta,
+    .btn-secondary-cta {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .fc-hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .fc-stat {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .fc-stat strong {
+        font-size: 24px;
+    }
+
+    .fc-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fc-section-title {
+        font-size: 24px;
+    }
+
+    .fc-pricing-number {
+        font-size: 52px;
+    }
+
+    .fc-pricing-card {
+        padding: var(--space-4);
+    }
+
+    .fc-cta-box {
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .fc-cta-title {
+        font-size: 26px;
+    }
+
+    .fc-cta-text {
+        font-size: var(--font-size-body);
+    }
+
+    .fc-cta-actions {
+        flex-direction: column;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .fc-faq-question {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--font-size-small);
+    }
+
+    .fc-faq-answer {
+        padding: 0 var(--space-3) var(--space-2);
+        font-size: 13px;
+    }
+
+    .fc-pricing-note {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

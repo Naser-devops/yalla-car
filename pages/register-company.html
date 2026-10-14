@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/register-company.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register-company.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body class="register-body">
@@ -21,10 +22,9 @@
 
     <div class="register-container">
 
-        <!-- ========== الجهة اليمنى: النموذج ========== -->
         <div class="register-form-side">
 
-            <a href="index.html" class="auth-logo">
+            <a href="../index.html" class="auth-logo">
                 <span class="logo-first" data-i18n="logo.first">يلا</span>
                 <span data-i18n="logo.second">كار</span>
             </a>
@@ -36,7 +36,6 @@
 
             <form class="register-form" id="companyForm">
 
-                <!-- ============ القسم 1: معلومات الشركة ============ -->
                 <div class="form-section">
                     <h2 class="form-section-title" data-i18n="registerCompany.section.basic">معلومات الشركة</h2>
 
@@ -65,7 +64,6 @@
                     </div>
                 </div>
 
-                <!-- ============ القسم 2: معلومات التواصل ============ -->
                 <div class="form-section">
                     <h2 class="form-section-title" data-i18n="registerCompany.section.contact">معلومات التواصل</h2>
 
@@ -100,7 +98,6 @@
                     </div>
                 </div>
 
-                <!-- ============ القسم 3: كلمة المرور ============ -->
                 <div class="form-section">
                     <h2 class="form-section-title" data-i18n="registerCompany.section.password">كلمة المرور</h2>
 
@@ -117,7 +114,6 @@
                     </div>
                 </div>
 
-                <!-- ============ القسم 4: الوثائق ============ -->
                 <div class="form-section">
                     <h2 class="form-section-title" data-i18n="registerCompany.section.documents">الوثائق المطلوبة</h2>
 
@@ -156,7 +152,6 @@
                     </div>
                 </div>
 
-                <!-- ============ الشروط + الزر ============ -->
                 <label class="checkbox-terms">
                     <input type="checkbox" required>
                     <span data-i18n="registerCompany.agreeTerms">أوافق على الشروط والأحكام وسياسة الخصوصية</span>
@@ -173,7 +168,6 @@
 
         </div>
 
-        <!-- ========== الجهة اليسرى: التصميم ========== -->
         <aside class="register-visual-side">
 
             <div class="visual-content">
@@ -221,14 +215,17 @@
 
     </div>
 
-    <!-- ========== Toast ========== -->
     <div class="auth-toast" id="registerToast">
         <span class="auth-toast-ico">✓</span>
         <span id="registerToastMsg"></span>
     </div>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/register-company.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js + auth-ui.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/register-company.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="register.metaTitle">إنشاء حساب — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body class="auth-body">
+
+    <button class="auth-lang-switch en" data-i18n="lang.switch">EN</button>
+
+    <div class="auth-container">
+
+        <!-- ========== النموذج (الجهة اليمنى) ========== -->
+        <div class="auth-form-side">
+
+            <a href="../index.html" class="auth-logo">
+                <span class="logo-first" data-i18n="logo.first">يلا</span>
+                <span data-i18n="logo.second">كار</span>
+            </a>
+
+            <!-- العنوان -->
+            <div class="register-header">
+                <h1 class="register-title" data-i18n="register.title">أنشئ حسابك الجديد</h1>
+                <p class="register-subtitle" data-i18n="register.subtitle">
+                    دقيقة واحدة وأنت جاهز للحجز
+                </p>
+            </div>
+
+            <!-- النموذج -->
+            <form class="auth-form active" id="registerForm">
+
+                <div class="auth-field">
+                    <label for="registerName" data-i18n="register.fullName">الاسم الكامل</label>
+                    <input id="registerName" type="text" placeholder="محمد أحمد" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerEmail" data-i18n="register.email">البريد الإلكتروني</label>
+                    <input id="registerEmail" type="email" placeholder="name@email.com" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerPhone" data-i18n="register.phone">رقم الهاتف</label>
+                    <input id="registerPhone" type="tel" placeholder="+962 7X XXX XXXX" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerPassword" data-i18n="register.password">كلمة المرور</label>
+                    <input id="registerPassword" type="password" placeholder="••••••••" minlength="8" required>
+                </div>
+
+                <div class="auth-field">
+                    <label for="registerPasswordConfirm" data-i18n="register.passwordConfirm">تأكيد كلمة المرور</label>
+                    <input id="registerPasswordConfirm" type="password" placeholder="••••••••" minlength="8" required>
+                </div>
+
+                <label class="auth-checkbox auth-checkbox-terms">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <span data-i18n="register.agreeTerms">أوافق على الشروط والأحكام وسياسة الخصوصية</span>
+                </label>
+
+                <button type="submit" class="auth-submit" data-i18n="register.submit">
+                    إنشاء حساب
+                </button>
+
+                <p class="auth-bottom-text">
+                    <span data-i18n="register.haveAccount">عندك حساب؟</span>
+                    <a href="login.html" class="auth-link" data-i18n="register.login">تسجيل الدخول</a>
+                </p>
+
+            </form>
+
+        </div>
+
+        <!-- ========== التصميم (الجهة اليسرى) ========== -->
+        <div class="auth-visual-side">
+
+            <div class="auth-visual-content">
+                <div class="auth-visual-logo">
+                    <span data-i18n="logo.first">يلا</span>
+                    <span class="visual-accent" data-i18n="logo.second">كار</span>
+                </div>
+                <p class="auth-visual-text" data-i18n="register.welcomeDesc">
+                    انضم لأكثر من 5,000 عميل استأجروا سياراتهم عبر يلا كار
+                </p>
+            </div>
+
+            <div class="auth-car-svg">
+                <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="80" y="60" width="240" height="55" rx="18" fill="#3B5BA9" />
+                    <rect x="130" y="30" width="140" height="45" rx="15" fill="#3B5BA9" />
+                    <circle cx="130" cy="120" r="22" fill="#1E2A4A" />
+                    <circle cx="270" cy="120" r="22" fill="#1E2A4A" />
+                </svg>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========== Toast ========== -->
+    <div class="auth-toast" id="authToast">
+        <span class="auth-toast-ico">✓</span>
+        <span id="authToastMsg"></span>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

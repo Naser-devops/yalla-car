@@ -94,24 +94,64 @@ button {
 }
 
 /* ============================================
-   6. الهيدر
+   6. الهيدر — Premium Glassmorphism Design
    ============================================ */
 header {
     display: flex;
     align-items: center;
-    height: 80px;
-    padding: 0 120px;
-    background: var(--color-white);
-    border-bottom: 1px solid var(--color-border);
+    height: 76px;
+    padding: 0 var(--space-4);
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    gap: var(--space-3);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
+header.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.06),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+[data-theme="dark"] header {
+    background: rgba(15, 23, 42, 0.78);
+    border-bottom-color: rgba(51, 65, 85, 0.7);
+}
+
+[data-theme="dark"] header.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.5),
+        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+/* --- Logo --- */
 .logo {
-    font-size: 30px;
-    font-weight: var(--font-weight-bold);
+    font-size: 26px;
+    font-weight: 800;
     color: var(--color-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: translateY(-1px) scale(1.02);
 }
 
 .logo .logo-first {
@@ -122,62 +162,355 @@ header {
     color: var(--color-accent);
 }
 
+[data-theme="dark"] .logo {
+    color: #F1F5F9;
+}
+
+/* --- Navigation --- */
 .navigation {
     display: flex;
-    margin-inline-start: var(--space-6);
-    gap: var(--space-6);
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
 }
 
 .navigation a {
     text-decoration: none;
     color: var(--color-text-dark);
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 14px;
+    border-radius: 10px;
+    position: relative;
+    line-height: 1;
 }
 
 .navigation a:hover {
     color: var(--color-primary);
+    background: rgba(30, 58, 138, 0.06);
 }
 
 .navigation .active {
     color: var(--color-primary);
-    font-weight: var(--font-weight-bold);
+    font-weight: 800;
+    background: rgba(30, 58, 138, 0.08);
 }
 
+.navigation .active::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 3px;
+}
+
+.navigation .nav-for-companies {
+    color: var(--color-accent) !important;
+    font-weight: 800 !important;
+}
+
+.navigation .nav-for-companies:hover {
+    background: rgba(249, 115, 22, 0.1) !important;
+    color: var(--color-accent-dark) !important;
+}
+
+[data-theme="dark"] .navigation a {
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .navigation a:hover {
+    color: #F1F5F9;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .navigation .active {
+    color: var(--color-accent);
+    background: rgba(249, 115, 22, 0.12);
+}
+
+/* --- Action Area --- */
 .action {
     display: flex;
-    gap: var(--space-2);
-    margin-inline-start: auto;
-}
-
-.action .en {
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 0;
     background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-}
-
-.action .en:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
-}
-
-.action .login-btn {
-    background: var(--color-accent);
-    color: var(--color-white);
     border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* --- Icon Buttons (theme, bell) --- */
+.theme-toggle,
+.notif-bell {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--color-text-dark);
+    font-size: 16px;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    font-weight: var(--font-weight-semibold);
-    padding: 0 var(--space-3);
-    height: var(--height-control);
-    border-radius: var(--radius-control);
-    cursor: pointer;
-    transition: background 0.2s;
+    padding: 0;
+    transition: background 0.2s, color 0.2s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+    font-family: var(--font-main);
+    line-height: 1;
 }
 
-.action .login-btn:hover {
-    background: var(--color-accent-dark);
+.theme-toggle:hover,
+.notif-bell:hover {
+    background: rgba(30, 58, 138, 0.08);
+    color: var(--color-primary);
+    transform: scale(1.06);
+}
+
+.theme-toggle:active,
+.notif-bell:active {
+    transform: scale(0.94);
+}
+
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .notif-bell {
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .theme-toggle:hover,
+[data-theme="dark"] .notif-bell:hover {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--color-accent);
+}
+
+/* --- EN Language Button --- */
+.en {
+    height: 38px;
+    padding: 0 14px;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    color: var(--color-text-dark);
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-transform: uppercase;
+}
+
+.en:hover {
+    background: rgba(30, 58, 138, 0.08);
+    color: var(--color-primary);
+}
+
+[data-theme="dark"] .en {
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .en:hover {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--color-accent);
+}
+
+/* --- Login Button --- */
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2A4FA8 100%);
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+    border: none;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.35);
+    background: linear-gradient(135deg, #2A4FA8 0%, var(--color-primary) 100%);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   6.1 Notification Badge
+   ============================================ */
+.notif-badge {
+    position: absolute;
+    top: 1px;
+    inset-inline-end: 1px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #DC2626, #EF4444);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-white);
+    font-family: var(--font-main);
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+    animation: notif-pulse 2s ease-in-out infinite;
+}
+
+[data-theme="dark"] .notif-badge {
+    border-color: #1E293B;
+}
+
+@keyframes notif-pulse {
+    0%, 100% {
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4), 0 0 0 0 rgba(220, 38, 38, 0.5);
+    }
+    50% {
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4), 0 0 0 6px rgba(220, 38, 38, 0);
+    }
+}
+
+/* ============================================
+   6.2 Responsive — الهيدر
+   ============================================ */
+@media (max-width: 1024px) {
+    header {
+        padding: 0 var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .navigation {
+        gap: 2px;
+    }
+
+    .navigation a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .action {
+        padding: 4px;
+    }
+
+    .theme-toggle,
+    .notif-bell {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .login-btn {
+        height: 34px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .en {
+        height: 34px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: var(--space-2) var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .action {
+        order: 2;
+        margin-inline-start: auto;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        gap: 2px;
+        margin-inline-start: 0;
+        justify-content: flex-start;
+        padding: var(--space-2) 0 0 0;
+        border-top: 1px solid var(--color-border);
+        flex: none;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navigation a {
+        font-size: 13px;
+        padding: 7px 12px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: var(--space-2);
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .theme-toggle,
+    .notif-bell {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .en {
+        height: 32px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .login-btn {
+        height: 32px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
 
 /* ============================================
@@ -279,47 +612,16 @@ header {
     translate: 0 0;
 }
 
-
 /* ============================================
-   9. Responsive — الهيدر والفوتر
+   9. Responsive — الفوتر
    ============================================ */
 @media (max-width: 1024px) {
-    header {
-        padding: 0 var(--space-4);
-    }
-
-    .navigation {
-        gap: var(--space-3);
-        margin-inline-start: var(--space-4);
-    }
-
     .footer-top {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        height: auto;
-        padding: var(--space-2) var(--space-3);
-        gap: var(--space-2);
-    }
-
-    .navigation {
-        order: 3;
-        width: 100%;
-        gap: var(--space-3);
-        margin-inline-start: 0;
-        justify-content: center;
-        padding: var(--space-1) 0;
-        border-top: 1px solid var(--color-border);
-    }
-
-    .navigation a {
-        font-size: var(--font-size-small);
-    }
-
     .footer-top {
         grid-template-columns: 1fr;
         gap: var(--space-3);
@@ -337,19 +639,20 @@ header {
 }
 
 /* ============================================
-   10. Dark Mode (الوضع الليلي)
+   10. Dark Mode — المتغيرات
    ============================================ */
-
-/* تطبيق المتغيرات الداكنة */
 [data-theme="dark"] {
     --color-background: #0F172A;
     --color-text-dark: #F1F5F9;
     --color-text-gray: #94A3B8;
     --color-border: #334155;
     --color-trust-bg: #1E293B;
+    --color-white: #1E293B;
 }
 
-/* بديل اللون الأبيض للـ backgrounds */
+/* ============================================
+   11. Dark Mode — الحاويات والصناديق
+   ============================================ */
 [data-theme="dark"] header,
 [data-theme="dark"] .search-box,
 [data-theme="dark"] .category-card,
@@ -382,14 +685,59 @@ header {
 [data-theme="dark"] .booking-card,
 [data-theme="dark"] .booking-form-wrap,
 [data-theme="dark"] .booking-summary,
-[data-theme="dark"] .summary-car img,
 [data-theme="dark"] .payment-option,
-[data-theme="dark"] .filters {
+[data-theme="dark"] .filters,
+[data-theme="dark"] .contact-form-wrap,
+[data-theme="dark"] .contact-info-side,
+[data-theme="dark"] .quick-contacts,
+[data-theme="dark"] .spec-item,
+[data-theme="dark"] .company-card,
+[data-theme="dark"] .fc-benefit-card,
+[data-theme="dark"] .fc-pricing-card,
+[data-theme="dark"] .fc-step-card,
+[data-theme="dark"] .fc-faq-item,
+[data-theme="dark"] .register-container,
+[data-theme="dark"] .register-form-side,
+[data-theme="dark"] .faq-no-results,
+[data-theme="dark"] .no-results-message,
+[data-theme="dark"] .sort-select,
+[data-theme="dark"] .gallery-main,
+[data-theme="dark"] .review-drawer,
+[data-theme="dark"] .drawer-body,
+[data-theme="dark"] .doc-item:not(.doc-missing),
+[data-theme="dark"] .faq-item[open],
+[data-theme="dark"] .fc-faq-item[open],
+[data-theme="dark"] .mini-faq,
+[data-theme="dark"] .about-story,
+[data-theme="dark"] .stats,
+[data-theme="dark"] .values,
+[data-theme="dark"] .about-cta,
+[data-theme="dark"] .vision-mission,
+[data-theme="dark"] .contact-main,
+[data-theme="dark"] .faq-main,
+[data-theme="dark"] .faq-cta,
+[data-theme="dark"] .legal-main,
+[data-theme="dark"] .legal-cta,
+[data-theme="dark"] .fc-benefits,
+[data-theme="dark"] .fc-faq,
+[data-theme="dark"] .fc-steps,
+[data-theme="dark"] .fc-pricing,
+[data-theme="dark"] .fc-cta,
+[data-theme="dark"] .testimonials-track-wrap,
+[data-theme="dark"] .pending-container,
+[data-theme="dark"] .pending-info,
+[data-theme="dark"] .admin-kpi-card,
+[data-theme="dark"] .kpi-card,
+[data-theme="dark"] .modal-box,
+[data-theme="dark"] .contact-toast,
+[data-theme="dark"] .toast {
     background: #1E293B;
     color: var(--color-text-dark);
 }
 
-/* الكروت والنصوص المتداخلة */
+/* ============================================
+   12. Dark Mode — النصوص
+   ============================================ */
 [data-theme="dark"] .car-name,
 [data-theme="dark"] .category-card span,
 [data-theme="dark"] .step-title,
@@ -397,7 +745,6 @@ header {
 [data-theme="dark"] .result-name,
 [data-theme="dark"] .result-body,
 [data-theme="dark"] .car-body,
-[data-theme="dark"] .hero-title,
 [data-theme="dark"] .about-hero-title,
 [data-theme="dark"] .contact-hero-title,
 [data-theme="dark"] .faq-hero-title,
@@ -411,6 +758,29 @@ header {
 [data-theme="dark"] .section-subtitle,
 [data-theme="dark"] .dashboard-title,
 [data-theme="dark"] .form-section-title,
+[data-theme="dark"] .fc-section-title,
+[data-theme="dark"] .fc-benefit-title,
+[data-theme="dark"] .fc-step-title,
+[data-theme="dark"] .fc-pricing-head h3,
+[data-theme="dark"] .fc-cta-title,
+[data-theme="dark"] .register-title,
+[data-theme="dark"] .spec-label,
+[data-theme="dark"] .info-card-value,
+[data-theme="dark"] .info-card-label,
+[data-theme="dark"] .company-info h4,
+[data-theme="dark"] .contact-info-title,
+[data-theme="dark"] .contact-form-title,
+[data-theme="dark"] .contact-form-subtitle,
+[data-theme="dark"] .quick-title,
+[data-theme="dark"] .faq-group-title,
+[data-theme="dark"] .no-results-message h3,
+[data-theme="dark"] .faq-no-results h3,
+[data-theme="dark"] .welcome-title,
+[data-theme="dark"] .kpi-label,
+[data-theme="dark"] .kpi-value,
+[data-theme="dark"] .kpi-number,
+[data-theme="dark"] .navigation a,
+[data-theme="dark"] .logo,
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
@@ -418,7 +788,13 @@ header {
     color: var(--color-text-dark);
 }
 
-/* حقول الإدخال */
+[data-theme="dark"] .stat-number {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   13. Dark Mode — الحقول
+   ============================================ */
 [data-theme="dark"] input,
 [data-theme="dark"] select,
 [data-theme="dark"] textarea {
@@ -438,7 +814,9 @@ header {
     border-color: #3B82F6;
 }
 
-/* الشارات والحدود */
+/* ============================================
+   14. Dark Mode — Badges والحالات
+   ============================================ */
 [data-theme="dark"] .status-available,
 [data-theme="dark"] .result-badge.available,
 [data-theme="dark"] .badge-active,
@@ -460,7 +838,14 @@ header {
     color: #FCA5A5;
 }
 
-/* الجداول */
+[data-theme="dark"] .payment-option:has(input:checked) {
+    background: rgba(249, 115, 22, 0.15);
+    border-color: var(--color-accent);
+}
+
+/* ============================================
+   15. Dark Mode — الجداول
+   ============================================ */
 [data-theme="dark"] .dashboard-table thead,
 [data-theme="dark"] .admin-table thead {
     background: #0F172A;
@@ -477,7 +862,9 @@ header {
     background: #1E293B;
 }
 
-/* الفوتر */
+/* ============================================
+   16. Dark Mode — الفوتر
+   ============================================ */
 [data-theme="dark"] .footer {
     background: #020617;
 }
@@ -487,7 +874,15 @@ header {
     background: #020617;
 }
 
-/* الـ Modal */
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-brand p,
+[data-theme="dark"] .footer-bottom p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================
+   17. Dark Mode — Modals وDrawers
+   ============================================ */
 [data-theme="dark"] .modal-box {
     background: #1E293B;
     color: var(--color-text-dark);
@@ -501,7 +896,6 @@ header {
     color: #94A3B8;
 }
 
-/* الـ Drawer */
 [data-theme="dark"] .review-drawer {
     background: #1E293B;
 }
@@ -510,7 +904,9 @@ header {
     background: #0F172A;
 }
 
-/* أزرار outline */
+/* ============================================
+   18. Dark Mode — أزرار Outline
+   ============================================ */
 [data-theme="dark"] .btn-outline {
     border-color: #3B82F6;
     color: #3B82F6;
@@ -521,14 +917,49 @@ header {
     color: white;
 }
 
-/* الفوتر links */
-[data-theme="dark"] .footer-links a,
-[data-theme="dark"] .footer-brand p,
-[data-theme="dark"] .footer-bottom p {
-    color: rgba(255, 255, 255, 0.65);
+/* ============================================
+   19. Dark Mode — أيقونات معلومات التواصل
+   ============================================ */
+[data-theme="dark"] .info-icon-phone { background: #1E3A8A; }
+[data-theme="dark"] .info-icon-email { background: #78350F; }
+[data-theme="dark"] .info-icon-address { background: #064E3B; }
+[data-theme="dark"] .info-icon-hours { background: #7C2D12; }
+
+/* ============================================
+   20. Dark Mode — عناصر متنوعة
+   ============================================ */
+[data-theme="dark"] .fc-pricing-features li {
+    color: var(--color-text-dark);
 }
 
-/* انتقالات سلسة عند التبديل */
+[data-theme="dark"] .info-row {
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .cell-mono {
+    background: #0F172A;
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: #334155;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .theme-toggle-fixed {
+    background: #1E293B;
+}
+
+/* ============================================
+   21. Smooth transitions
+   ============================================ */
 body,
 header,
 .footer,
@@ -549,79 +980,386 @@ header,
 .faq-item,
 .legal-content,
 .legal-toc,
-.booking-card {
+.booking-card,
+.contact-form-wrap,
+.quick-contacts,
+.spec-item,
+.company-card,
+.fc-benefit-card,
+.fc-pricing-card,
+.fc-step-card,
+.register-container,
+.faq-no-results,
+.no-results-message,
+.sort-select,
+.gallery-main {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-
 /* ============================================
-   11. زر تبديل الوضع (Theme Toggle Button)
+   22. ✅ Notification Bell (Global)
    ============================================ */
-.theme-toggle {
+.notif-bell-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.notif-bell {
+    position: relative;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    font-size: 18px;
-    cursor: pointer;
+    border: none;
+    color: var(--color-text-dark);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s, color 0.2s, transform 0.3s;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
     padding: 0;
-    line-height: 1;
     flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1;
 }
 
-.theme-toggle:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
-    transform: rotate(20deg);
+.notif-bell:hover {
+    background: var(--color-background);
+    color: var(--color-primary);
+    transform: translateY(-1px);
 }
 
-/* في الوضع الليلي */
-[data-theme="dark"] .theme-toggle {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+.notif-bell.active {
+    background: var(--color-background);
+    color: var(--color-primary);
 }
 
-[data-theme="dark"] .theme-toggle:hover {
-    background: var(--color-accent);
-    color: white;
+[data-theme="dark"] .notif-bell {
+    color: #CBD5E1;
 }
 
-/* الزر الثابت (في login/register) */
-.theme-toggle-fixed {
-    position: fixed;
-    top: var(--space-3);
-    inset-inline-end: var(--space-3);
-    background: var(--color-white);
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .theme-toggle-fixed {
+[data-theme="dark"] .notif-bell:hover,
+[data-theme="dark"] .notif-bell.active {
     background: #1E293B;
-}
-
-/* في الـ admin header */
-[data-theme="dark"] .admin-header .theme-toggle {
-    border-color: var(--color-accent);
     color: var(--color-accent);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .theme-toggle {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
-    }
+.notif-badge {
+    position: absolute;
+    top: 4px;
+    inset-inline-end: 4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--color-error);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-white);
+    font-family: var(--font-main);
+    line-height: 1;
+}
 
-    .theme-toggle-fixed {
-        top: 12px;
-        inset-inline-end: 12px;
+[data-theme="dark"] .notif-badge {
+    border-color: #1E293B;
+}
+
+/* --- الـ Dropdown --- */
+.notif-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    inset-inline-start: 0;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    z-index: 9999;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+    pointer-events: none;
+}
+
+.notif-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+[data-theme="dark"] .notif-dropdown {
+    background: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.notif-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+[data-theme="dark"] .notif-dropdown-header {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+.notif-dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+
+.notif-mark-all-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    height: auto;
+}
+
+.notif-mark-all-btn:hover {
+    background: var(--color-trust-bg);
+}
+
+[data-theme="dark"] .notif-mark-all-btn {
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .notif-mark-all-btn:hover {
+    background: #334155;
+}
+
+.notif-dropdown-list {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.notif-dropdown-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+
+.notif-dropdown-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.notif-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.notif-dropdown-item:hover {
+    background: var(--color-background);
+}
+
+.notif-dropdown-item.unread {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.04) 0%, transparent 100%);
+}
+
+.notif-dropdown-item.unread::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 3px;
+    background: var(--color-accent);
+    border-radius: 0 3px 3px 0;
+}
+
+[data-theme="dark"] .notif-dropdown-item {
+    border-color: #334155;
+}
+
+[data-theme="dark"] .notif-dropdown-item:hover {
+    background: #0F172A;
+}
+
+[data-theme="dark"] .notif-dropdown-item.unread {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, transparent 100%);
+}
+
+.notif-dropdown-item-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--color-trust-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+[data-theme="dark"] .notif-dropdown-item-icon {
+    background: #334155;
+}
+
+.notif-dropdown-item-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.notif-dropdown-item-body strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-dropdown-item-body span {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-dropdown-item-body small {
+    font-size: 11px;
+    color: var(--color-text-gray);
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+.notif-dropdown-empty {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.notif-dropdown-empty .notif-empty-icon {
+    font-size: 48px;
+    opacity: 0.25;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.notif-dropdown-empty p {
+    font-size: 13px;
+    color: var(--color-text-gray);
+    margin: 0;
+}
+
+.notif-dropdown-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 12px 18px;
+    background: var(--color-background);
+    text-align: center;
+}
+
+[data-theme="dark"] .notif-dropdown-footer {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+.notif-dropdown-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.notif-dropdown-footer a:hover {
+    color: var(--color-accent);
+    gap: 10px;
+}
+
+[data-theme="dark"] .notif-dropdown-footer a {
+    color: var(--color-accent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .notif-dropdown {
+        width: 320px;
+        inset-inline-start: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notif-dropdown {
+        width: calc(100vw - 32px);
+        inset-inline-start: -100px;
+    }
+}
+
+/* ============================================
+   23. ✅ Header User Area (جرس + بروفايل)
+   ============================================ */
+.header-user-area {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    margin-inline-end: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.header-user-area:empty {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-user-area {
+        margin-inline-end: 8px;
+        gap: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-user-area {
+        margin-inline-end: 4px;
     }
 }

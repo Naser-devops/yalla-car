@@ -1,0 +1,72 @@
+/* ============================================
+   Yalla Car — أنماط إضافية لصفحة التسجيل
+   (تعتمد على login.css)
+   ============================================ */
+
+
+/* ============================================
+   1. رأس الصفحة (عنوان + وصف)
+   ============================================ */
+.register-header {
+    margin-bottom: var(--space-4);
+    text-align: start;
+}
+
+.register-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.register-subtitle {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   2. حقل الهاتف (RTL fix)
+   ============================================ */
+#registerPhone {
+    direction: ltr;
+    text-align: right;
+}
+
+#registerPhone::placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* ============================================
+   3. نموذج التسجيل — أوسع قليلاً
+   ============================================ */
+#registerForm {
+    gap: var(--space-3);
+}
+
+
+/* ============================================
+   4. Dark Mode
+   ============================================ */
+[data-theme="dark"] .register-title {
+    color: #F1F5F9;
+}
+
+
+/* ============================================
+   5. Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .register-title {
+        font-size: 22px;
+    }
+
+    .register-subtitle {
+        font-size: 13px;
+    }
+}

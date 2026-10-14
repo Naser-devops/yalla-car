@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -25,7 +25,7 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" data-i18n="nav.cars">السيارات</a>
             <a href="about.html" data-i18n="nav.about">من نحن</a>
             <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
@@ -37,7 +37,6 @@
         </div>
     </header>
 
-    <!-- ========== Hero ========== -->
     <section class="faq-hero">
         <div class="container">
             <h1 class="faq-hero-title" data-i18n="faq.hero.title">كيف نساعدك؟</h1>
@@ -45,7 +44,6 @@
                 ابحث في الأسئلة الشائعة، أو تواصل معنا مباشرة إن لم تجد إجابة
             </p>
 
-            <!-- شريط البحث -->
             <div class="faq-search-wrap">
                 <span class="faq-search-icon">🔍</span>
                 <input
@@ -61,11 +59,9 @@
         </div>
     </section>
 
-    <!-- ========== التصنيفات + القائمة ========== -->
     <section class="faq-main">
         <div class="container">
 
-            <!-- التصنيفات -->
             <div class="faq-categories" id="faqCategories">
                 <button type="button" class="faq-cat active" data-cat="all">
                     <span data-i18n="faq.cat.all">الكل</span>
@@ -87,10 +83,8 @@
                 </button>
             </div>
 
-            <!-- قائمة الأسئلة -->
             <div class="faq-list" id="faqList">
 
-                <!-- ============ الحجز ============ -->
                 <div class="faq-group" data-category="booking">
                     <h2 class="faq-group-title">
                         <span class="faq-group-icon">📋</span>
@@ -138,7 +132,6 @@
                     </details>
                 </div>
 
-                <!-- ============ الدفع ============ -->
                 <div class="faq-group" data-category="payment">
                     <h2 class="faq-group-title">
                         <span class="faq-group-icon">💳</span>
@@ -176,7 +169,6 @@
                     </details>
                 </div>
 
-                <!-- ============ الإلغاء ============ -->
                 <div class="faq-group" data-category="cancel">
                     <h2 class="faq-group-title">
                         <span class="faq-group-icon">🔄</span>
@@ -204,7 +196,6 @@
                     </details>
                 </div>
 
-                <!-- ============ الشركات ============ -->
                 <div class="faq-group" data-category="companies">
                     <h2 class="faq-group-title">
                         <span class="faq-group-icon">🏢</span>
@@ -242,7 +233,6 @@
                     </details>
                 </div>
 
-                <!-- ============ السلامة ============ -->
                 <div class="faq-group" data-category="safety">
                     <h2 class="faq-group-title">
                         <span class="faq-group-icon">🛡️</span>
@@ -280,7 +270,6 @@
                     </details>
                 </div>
 
-                <!-- ========== لا نتائج ========== -->
                 <div class="faq-no-results" id="faqNoResults">
                     <div class="no-results-icon">🔍</div>
                     <h3 data-i18n="faq.noResults.title">لم نجد نتائج</h3>
@@ -292,7 +281,6 @@
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
     <section class="faq-cta">
         <div class="container">
             <div class="faq-cta-box">
@@ -306,7 +294,6 @@
         </div>
     </section>
 
-    <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -360,9 +347,13 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/faq.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js + حذف pagination.js لأنها غير ضرورية) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/faq.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="adminLogin.metaTitle">دخول الأدمن — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin-login.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body class="admin-login-body">
+
+    <div class="admin-security-badge">
+        <span>🔒</span>
+        <span data-i18n="adminLogin.secure">اتصال آمن</span>
+    </div>
+
+    <div class="admin-login-container">
+
+        <div class="admin-login-logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+            <span class="admin-badge-tag">ADMIN</span>
+        </div>
+
+        <div class="admin-login-header">
+            <h1 class="admin-login-title" data-i18n="adminLogin.title">دخول لوحة الأدمن</h1>
+            <p class="admin-login-subtitle" data-i18n="adminLogin.subtitle">
+                هذه المنطقة مخصصة للمسؤولين فقط
+            </p>
+        </div>
+
+        <form class="admin-login-form" id="adminLoginForm">
+
+            <div class="admin-field">
+                <label for="adminEmail" data-i18n="adminLogin.email">البريد الإلكتروني الإداري</label>
+                <input id="adminEmail" type="email" placeholder="admin@yallacar.jo" autocomplete="off" required>
+            </div>
+
+            <div class="admin-field">
+                <label for="adminPassword" data-i18n="adminLogin.password">كلمة مرور الأدمن</label>
+                <input id="adminPassword" type="password" placeholder="••••••••" autocomplete="off" required>
+            </div>
+
+            <div class="admin-warning">
+                <span class="warning-icon">⚠️</span>
+                <span data-i18n="adminLogin.warning">
+                    تحذير: هذا النظام مراقب. أي محاولة دخول غير مصرح بها تُسجّل.
+                </span>
+            </div>
+
+            <button type="submit" class="admin-login-submit" data-i18n="adminLogin.submit">
+                تسجيل الدخول كأدمن
+            </button>
+
+        </form>
+
+        <a href="../index.html" class="admin-login-back" data-i18n="adminLogin.back">
+            → العودة للصفحة الرئيسية
+        </a>
+
+    </div>
+
+    <div class="admin-login-toast" id="adminToast">
+        <span class="toast-ico">✓</span>
+        <span id="adminToastMsg"></span>
+    </div>
+
+    <!-- ✅ السكربتات (تم حذف auth-ui.js — بلا فايدة على صفحة الأدمن) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/admin-login.js"></script>
+</body>
+
+</html>

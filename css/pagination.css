@@ -1,0 +1,190 @@
+/* ============================================
+   Yalla Car — أنماط Pagination (شامل)
+   ============================================ */
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 16px 20px;
+    margin-top: 20px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+}
+
+[data-theme="dark"] .pagination-container {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+/* ============================================
+   Info (عرض x-y من z)
+   ============================================ */
+.pagination-info {
+    font-size: 14px;
+    color: var(--color-text-gray);
+    font-family: var(--font-main);
+}
+
+.pagination-info strong {
+    color: var(--color-text-dark);
+    font-weight: 800;
+    margin: 0 2px;
+}
+
+/* ============================================
+   Controls
+   ============================================ */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ============================================
+   أزرار الصفحات (تصميم احترافي)
+   ============================================ */
+.page-btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.page-btn:hover:not(:disabled):not(.active) {
+    background: var(--color-trust-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.page-btn.active {
+    background: linear-gradient(135deg, var(--color-primary), #2A4FA8);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+    cursor: default;
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-btn svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* زر السابق/التالي */
+.page-prev,
+.page-next {
+    padding: 0 12px;
+}
+
+/* ============================================
+   Ellipsis (...)
+   ============================================ */
+.page-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 40px;
+    color: var(--color-text-gray);
+    font-weight: 800;
+    user-select: none;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   Dark Mode
+   ============================================ */
+[data-theme="dark"] .page-btn {
+    border-color: #334155;
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .page-btn:hover:not(:disabled):not(.active) {
+    background: #0F172A;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .page-btn.active {
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+    border-color: var(--color-accent);
+    color: white;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+}
+
+[data-theme="dark"] .pagination-info {
+    color: #94A3B8;
+}
+
+[data-theme="dark"] .pagination-info strong {
+    color: #F1F5F9;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 640px) {
+    .pagination-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .pagination-info {
+        text-align: center;
+        font-size: 13px;
+        order: 2;
+    }
+
+    .pagination-controls {
+        justify-content: center;
+        order: 1;
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        min-width: 36px;
+        height: 36px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .page-ellipsis {
+        min-width: 24px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    /* إخفاء الأرقام الوسطى في الشاشات الصغيرة جداً */
+    .page-btn:not(.active):not(.page-prev):not(.page-next) {
+        display: none;
+    }
+
+    .page-ellipsis {
+        display: none;
+    }
+}

@@ -13,7 +13,52 @@
 
 
 /* ============================================
-   2. التابات
+   2. ✅ رأس الصفحة (العنوان + زر تصفح)
+   ============================================ */
+.bookings-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.bookings-page-header .section-title {
+    margin-bottom: 0;
+}
+
+.btn-browse-cars {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 var(--space-4);
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+    color: white;
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.btn-browse-cars:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+}
+
+.btn-browse-cars span:first-child {
+    font-size: 16px;
+}
+
+
+/* ============================================
+   3. التابات
    ============================================ */
 .bookings-tabs {
     display: flex;
@@ -37,6 +82,9 @@
     border-radius: 0;
     white-space: nowrap;
     transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .bookings-tab:hover {
@@ -57,9 +105,28 @@
     border-radius: 2px;
 }
 
+.tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 11px;
+    background: var(--color-background);
+    color: var(--color-text-gray);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.bookings-tab.active .tab-count {
+    background: var(--color-primary);
+    color: white;
+}
+
 
 /* ============================================
-   3. قائمة الحجوزات
+   4. قائمة الحجوزات
    ============================================ */
 .bookings-list {
     display: flex;
@@ -69,7 +136,7 @@
 
 
 /* ============================================
-   4. كارت الحجز
+   5. كارت الحجز
    ============================================ */
 .booking-card {
     display: grid;
@@ -89,7 +156,7 @@
 }
 
 
-/* ---- 4.1 الصورة ---- */
+/* ---- 5.1 الصورة ---- */
 .booking-card-image img {
     width: 100%;
     height: 100%;
@@ -98,7 +165,7 @@
 }
 
 
-/* ---- 4.2 الجسم ---- */
+/* ---- 5.2 الجسم ---- */
 .booking-card-body {
     padding: var(--space-3);
     display: flex;
@@ -112,6 +179,7 @@
     align-items: center;
     gap: var(--space-2);
     margin-bottom: var(--space-1);
+    flex-wrap: wrap;
 }
 
 .booking-card-name {
@@ -127,7 +195,7 @@
 }
 
 
-/* ---- 4.3 شارات الحالة ---- */
+/* ---- 5.3 شارات الحالة ---- */
 .booking-status {
     display: inline-block;
     padding: 4px 12px;
@@ -158,11 +226,12 @@
 }
 
 
-/* ---- 4.4 التواريخ ---- */
+/* ---- 5.4 التواريخ ---- */
 .booking-card-dates {
     display: flex;
     gap: var(--space-4);
     margin-top: var(--space-2);
+    flex-wrap: wrap;
 }
 
 .booking-date {
@@ -183,7 +252,7 @@
 }
 
 
-/* ---- 4.5 الأسفل (السعر + الأزرار) ---- */
+/* ---- 5.5 الأسفل ---- */
 .booking-card-footer {
     padding: var(--space-3);
     background: var(--color-background);
@@ -210,7 +279,7 @@
 
 
 /* ============================================
-   5. الأزرار (Outline)
+   6. الأزرار (Outline)
    ============================================ */
 .btn-outline {
     display: inline-flex;
@@ -258,37 +327,7 @@
 
 
 /* ============================================
-   6. Responsive
-   ============================================ */
-@media (max-width: 1024px) {
-    .booking-card {
-        grid-template-columns: 180px 1fr auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .booking-card {
-        grid-template-columns: 1fr;
-    }
-
-    .booking-card-image img {
-        height: 180px;
-    }
-
-    .booking-card-footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .booking-card-actions {
-        flex-direction: row;
-        width: auto;
-    }
-}
-
-/* ============================================
-   7. كارت الحجز الملغى (Visual Feedback)
+   7. كارت الحجز الملغى
    ============================================ */
 .booking-card.cancelled {
     opacity: 0.65;
@@ -307,4 +346,116 @@
 
 .booking-card.cancelled:hover .booking-card-image img {
     filter: grayscale(0%);
+}
+
+
+/* ============================================
+   8. ✅ زر "تصفح المزيد من السيارات"
+   ============================================ */
+.bookings-browse-more {
+    margin-top: var(--space-5);
+    text-align: center;
+}
+
+.btn-browse-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 56px;
+    padding: 0 var(--space-5);
+    background: var(--color-white);
+    color: var(--color-primary);
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+}
+
+.btn-browse-more:hover {
+    background: var(--color-primary);
+    color: white;
+    border-style: solid;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(30, 58, 138, 0.25);
+}
+
+.btn-browse-more span:first-child {
+    font-size: 20px;
+}
+
+.btn-browse-more span:last-child {
+    transition: transform 0.2s;
+}
+
+.btn-browse-more:hover span:last-child {
+    transform: translateX(-6px);
+}
+
+
+/* ============================================
+   9. Dark Mode
+   ============================================ */
+[data-theme="dark"] .btn-browse-more {
+    background: #1E293B;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .btn-browse-more:hover {
+    background: var(--color-accent);
+    color: white;
+}
+
+[data-theme="dark"] .btn-browse-cars {
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+}
+
+
+/* ============================================
+   10. Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .booking-card {
+        grid-template-columns: 180px 1fr auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .bookings-page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-browse-cars {
+        width: 100%;
+    }
+
+    .booking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card-image img {
+        height: 180px;
+    }
+
+    .booking-card-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .booking-card-actions {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .btn-browse-more {
+        width: 100%;
+        padding: 0 var(--space-3);
+    }
 }

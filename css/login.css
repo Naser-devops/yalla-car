@@ -82,46 +82,61 @@
     color: var(--color-accent);
 }
 
-.auth-tabs {
-    display: flex;
-    gap: var(--space-3);
-    border-bottom: 1px solid var(--color-border);
+
+/* ============================================
+   4.1 ✅ تبويبات الدور (عميل / شركة) — جديد
+   ============================================ */
+.auth-role-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
     margin-bottom: var(--space-4);
+    padding: 6px;
+    background: var(--color-background);
+    border-radius: 14px;
 }
 
-.auth-tab {
-    background: none;
+.auth-role-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding: 0 var(--space-3);
+    background: transparent;
     border: none;
-    padding: var(--space-2) 0;
+    border-radius: 10px;
     font-family: var(--font-main);
     font-size: var(--font-size-body);
-    font-weight: var(--font-weight-semibold);
+    font-weight: 700;
     color: var(--color-text-gray);
     cursor: pointer;
-    position: relative;
-    height: auto;
-    border-radius: 0;
-    transition: color 0.2s;
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s;
 }
 
-.auth-tab:hover {
+.auth-role-tab:hover {
     color: var(--color-text-dark);
 }
 
-.auth-tab.active {
+.auth-role-tab.active {
+    background: var(--color-white);
     color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.12);
 }
 
-.auth-tab.active::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    inset-inline: 0;
-    height: 3px;
-    background: var(--color-accent);
-    border-radius: 2px;
+.role-tab-icon {
+    font-size: 20px;
+    line-height: 1;
 }
 
+.auth-role-tab.active .role-tab-icon {
+    transform: scale(1.1);
+}
+
+
+/* ============================================
+   4.2 النماذج (عميل / شركة)
+   ============================================ */
 .auth-form {
     display: none;
     flex-direction: column;
@@ -229,25 +244,42 @@
 
 
 /* ============================================
-   4.1 رابط دخول الأدمن
+   4.3 ✅ صندوق "سجّل شركتك" (داخل تبويب الشركة) — جديد
    ============================================ */
-.admin-access-link {
+.auth-register-company-box {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px dashed var(--color-border);
+    text-align: center;
+}
+
+.register-company-text {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-2);
+}
+
+.auth-register-company-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: auto;
-    padding-top: var(--space-4);
-    font-size: 13px;
-    color: var(--color-text-gray);
+    width: 100%;
+    height: 48px;
+    background: var(--color-trust-bg);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-control);
     text-decoration: none;
-    font-weight: var(--font-weight-semibold);
-    transition: color 0.2s;
-    align-self: center;
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-.admin-access-link:hover {
-    color: var(--color-primary);
+.auth-register-company-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-1px);
 }
 
 
@@ -299,35 +331,35 @@
     height: auto;
 }
 
-
 /* ============================================
-   6. Toast Notification
+   6. Toast Notification (تحت — موحّد)
    ============================================ */
 .auth-toast {
     position: fixed;
-    top: 40px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%) translateY(-100px);
-    background: var(--color-text-dark);
-    color: var(--color-white);
-    padding: 14px var(--space-4);
-    border-radius: 14px;
+    bottom: 30px;
+    inset-inline-end: 30px;
+    transform: translateY(100px);
+    background: linear-gradient(135deg, #047857, #10B981);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: 10px;
     font-family: var(--font-main);
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-bold);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    z-index: 2000;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
+    max-width: 340px;
 }
 
 .auth-toast.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .auth-toast.success {
@@ -350,100 +382,40 @@
     flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+    .auth-toast {
+        inset-inline: 16px;
+        inset-inline-end: 16px;
+        max-width: calc(100% - 32px);
+    }
+}
 /* ============================================
-   8. روابط إضافية (سجل شركة + حسابات تجريبية)
+   7. Dark Mode
    ============================================ */
-.auth-extra-links {
-    margin-top: var(--space-4);
-    padding-top: var(--space-3);
-    border-top: 1px solid var(--color-border);
-}
-
-.auth-register-company {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 44px;
-    background: var(--color-trust-bg);
-    color: var(--color-primary);
-    border-radius: var(--radius-control);
-    text-decoration: none;
-    font-size: var(--font-size-small);
-    font-weight: 700;
-    transition: background 0.2s, transform 0.2s;
-    margin-bottom: var(--space-3);
-}
-
-.auth-register-company:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: translateY(-1px);
-}
-
-.auth-test-accounts {
-    background: var(--color-background);
-    border: 1px dashed var(--color-border);
-    border-radius: var(--radius-control);
-    padding: var(--space-2);
-    font-size: 13px;
-}
-
-.test-accounts-title {
-    font-weight: 800;
-    color: var(--color-text-dark);
-    margin-bottom: 6px;
-    font-size: 13px;
-}
-
-.test-accounts-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.test-accounts-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    color: var(--color-text-gray);
-}
-
-.test-accounts-list strong {
-    color: var(--color-text-dark);
-    font-weight: 700;
-}
-
-.test-accounts-list code {
-    font-family: 'Courier New', monospace;
-    background: var(--color-white);
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: var(--color-primary);
-    font-size: 11px;
-    direction: ltr;
-}
-
-/* Dark mode */
-[data-theme="dark"] .auth-register-company {
-    background: rgba(59, 130, 246, 0.15);
-    color: #60A5FA;
-}
-
-[data-theme="dark"] .auth-test-accounts {
-    background: #1E293B;
-    border-color: #334155;
-}
-
-[data-theme="dark"] .test-accounts-list code {
+[data-theme="dark"] .auth-role-tabs {
     background: #0F172A;
 }
 
+[data-theme="dark"] .auth-role-tab.active {
+    background: #1E293B;
+    color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .auth-register-company-btn {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60A5FA;
+    border-color: #60A5FA;
+}
+
+[data-theme="dark"] .auth-register-company-btn:hover {
+    background: #3B82F6;
+    color: white;
+}
+
+
 /* ============================================
-   7. Responsive
+   8. Responsive
    ============================================ */
 @media (max-width: 768px) {
     .auth-container {
@@ -461,6 +433,15 @@
 
     .auth-logo {
         font-size: 24px;
+    }
+
+    .auth-role-tab {
+        height: 46px;
+        font-size: var(--font-size-small);
+    }
+
+    .role-tab-icon {
+        font-size: 18px;
     }
 
     .auth-toast {

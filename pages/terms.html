@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/legal.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/legal.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -25,7 +25,7 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" data-i18n="nav.cars">السيارات</a>
             <a href="about.html" data-i18n="nav.about">من نحن</a>
             <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
@@ -37,7 +37,6 @@
         </div>
     </header>
 
-    <!-- ========== Hero ========== -->
     <section class="legal-hero">
         <div class="container">
             <div class="legal-badge">
@@ -57,12 +56,10 @@
         </div>
     </section>
 
-    <!-- ========== المحتوى ========== -->
     <section class="legal-main">
         <div class="container">
             <div class="legal-layout">
 
-                <!-- ========== TOC (Sidebar) ========== -->
                 <aside class="legal-toc">
                     <h3 class="toc-title" data-i18n="legal.toc">المحتويات</h3>
                     <nav class="toc-nav">
@@ -109,7 +106,6 @@
                     </nav>
                 </aside>
 
-                <!-- ========== المحتوى ========== -->
                 <article class="legal-content">
 
                     <section class="legal-section" id="section-1">
@@ -299,7 +295,6 @@
                         </p>
                     </section>
 
-                    <!-- تاريخ آخر تحديث -->
                     <div class="legal-footer-note">
                         <span>📅</span>
                         <p>
@@ -314,7 +309,6 @@
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
     <section class="legal-cta">
         <div class="container">
             <div class="legal-cta-box">
@@ -326,7 +320,6 @@
         </div>
     </section>
 
-    <!-- ========== الفوتر ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -381,15 +374,16 @@
         </div>
     </footer>
 
-    <!-- ========== زر العودة للأعلى ========== -->
     <button class="back-to-top" id="backToTop" aria-label="عودة للأعلى">
         <span>↑</span>
     </button>
 
-    <!-- ✅ السكربتات الصحيحة -->
-    <script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/legal.js"></script>
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/legal.js"></script>
 </body>
 
 </html>

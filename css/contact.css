@@ -421,33 +421,34 @@ a.info-card-value:hover {
 
 
 /* ============================================
-   7. Toast
+   7. Toast (تحت — موحّد)
    ============================================ */
 .contact-toast {
     position: fixed;
-    top: 40px;
-    inset-inline-start: 50%;
-    transform: translateX(-50%) translateY(-100px);
-    background: var(--color-text-dark);
-    color: var(--color-white);
-    padding: 14px var(--space-4);
-    border-radius: 14px;
+    bottom: 30px;
+    inset-inline-end: 30px;
+    transform: translateY(100px);
+    background: linear-gradient(135deg, #047857, #10B981);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: 10px;
     font-family: var(--font-main);
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-bold);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    z-index: 2000;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
+    max-width: 340px;
 }
 
 .contact-toast.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .contact-toast.success {
@@ -470,7 +471,13 @@ a.info-card-value:hover {
     flex-shrink: 0;
 }
 
-
+@media (max-width: 768px) {
+    .contact-toast {
+        inset-inline: 16px;
+        inset-inline-end: 16px;
+        max-width: calc(100% - 32px);
+    }
+}
 /* ============================================
    8. Responsive
    ============================================ */

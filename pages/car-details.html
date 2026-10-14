@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/car-details.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/car-details.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
@@ -24,10 +25,10 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" class="active" data-i18n="nav.cars">السيارات</a>
-            <a href="index.html#partners" data-i18n="nav.companies">الشركات</a>
-            <a href="index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+            <a href="../index.html#partners" data-i18n="nav.companies">الشركات</a>
+            <a href="../index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
         </nav>
 
         <div class="action">
@@ -39,7 +40,7 @@
     <main class="container car-details-page">
 
         <nav class="breadcrumb">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <span class="sep">/</span>
             <a href="search.html" data-i18n="nav.cars">السيارات</a>
             <span class="sep">/</span>
@@ -51,13 +52,13 @@
             <div class="car-gallery">
 
                 <div class="gallery-main">
-                    <img id="mainImage" src="images/kia-picanto-2023.jpg" alt="Car">
+                    <img id="mainImage" src="../images/kia-picanto-2023.jpg" alt="Car">
                 </div>
 
                 <div class="gallery-thumbs">
-                    <img class="thumb active" src="images/kia-picanto-2023.jpg" alt="صورة 1">
-                    <img class="thumb" src="images/kia-picanto-2023-side.jpg" alt="صورة 2">
-                    <img class="thumb" src="images/kia-picanto-2023-rear.jpg" alt="صورة 3">
+                    <img class="thumb active" src="../images/kia-picanto-2023.jpg" alt="صورة 1">
+                    <img class="thumb" src="../images/kia-picanto-2023-side.jpg" alt="صورة 2">
+                    <img class="thumb" src="../images/kia-picanto-2023-rear.jpg" alt="صورة 3">
                 </div>
 
             </div>
@@ -164,26 +165,26 @@
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.aboutTitle">من نحن</h4>
-                    <a href="#" data-i18n="footer.aboutUs">عن يلا كار</a>
-                    <a href="#" data-i18n="footer.contact">تواصل معنا</a>
+                    <a href="about.html" data-i18n="footer.aboutUs">عن يلا كار</a>
+                    <a href="contact.html" data-i18n="footer.contact">تواصل معنا</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.companiesTitle">للشركات</h4>
-                    <a href="login.html" data-i18n="footer.register">سجّل شركتك</a>
+                    <a href="register-company.html" data-i18n="footer.register">سجّل شركتك</a>
                     <a href="login.html" data-i18n="footer.dashboard">لوحة التحكم</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.helpTitle">مساعدة</h4>
-                    <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
-                    <a href="#" data-i18n="footer.refund">سياسة الاسترجاع</a>
+                    <a href="faq.html" data-i18n="footer.faq">الأسئلة الشائعة</a>
+                    <a href="terms.html" data-i18n="footer.refund">سياسة الاسترجاع</a>
                 </div>
 
                 <div class="footer-links">
                     <h4 data-i18n="footer.legalTitle">الشروط</h4>
-                    <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
-                    <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                    <a href="terms.html" data-i18n="footer.terms">الشروط والأحكام</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
                 </div>
             </div>
 
@@ -192,9 +193,13 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/car-details.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/car-details.js"></script>
 </body>
 
 </html>

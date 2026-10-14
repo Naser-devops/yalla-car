@@ -9,25 +9,39 @@
     if (!slider) return;
 
     const track = document.getElementById('testimonialsTrack');
+    if (!track) return;
+
     const cards = track.querySelectorAll('.testimonial-card');
     const prevBtn = document.getElementById('sliderPrev');
     const nextBtn = document.getElementById('sliderNext');
     const dotsContainer = document.getElementById('sliderDots');
 
     const totalSlides = cards.length;
+    if (totalSlides === 0) return;
+
     let currentIndex = 0;
     let autoplayTimer = null;
     let isPaused = false;
 
     // ============================================
+    // 0. ✅ إضافة aria-live للتأثيرات الحيوية
+    // ============================================
+    track.setAttribute('aria-live', 'polite');
+    track.setAttribute('aria-atomic', 'false');
+    slider.setAttribute('role', 'region');
+    slider.setAttribute('aria-label', 'آراء العملاء');
+
+    // ============================================
     // 1. إنشاء النقاط
     // ============================================
     function createDots() {
+        if (!dotsContainer) return;
+
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
             dot.type = 'button';
             dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.setAttribute('aria-label', 'الشهادة رقم ' + (i + 1) + ' من ' + totalSlides);
             dot.addEventListener('click', function () {
                 goToSlide(i);
             });
@@ -39,9 +53,11 @@
     // 2. تحديث النقاط النشطة
     // ============================================
     function updateDots() {
+        if (!dotsContainer) return;
         const dots = dotsContainer.querySelectorAll('.slider-dot');
         dots.forEach(function (dot, i) {
             dot.classList.toggle('active', i === currentIndex);
+            dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
         });
     }
 
@@ -54,12 +70,10 @@
 
         currentIndex = index;
 
-        // حساب الإزاحة
         const cardWidth = cards[0].offsetWidth;
         const gap = parseInt(getComputedStyle(track).gap) || 24;
         const offset = currentIndex * (cardWidth + gap);
 
-        // في RTL، الاتجاه معكوس
         const isRTL = document.documentElement.dir === 'rtl';
         track.style.transform = 'translateX(' + (isRTL ? offset : -offset) + 'px)';
 
@@ -103,12 +117,11 @@
     }
 
     // ============================================
-    // 6. إيقاف عند hover
+    // 6. إيقاف عند hover / touch
     // ============================================
     slider.addEventListener('mouseenter', function () { isPaused = true; });
     slider.addEventListener('mouseleave', function () { isPaused = false; });
 
-    // إيقاف عند لمس الموبايل
     slider.addEventListener('touchstart', function () { isPaused = true; }, { passive: true });
     slider.addEventListener('touchend', function () { isPaused = false; });
 
@@ -116,11 +129,7 @@
     // 7. إيقاف عند مغادرة التاب
     // ============================================
     document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-            isPaused = true;
-        } else {
-            isPaused = false;
-        }
+        isPaused = document.hidden;
     });
 
     // ============================================
@@ -145,7 +154,6 @@
 
         if (Math.abs(diff) < SWIPE_THRESHOLD) return;
 
-        // في RTL، السحب العكسي
         if (isRTL) {
             if (diff < 0) prevSlide();
             else nextSlide();
@@ -161,21 +169,17 @@
     // 9. لوحة المفاتيح
     // ============================================
     document.addEventListener('keydown', function (e) {
-        // فقط لو السلايدر بالشاشة
         const rect = slider.getBoundingClientRect();
         const inView = rect.top < window.innerHeight && rect.bottom > 0;
-
         if (!inView) return;
 
+        const isRTL = document.documentElement.dir === 'rtl';
+
         if (e.key === 'ArrowRight') {
-            const isRTL = document.documentElement.dir === 'rtl';
-            if (isRTL) prevSlide();
-            else nextSlide();
+            isRTL ? prevSlide() : nextSlide();
             restartAutoplay();
         } else if (e.key === 'ArrowLeft') {
-            const isRTL = document.documentElement.dir === 'rtl';
-            if (isRTL) nextSlide();
-            else prevSlide();
+            isRTL ? nextSlide() : prevSlide();
             restartAutoplay();
         }
     });
@@ -197,7 +201,6 @@
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.attributeName === 'dir') {
-                // انتظر قليلاً حتى يتم تطبيق اللغة
                 setTimeout(function () {
                     goToSlide(currentIndex);
                 }, 100);
@@ -205,7 +208,10 @@
         });
     });
 
-    observer.observe(document.documentElement, { attributes: true });
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['dir']
+    });
 
     // ============================================
     // 12. التشغيل
@@ -213,5 +219,7 @@
     createDots();
     goToSlide(0);
     startAutoplay();
+
+    console.log('✅ Testimonials Slider loaded with aria-live');
 
 })();

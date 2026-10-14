@@ -1,0 +1,572 @@
+/* ============================================
+   Yalla Car — أنماط Modal تفاصيل الحجز
+   ============================================ */
+
+
+/* ============================================
+   1. الـ Overlay
+   ============================================ */
+.bd-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.bd-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ============================================
+   2. البطاقة الرئيسية
+   ============================================ */
+.bd-modal {
+    background: var(--color-white);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: bd-fadeIn 0.3s ease;
+}
+
+.bd-overlay.active .bd-modal {
+    transform: scale(1) translateY(0);
+}
+
+@keyframes bd-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+[data-theme="dark"] .bd-modal {
+    background: #1E293B;
+    border: 1px solid #334155;
+}
+
+.bd-modal::-webkit-scrollbar { width: 8px; }
+.bd-modal::-webkit-scrollbar-track { background: transparent; }
+.bd-modal::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+[data-theme="dark"] .bd-modal::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+
+
+/* ============================================
+   3. زر الإغلاق
+   ============================================ */
+.bd-close {
+    position: absolute;
+    top: 16px;
+    inset-inline-end: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    color: #0F172A;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    line-height: 1;
+}
+
+.bd-close:hover {
+    background: #DC2626;
+    color: white;
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .bd-close {
+    background: #334155;
+    color: #F1F5F9;
+}
+
+
+/* ============================================
+   4. صورة السيارة
+   ============================================ */
+.bd-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background: var(--color-background);
+}
+
+.bd-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bd-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.bd-image-overlay {
+    position: absolute;
+    bottom: 20px;
+    inset-inline-start: 24px;
+    inset-inline-end: 24px;
+    z-index: 1;
+    color: white;
+}
+
+.bd-car-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.5px;
+}
+
+.bd-car-company {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+
+/* ============================================
+   5. جسم الـ Modal
+   ============================================ */
+.bd-body {
+    padding: 24px;
+}
+
+
+/* ============================================
+   6. رقم الحجز + الحالة
+   ============================================ */
+.bd-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+[data-theme="dark"] .bd-header-row {
+    border-color: #334155;
+}
+
+.bd-booking-id {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bd-booking-id-label {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    font-weight: 600;
+}
+
+.bd-booking-id-value {
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    letter-spacing: 0.5px;
+    direction: ltr;
+}
+
+.bd-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.bd-status-active {
+    background: #DCFCE7;
+    color: #047857;
+}
+
+.bd-status-pending {
+    background: #FEF3C7;
+    color: #B45309;
+}
+
+.bd-status-completed {
+    background: #DBEAFE;
+    color: #1E3A8A;
+}
+
+.bd-status-cancelled {
+    background: #FEE2E2;
+    color: #B91C1C;
+}
+
+[data-theme="dark"] .bd-status-active { background: #064E3B; color: #6EE7B7; }
+[data-theme="dark"] .bd-status-pending { background: #78350F; color: #FCD34D; }
+[data-theme="dark"] .bd-status-completed { background: #1E3A8A; color: #93C5FD; }
+[data-theme="dark"] .bd-status-cancelled { background: #7F1D1D; color: #FCA5A5; }
+
+
+/* ============================================
+   7. شبكة التفاصيل
+   ============================================ */
+.bd-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.bd-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--color-background);
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+[data-theme="dark"] .bd-detail-item {
+    background: #0F172A;
+}
+
+.bd-detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-trust-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+[data-theme="dark"] .bd-detail-icon {
+    background: #334155;
+}
+
+.bd-detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.bd-detail-label {
+    font-size: 11px;
+    color: var(--color-text-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.bd-detail-value {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    direction: ltr;
+    text-align: start;
+    word-break: break-word;
+}
+
+.bd-detail-item.bd-price-highlight .bd-detail-icon {
+    background: linear-gradient(135deg, var(--color-accent), #EA580C);
+    color: white;
+}
+
+.bd-detail-item.bd-price-highlight .bd-detail-value {
+    color: var(--color-accent);
+    font-size: 17px;
+}
+
+
+/* ============================================
+   8. Timeline
+   ============================================ */
+.bd-timeline-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--color-text-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .bd-timeline-title {
+    border-color: #334155;
+}
+
+.bd-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.bd-timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.bd-timeline-step:last-child {
+    padding-bottom: 0;
+}
+
+.bd-timeline-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 15px;
+    top: 32px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.bd-timeline-step.done:not(:last-child)::before {
+    background: var(--color-success);
+}
+
+[data-theme="dark"] .bd-timeline-step:not(:last-child)::before {
+    background: #334155;
+}
+
+[data-theme="dark"] .bd-timeline-step.done:not(:last-child)::before {
+    background: #10B981;
+}
+
+.bd-timeline-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    font-weight: 800;
+}
+
+.bd-timeline-step.done .bd-timeline-dot {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: white;
+}
+
+.bd-timeline-step.current .bd-timeline-dot {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+    box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.15);
+    animation: bd-pulse 2s infinite;
+}
+
+@keyframes bd-pulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.15); }
+    50% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+}
+
+[data-theme="dark"] .bd-timeline-dot {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+.bd-timeline-text {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.bd-timeline-text strong {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.bd-timeline-step:not(.done):not(.current) .bd-timeline-text strong {
+    color: var(--color-text-gray);
+    font-weight: 600;
+}
+
+.bd-timeline-text span {
+    font-size: 12px;
+    color: var(--color-text-gray);
+}
+
+
+/* ============================================
+   9. أزرار الإجراءات
+   ============================================ */
+.bd-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .bd-actions {
+    border-color: #334155;
+}
+
+.bd-btn {
+    height: 50px;
+    border-radius: 12px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.bd-btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.bd-btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.bd-btn-close {
+    background: transparent;
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-border);
+}
+
+.bd-btn-close:hover {
+    background: var(--color-background);
+    border-color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .bd-btn-close {
+    color: #F1F5F9;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .bd-btn-close:hover {
+    background: #0F172A;
+}
+/* ============================================
+   11. Quick Actions (وضع الشركة)
+   ============================================ */
+.bd-btn-quick-accept {
+    transition: all 0.2s;
+}
+
+.bd-btn-quick-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.bd-btn-quick-reject {
+    transition: all 0.2s;
+}
+
+.bd-btn-quick-reject:hover {
+    background: #DC2626 !important;
+    color: white !important;
+}
+
+/* ============================================
+   10. Responsive
+   ============================================ */
+@media (max-width: 640px) {
+    .bd-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .bd-modal {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .bd-image-wrap {
+        height: 200px;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .bd-car-name {
+        font-size: 20px;
+    }
+
+    .bd-body {
+        padding: 20px;
+    }
+
+    .bd-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bd-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .bd-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

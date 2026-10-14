@@ -10,15 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/add-car.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/add-car.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر (نسخة لوحة الشركة) ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -31,7 +31,6 @@
         </div>
     </header>
 
-    <!-- ========== لوحة التحكم ========== -->
     <div class="dashboard-layout container">
 
         <main class="dashboard-content">
@@ -246,7 +245,7 @@
                 </a>
             </nav>
 
-            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+            <a href="../index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
         </aside>
 
     </div>
@@ -258,9 +257,13 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/add-car.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js + auth-ui.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/add-car.js"></script>
 </body>
 
 </html>

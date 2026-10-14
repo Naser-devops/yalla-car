@@ -258,8 +258,13 @@
     transition: background 0.2s, transform 0.2s;
 }
 
+/* ✅ إصلاح RTL: نستخدم translateX بقيمة موجبة (تتحرك لليمين في RTL) */
 .top-car-item:hover {
     background: var(--color-trust-bg);
+    transform: translateX(3px);
+}
+
+[dir="ltr"] .top-car-item:hover {
     transform: translateX(-3px);
 }
 

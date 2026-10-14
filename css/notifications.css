@@ -1,0 +1,714 @@
+/* ============================================
+   Yalla Car — أنماط الإشعارات (Bell + Dropdown + Page)
+   ============================================ */
+
+
+/* ============================================
+   1. حاوية البيل
+   ============================================ */
+.notif-bell-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   2. زر البيل (Design أنظف - بدون border دائرية)
+   ============================================ */
+.notif-bell {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--color-text-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.notif-bell:hover {
+    background: var(--color-background);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.notif-bell.active {
+    background: var(--color-background);
+    color: var(--color-primary);
+}
+
+[data-theme="dark"] .notif-bell {
+    color: #CBD5E1;
+}
+
+[data-theme="dark"] .notif-bell:hover,
+[data-theme="dark"] .notif-bell.active {
+    background: #1E293B;
+    color: var(--color-accent);
+}
+
+
+/* ============================================
+   3. Badge (العدد)
+   ============================================ */
+.notif-badge {
+    position: absolute;
+    top: 4px;
+    inset-inline-end: 4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--color-error);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-white);
+    font-family: var(--font-main);
+    line-height: 1;
+}
+
+[data-theme="dark"] .notif-badge {
+    border-color: #1E293B;
+}
+
+
+/* ============================================
+   4. ✅ الـ Dropdown
+   ============================================ */
+.notif-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    inset-inline-end: 0;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    z-index: 999;
+    overflow: hidden;
+
+    /* الحالة الافتراضية: مخفي */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+    pointer-events: none;
+}
+
+.notif-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+[data-theme="dark"] .notif-dropdown {
+    background: #1E293B;
+    border-color: #334155;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================
+   5. رأس الـ Dropdown
+   ============================================ */
+.notif-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+[data-theme="dark"] .notif-dropdown-header {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+.notif-dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+
+.notif-dropdown-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background: var(--color-error);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.notif-mark-all-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    height: auto;
+}
+
+.notif-mark-all-btn:hover {
+    background: var(--color-trust-bg);
+}
+
+[data-theme="dark"] .notif-mark-all-btn {
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .notif-mark-all-btn:hover {
+    background: #334155;
+}
+
+
+/* ============================================
+   6. قائمة الإشعارات
+   ============================================ */
+.notif-dropdown-list {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+/* Scrollbar أنظف */
+.notif-dropdown-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.notif-dropdown-list::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+
+
+/* ============================================
+   7. عنصر الإشعار
+   ============================================ */
+.notif-dropdown-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.notif-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.notif-dropdown-item:hover {
+    background: var(--color-background);
+}
+
+.notif-dropdown-item.unread {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.04) 0%, transparent 100%);
+}
+
+.notif-dropdown-item.unread::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 3px;
+    background: var(--color-accent);
+    border-radius: 0 3px 3px 0;
+}
+
+[data-theme="dark"] .notif-dropdown-item {
+    border-color: #334155;
+}
+
+[data-theme="dark"] .notif-dropdown-item:hover {
+    background: #0F172A;
+}
+
+[data-theme="dark"] .notif-dropdown-item.unread {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, transparent 100%);
+}
+
+
+.notif-dropdown-item-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--color-trust-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+[data-theme="dark"] .notif-dropdown-item-icon {
+    background: #334155;
+}
+
+
+.notif-dropdown-item-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.notif-dropdown-item-body strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-dropdown-item-body span {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-dropdown-item-body small {
+    font-size: 11px;
+    color: var(--color-text-gray);
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+
+/* ============================================
+   8. حالة فاضية (داخل Dropdown)
+   ============================================ */
+.notif-dropdown-empty {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.notif-dropdown-empty .notif-empty-icon {
+    font-size: 48px;
+    opacity: 0.25;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.notif-dropdown-empty p {
+    font-size: 13px;
+    color: var(--color-text-gray);
+    margin: 0;
+}
+
+
+/* ============================================
+   9. فوتر الـ Dropdown
+   ============================================ */
+.notif-dropdown-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 12px 18px;
+    background: var(--color-background);
+    text-align: center;
+}
+
+[data-theme="dark"] .notif-dropdown-footer {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+.notif-dropdown-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.notif-dropdown-footer a:hover {
+    color: var(--color-accent);
+    gap: 10px;
+}
+
+[data-theme="dark"] .notif-dropdown-footer a {
+    color: var(--color-accent);
+}
+
+
+/* ============================================
+   10. صفحة الإشعارات الكاملة
+   ============================================ */
+.notifications-page {
+    padding: var(--space-5) 0 var(--space-6);
+    min-height: 60vh;
+}
+
+
+/* ============================================
+   11. رأس صفحة الإشعارات
+   ============================================ */
+.notif-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.notif-page-title {
+    font-size: var(--font-size-h2);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.notif-page-subtitle {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+}
+
+.notif-mark-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 42px;
+    padding: 0 var(--space-3);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius-control);
+    font-family: var(--font-main);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.notif-mark-all:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.notif-mark-all:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* ============================================
+   12. تابات صفحة الإشعارات
+   ============================================ */
+.notif-tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+}
+
+.notif-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-main);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-gray);
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    border-radius: 0;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.notif-tab:hover {
+    color: var(--color-text-dark);
+}
+
+.notif-tab.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.notif-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    inset-inline: 0;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+.notif-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 11px;
+    background: var(--color-background);
+    color: var(--color-text-gray);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.notif-tab.active .notif-count {
+    background: var(--color-primary);
+    color: white;
+}
+
+.notif-count-unread {
+    background: var(--color-error);
+    color: white;
+}
+
+
+/* ============================================
+   13. قائمة كروت الإشعارات (الصفحة الكاملة)
+   ============================================ */
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.notif-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.notif-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.notif-card.unread {
+    background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
+    border-color: var(--color-primary);
+}
+
+.notif-card.unread::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--color-accent);
+}
+
+[data-theme="dark"] .notif-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .notif-card.unread {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E293B 100%);
+}
+
+
+.notif-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.notif-icon-success { background: #DCFCE7; color: var(--color-success); }
+.notif-icon-warning { background: #FEF3C7; color: #B45309; }
+.notif-icon-error   { background: #FEE2E2; color: var(--color-error); }
+.notif-icon-info    { background: #DBEAFE; color: var(--color-primary); }
+
+
+.notif-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.notif-body h4 {
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.notif-body p {
+    font-size: var(--font-size-small);
+    color: var(--color-text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.notif-time {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.75;
+}
+
+
+.notif-delete {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--color-text-gray);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.notif-delete:hover {
+    background: #FEE2E2;
+    color: var(--color-error);
+}
+
+
+.notif-empty {
+    padding: var(--space-6) var(--space-3);
+    text-align: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+}
+
+[data-theme="dark"] .notif-empty {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.notif-empty-icon {
+    font-size: 64px;
+    line-height: 1;
+    opacity: 0.3;
+    margin-bottom: var(--space-3);
+}
+
+.notif-empty h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-1);
+}
+
+.notif-empty p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-gray);
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   14. Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .notif-dropdown {
+        width: 320px;
+        inset-inline-end: -60px;
+    }
+
+    .notif-page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .notif-mark-all {
+        justify-content: center;
+    }
+
+    .notif-page-title {
+        font-size: var(--font-size-h3);
+    }
+
+    .notif-card {
+        padding: var(--space-2);
+    }
+
+    .notif-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notif-dropdown {
+        width: calc(100vw - 24px);
+        inset-inline-end: -100px;
+    }
+}

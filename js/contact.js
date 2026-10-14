@@ -2,78 +2,80 @@
 // Yalla Car — JavaScript صفحة "تواصل معنا"
 // ============================================
 
+(function () {
+    'use strict';
 
-// ============================================
-// 1. سنة الفوتر تلقائية
-// ============================================
-const yearElement = document.getElementById('year');
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-
-// ============================================
-// 2. Toast Notification
-// ============================================
-const toast = document.getElementById('contactToast');
-const toastMsg = document.getElementById('contactToastMsg');
-let toastTimeout = null;
-
-function showToast(message, type) {
-    if (!toast) return;
-
-    toastMsg.textContent = message;
-    toast.className = 'contact-toast show ' + (type || 'success');
-
-    if (toastTimeout) clearTimeout(toastTimeout);
-
-    toastTimeout = setTimeout(function () {
-        toast.classList.remove('show');
-    }, 3200);
-}
+    // ============================================
+    // 1. سنة الفوتر
+    // ============================================
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
 
-// ============================================
-// 3. إرسال النموذج
-// ============================================
-const contactForm = document.getElementById('contactForm');
+    // ============================================
+    // 2. Toast Notification (تحت)
+    // ============================================
+    const toast = document.getElementById('contactToast');
+    const toastMsg = document.getElementById('contactToastMsg');
+    let toastTimeout = null;
 
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    function showToast(message, type) {
+        if (!toast) return;
 
-        const formData = {
-            name: document.getElementById('contactName').value,
-            email: document.getElementById('contactEmail').value,
-            phone: document.getElementById('contactPhone').value,
-            subject: document.getElementById('contactSubject').value,
-            message: document.getElementById('contactMessage').value
-        };
+        toastMsg.textContent = message;
+        toast.className = 'contact-toast show ' + (type || 'success');
 
-        console.log('📨 رسالة جديدة:', formData);
+        if (toastTimeout) clearTimeout(toastTimeout);
 
-        // إظهار رسالة نجاح
-        showToast('✅ تم إرسال رسالتك! سنرد خلال 24 ساعة', 'success');
+        toastTimeout = setTimeout(function () {
+            toast.classList.remove('show');
+        }, 3200);
+    }
 
-        // مسح النموذج
-        contactForm.reset();
+
+    // ============================================
+    // 3. إرسال النموذج
+    // ============================================
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value
+            };
+
+            console.log('📨 رسالة جديدة:', formData);
+
+            showToast('✅ تم إرسال رسالتك! سنرد خلال 24 ساعة', 'success');
+
+            contactForm.reset();
+        });
+    }
+
+
+    // ============================================
+    // 4. FAQ — إغلاق الباقي عند فتح واحد
+    // ============================================
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(function (item) {
+        item.addEventListener('toggle', function () {
+            if (item.open) {
+                faqItems.forEach(function (other) {
+                    if (other !== item && other.open) {
+                        other.open = false;
+                    }
+                });
+            }
+        });
     });
-}
 
-
-// ============================================
-// 4. FAQ — إغلاق الباقي عند فتح واحد
-// ============================================
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(function (item) {
-    item.addEventListener('toggle', function () {
-        if (item.open) {
-            faqItems.forEach(function (other) {
-                if (other !== item && other.open) {
-                    other.open = false;
-                }
-            });
-        }
-    });
-});
+})();

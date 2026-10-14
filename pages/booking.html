@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/booking.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
@@ -24,10 +25,10 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
             <a href="search.html" class="active" data-i18n="nav.cars">السيارات</a>
-            <a href="index.html#partners" data-i18n="nav.companies">الشركات</a>
-            <a href="index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
+            <a href="../index.html#partners" data-i18n="nav.companies">الشركات</a>
+            <a href="../index.html#how-it-works" data-i18n="nav.how">كيف يعمل</a>
         </nav>
 
         <div class="action">
@@ -65,25 +66,25 @@
 
                     <div class="form-row">
                         <div class="form-field">
-                            <label data-i18n="booking.fullName">الاسم الكامل</label>
-                            <input type="text" placeholder="محمد أحمد" required>
+                            <label for="driverName" data-i18n="booking.fullName">الاسم الكامل</label>
+                            <input type="text" id="driverName" placeholder="محمد أحمد" required>
                         </div>
 
                         <div class="form-field">
-                            <label data-i18n="booking.phone">رقم الهاتف</label>
-                            <input type="tel" placeholder="+962 7X XXX XXXX" required>
+                            <label for="driverPhone" data-i18n="booking.phone">رقم الهاتف</label>
+                            <input type="tel" id="driverPhone" placeholder="+962 7X XXX XXXX" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-field">
-                            <label data-i18n="booking.email">البريد الإلكتروني</label>
-                            <input type="email" placeholder="name@email.com" required>
+                            <label for="driverEmail" data-i18n="booking.email">البريد الإلكتروني</label>
+                            <input type="email" id="driverEmail" placeholder="name@email.com" required>
                         </div>
 
                         <div class="form-field">
-                            <label data-i18n="booking.license">رقم رخصة القيادة</label>
-                            <input type="text" placeholder="1234567" required>
+                            <label for="driverLicense" data-i18n="booking.license">رقم رخصة القيادة</label>
+                            <input type="text" id="driverLicense" placeholder="1234567" required>
                         </div>
                     </div>
 
@@ -91,22 +92,22 @@
 
                     <div class="form-row">
                         <div class="form-field">
-                            <label data-i18n="booking.pickupDate">تاريخ الاستلام</label>
+                            <label for="pickupDate" data-i18n="booking.pickupDate">تاريخ الاستلام</label>
                             <input type="date" id="pickupDate" required>
                         </div>
 
                         <div class="form-field">
-                            <label data-i18n="booking.returnDate">تاريخ الإرجاع</label>
+                            <label for="returnDate" data-i18n="booking.returnDate">تاريخ الإرجاع</label>
                             <input type="date" id="returnDate" required>
                         </div>
                     </div>
 
                     <div class="form-field">
-                        <label data-i18n="booking.pickupCity">مدينة الاستلام</label>
-                        <select required>
-                            <option data-i18n="booking.amman">عمّان</option>
-                            <option data-i18n="booking.aqaba">العقبة</option>
-                            <option data-i18n="booking.irbid">إربد</option>
+                        <label for="pickupCitySelect" data-i18n="booking.pickupCity">مدينة الاستلام</label>
+                        <select id="pickupCitySelect" required>
+                            <option value="amman" data-i18n="booking.amman">عمّان</option>
+                            <option value="aqaba" data-i18n="booking.aqaba">العقبة</option>
+                            <option value="irbid" data-i18n="booking.irbid">إربد</option>
                         </select>
                     </div>
 
@@ -133,7 +134,7 @@
                     </div>
 
                     <label class="checkbox-terms">
-                        <input type="checkbox" required>
+                        <input type="checkbox" id="termsAgree" required>
                         <span data-i18n="booking.agree">أوافق على الشروط والأحكام</span>
                     </label>
 
@@ -147,7 +148,7 @@
                 <h3 class="summary-title" data-i18n="booking.summary">ملخص الحجز</h3>
 
                 <div class="summary-car">
-                    <img id="summaryImage" src="images/kia-picanto-2023.jpg" alt="Car">
+                    <img id="summaryImage" src="../images/kia-picanto-2023.jpg" alt="Car">
                     <div class="summary-car-info">
                         <h4 id="summaryName">Kia Picanto 2023</h4>
                         <p id="summaryCompany">Ram Rentals</p>
@@ -208,9 +209,13 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/booking.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/booking.js"></script>
 </body>
 
 </html>

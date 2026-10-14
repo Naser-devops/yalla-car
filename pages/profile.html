@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="profile.metaTitle">الملف الشخصي — يلا كار</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+
+    <!-- ========== الهيدر ========== -->
+    <header>
+        <div class="logo">
+            <span class="logo-first" data-i18n="logo.first">يلا</span>
+            <span data-i18n="logo.second">كار</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="../index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="search.html" data-i18n="nav.cars">السيارات</a>
+            <a href="my-bookings.html" data-i18n="nav.myBookings">حجوزاتي</a>
+            <a href="profile.html" class="active" data-i18n="nav.profile">ملفي الشخصي</a>
+        </nav>
+
+        <div class="action">
+            <button class="en" data-i18n="lang.switch">EN</button>
+            <a href="login.html" class="login-btn" data-i18n="auth.logout" data-logout>تسجيل الخروج</a>
+        </div>
+    </header>
+
+    <!-- ========== المحتوى ========== -->
+    <main class="profile-page container">
+
+        <!-- رأس الصفحة -->
+        <div class="profile-header">
+            <div class="profile-avatar-big" id="profileAvatar">م</div>
+            <div class="profile-header-info">
+                <h1 class="profile-header-name" id="profileName">محمد أحمد</h1>
+                <p class="profile-header-email" id="profileEmail">user@test.com</p>
+                <span class="profile-header-role" id="profileRole">عميل</span>
+            </div>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="profile-layout">
+
+            <!-- عمود اليمين: التنقل -->
+            <aside class="profile-sidebar">
+                <button type="button" class="profile-tab active" data-tab="info">
+                    <span class="tab-icon">👤</span>
+                    <span data-i18n="profile.tabs.info">المعلومات الشخصية</span>
+                </button>
+
+                <button type="button" class="profile-tab" data-tab="password">
+                    <span class="tab-icon">🔒</span>
+                    <span data-i18n="profile.tabs.password">كلمة المرور</span>
+                </button>
+
+                <button type="button" class="profile-tab" data-tab="danger">
+                    <span class="tab-icon">⚠️</span>
+                    <span data-i18n="profile.tabs.danger">منطقة الخطر</span>
+                </button>
+            </aside>
+
+            <!-- عمود اليسار: المحتوى -->
+            <div class="profile-content">
+
+                <!-- تبويب: المعلومات الشخصية -->
+                <div class="profile-panel active" data-panel="info">
+                    <h2 class="profile-panel-title" data-i18n="profile.info.title">المعلومات الشخصية</h2>
+                    <p class="profile-panel-subtitle" data-i18n="profile.info.subtitle">
+                        عدّل بياناتك الشخصية وحافظ على تحديثها
+                    </p>
+
+                    <form class="profile-form" id="infoForm">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="inputName" data-i18n="profile.info.name">الاسم الكامل</label>
+                                <input id="inputName" type="text" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="inputEmail" data-i18n="profile.info.email">البريد الإلكتروني</label>
+                                <input id="inputEmail" type="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="inputPhone" data-i18n="profile.info.phone">رقم الهاتف</label>
+                                <input id="inputPhone" type="tel" placeholder="+962 7X XXX XXXX">
+                            </div>
+
+                            <div class="form-field">
+                                <label data-i18n="profile.info.role">نوع الحساب</label>
+                                <input id="inputRole" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary" data-i18n="profile.info.save">
+                                حفظ التعديلات
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- تبويب: كلمة المرور -->
+                <div class="profile-panel" data-panel="password">
+                    <h2 class="profile-panel-title" data-i18n="profile.password.title">تغيير كلمة المرور</h2>
+                    <p class="profile-panel-subtitle" data-i18n="profile.password.subtitle">
+                        احرص على استخدام كلمة مرور قوية
+                    </p>
+
+                    <form class="profile-form" id="passwordForm">
+                        <div class="form-field">
+                            <label for="inputCurrentPassword" data-i18n="profile.password.current">
+                                كلمة المرور الحالية
+                            </label>
+                            <input id="inputCurrentPassword" type="password" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="inputNewPassword" data-i18n="profile.password.new">
+                                    كلمة المرور الجديدة
+                                </label>
+                                <input id="inputNewPassword" type="password" placeholder="••••••••" minlength="8" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="inputConfirmPassword" data-i18n="profile.password.confirm">
+                                    تأكيد كلمة المرور
+                                </label>
+                                <input id="inputConfirmPassword" type="password" placeholder="••••••••" minlength="8" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary" data-i18n="profile.password.save">
+                                تحديث كلمة المرور
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- تبويب: منطقة الخطر -->
+                <div class="profile-panel" data-panel="danger">
+                    <h2 class="profile-panel-title profile-panel-title-danger" data-i18n="profile.danger.title">
+                        منطقة الخطر
+                    </h2>
+                    <p class="profile-panel-subtitle" data-i18n="profile.danger.subtitle">
+                        إجراءات لا يمكن التراجع عنها
+                    </p>
+
+                    <div class="danger-box">
+                        <div class="danger-box-icon">⚠️</div>
+                        <div class="danger-box-content">
+                            <h3 data-i18n="profile.danger.deleteTitle">حذف الحساب نهائياً</h3>
+                            <p data-i18n="profile.danger.deleteText">
+                                سيتم حذف جميع بياناتك وحجوزاتك نهائياً. لا يمكن التراجع عن هذا الإجراء.
+                            </p>
+                        </div>
+                        <button type="button" class="btn-danger" id="deleteAccountBtn" data-i18n="profile.danger.deleteBtn">
+                            حذف الحساب
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span data-i18n="footer.rights">يلا كار — جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ السكربتات بترتيب صحيح -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+
+</html>

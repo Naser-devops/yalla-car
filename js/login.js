@@ -1,240 +1,251 @@
 // ============================================
 // Yalla Car — JavaScript صفحة تسجيل الدخول
-// نظام الأدوار الكامل: customer / company / admin
 // ============================================
 
+(function () {
+    'use strict';
 
-// ============================================
-// 0. قوائم الإيميلات (مؤقتة — للتجربة)
-// ============================================
-// ⚠️ TODO: استبدلها بـ Backend API في المرحلة القادمة
-// ⚠️ لا يمكن الاعتماد على Frontend للتحقق الأمني
+    // ============================================
+    // 0. قوائم الإيميلات
+    // ============================================
+    const MOCK_ADMIN_EMAILS = [
+        'admin@yallacar.jo',
+        'manager@yallacar.jo'
+    ];
 
-const MOCK_ADMIN_EMAILS = [
-    'admin@yallacar.jo',
-    'manager@yallacar.jo'
-];
+    const MOCK_COMPANY_EMAILS = [
+        'company@test.com',
+        'ram@rentals.jo',
+        'petra@wheels.jo'
+    ];
 
-const MOCK_COMPANY_EMAILS = [
-    'company@test.com',
-    'ram@rentals.jo',
-    'petra@wheels.jo'
-];
-
-// خريطة أسماء الشركات (للترحيب لاحقاً)
-const COMPANY_NAMES = {
-    'company@test.com': 'Ram Rentals',
-    'ram@rentals.jo': 'Ram Rentals',
-    'petra@wheels.jo': 'Petra Car'
-};
+    const COMPANY_NAMES = {
+        'company@test.com': 'Ram Rentals',
+        'ram@rentals.jo': 'Ram Rentals',
+        'petra@wheels.jo': 'Petra Car'
+    };
 
 
-// ============================================
-// 1. تبديل التابين (Login / Register)
-// ============================================
-const authTabs = document.querySelectorAll('.auth-tab');
-const authForms = document.querySelectorAll('.auth-form');
+    // ============================================
+    // 0.1 إذا المستخدم مسجّل → وجّهه مباشرة
+    // ============================================
+    (function checkAlreadyLoggedIn() {
+        try {
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.loggedIn) return;
 
-function switchTab(target) {
-    authTabs.forEach(function (t) {
-        t.classList.remove('active');
-        if (t.getAttribute('data-tab') === target) {
-            t.classList.add('active');
+            const savedRedirect = sessionStorage.getItem('redirectAfterLogin');
+            let target = '';
+
+            if (savedRedirect && savedRedirect.indexOf('login.html') === -1) {
+                sessionStorage.removeItem('redirectAfterLogin');
+                target = savedRedirect;
+            } else {
+                if (user.role === 'admin') target = 'admin-approvals.html';
+                else if (user.role === 'company') target = 'dashboard.html';
+                else target = 'my-bookings.html';
+            }
+
+            console.log('ℹ️ أنت مسجّل دخول بالفعل — جاري تحويلك...');
+            window.location.replace(target);
+        } catch (err) {
+            console.error('Check logged-in error:', err);
         }
-    });
+    })();
 
-    authForms.forEach(function (f) {
-        f.classList.remove('active');
-    });
 
-    const targetForm = document.getElementById(target + 'Form');
-    if (targetForm) {
-        targetForm.classList.add('active');
+    // ============================================
+    // 1. تبديل التابين (عميل / شركة)
+    // ============================================
+    const roleTabs = document.querySelectorAll('.auth-role-tab');
+    const authForms = document.querySelectorAll('.auth-form');
+
+    function switchRole(role) {
+        roleTabs.forEach(function (tab) {
+            tab.classList.remove('active');
+            if (tab.getAttribute('data-role') === role) {
+                tab.classList.add('active');
+            }
+        });
+
+        authForms.forEach(function (form) {
+            form.classList.remove('active');
+            if (form.getAttribute('data-role') === role) {
+                form.classList.add('active');
+            }
+        });
+
+        authForms.forEach(function (form) {
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(function (input) {
+                if (input.type === 'checkbox') {
+                    input.checked = false;
+                } else {
+                    input.value = '';
+                }
+            });
+        });
+
+        console.log('🔄 تم التبديل لوضع:', role);
     }
-}
 
-authTabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-        switchTab(this.getAttribute('data-tab'));
+    roleTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            const role = this.getAttribute('data-role');
+            switchRole(role);
+        });
     });
-});
 
-document.querySelectorAll('[data-tab-switch]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
+
+    // ============================================
+    // 2. Toast Notification
+    // ============================================
+    const toast = document.getElementById('authToast');
+    const toastMsg = document.getElementById('authToastMsg');
+    let toastTimeout = null;
+
+    function showToast(message, type) {
+        if (!toast || !toastMsg) return;
+
+        toastMsg.textContent = message;
+        toast.className = 'auth-toast show ' + (type || 'success');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+
+        toastTimeout = setTimeout(function () {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+
+    // ============================================
+    // 3. تحديد دور المستخدم
+    // ============================================
+    function checkUserRole(email) {
+        const cleanEmail = email.toLowerCase().trim();
+
+        if (MOCK_ADMIN_EMAILS.includes(cleanEmail)) return 'admin';
+        if (MOCK_COMPANY_EMAILS.includes(cleanEmail)) return 'company';
+        return 'customer';
+    }
+
+
+    // ============================================
+    // 4. صفحة التوجيه
+    // ============================================
+    function getRedirectUrl(role) {
+        const savedRedirect = sessionStorage.getItem('redirectAfterLogin');
+        if (savedRedirect && savedRedirect.indexOf('login.html') === -1) {
+            sessionStorage.removeItem('redirectAfterLogin');
+            return savedRedirect;
+        }
+
+        if (role === 'admin') return 'admin-approvals.html';
+        if (role === 'company') return 'dashboard.html';
+        return 'my-bookings.html';
+    }
+
+
+    // ============================================
+    // 5. تسجيل الدخول
+    // ============================================
+    const customerForm = document.getElementById('customerForm');
+    const companyForm = document.getElementById('companyForm');
+
+    function handleLogin(e, formRole) {
         e.preventDefault();
-        switchTab(this.getAttribute('data-tab-switch'));
-    });
-});
 
+        const emailInput = formRole === 'customer'
+            ? document.getElementById('customerEmail')
+            : document.getElementById('companyEmail');
 
-// ============================================
-// 2. Toast Notification
-// ============================================
-const toast = document.getElementById('authToast');
-const toastMsg = document.getElementById('authToastMsg');
-let toastTimeout = null;
+        const passwordInput = formRole === 'customer'
+            ? document.getElementById('customerPassword')
+            : document.getElementById('companyPassword');
 
-function showToast(message, type) {
-    if (!toast || !toastMsg) return;
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
 
-    toastMsg.textContent = message;
-    toast.className = 'auth-toast show ' + (type || 'success');
-
-    if (toastTimeout) clearTimeout(toastTimeout);
-
-    toastTimeout = setTimeout(function () {
-        toast.classList.remove('show');
-    }, 2500);
-}
-
-
-// ============================================
-// 3. تحديد دور المستخدم حسب الإيميل
-// ============================================
-function checkUserRole(email) {
-    const cleanEmail = email.toLowerCase().trim();
-
-    if (MOCK_ADMIN_EMAILS.includes(cleanEmail)) {
-        return 'admin';
-    }
-
-    if (MOCK_COMPANY_EMAILS.includes(cleanEmail)) {
-        return 'company';
-    }
-
-    return 'customer';
-}
-
-
-// ============================================
-// 4. الحصول على صفحة التوجيه حسب الدور
-// ============================================
-function getRedirectUrl(role) {
-    // لو في صفحة محفوظة قبل تسجيل الدخول → روح لها
-    const savedRedirect = sessionStorage.getItem('redirectAfterLogin');
-    if (savedRedirect && savedRedirect.indexOf('login.html') === -1) {
-        sessionStorage.removeItem('redirectAfterLogin');
-        return savedRedirect;
-    }
-
-    // وإلا — روح حسب الدور
-    if (role === 'admin') {
-        return 'admin-approvals.html';
-    }
-    if (role === 'company') {
-        return 'dashboard.html';
-    }
-    return 'my-bookings.html';
-}
-
-
-// ============================================
-// 5. تسجيل الدخول
-// ============================================
-const loginForm = document.getElementById('loginForm');
-
-if (loginForm) {
-    loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const email = document.getElementById('loginEmail').value.trim();
-        const password = document.getElementById('loginPassword').value;
-
-        // تحقق أساسي من الإيميل
         if (!email || !email.includes('@')) {
             showToast('❌ البريد الإلكتروني غير صحيح', 'error');
             return;
         }
 
-        // تحقق من طول كلمة المرور (تجريبي)
         if (!password || password.length < 4) {
             showToast('❌ كلمة المرور قصيرة جداً', 'error');
             return;
         }
 
-        const role = checkUserRole(email);
+        const actualRole = checkUserRole(email);
 
-        console.log('محاولة تسجيل دخول:', { email: email, role: role });
+        console.log('محاولة تسجيل دخول:', { email: email, formRole: formRole, actualRole: actualRole });
 
-        // تجهيز بيانات المستخدم
+        if (formRole === 'company' && actualRole !== 'company' && actualRole !== 'admin') {
+            showToast('❌ هذا الإيميل ليس مسجلاً كشركة', 'error');
+            return;
+        }
+
+        if (formRole === 'customer' && actualRole === 'company') {
+            showToast('💡 هذا الإيميل مسجّل كشركة — جاري تحويلك...', 'success');
+            setTimeout(function () {
+                switchRole('company');
+            }, 1200);
+            return;
+        }
+
         const userData = {
             email: email,
-            role: role,
+            role: actualRole,
             loggedIn: true,
             loginTime: new Date().toISOString()
         };
 
-        // لو شركة → احفظ اسم الشركة
-        if (role === 'company' && COMPANY_NAMES[email.toLowerCase()]) {
+        if (actualRole === 'company' && COMPANY_NAMES[email.toLowerCase()]) {
             userData.companyName = COMPANY_NAMES[email.toLowerCase()];
         }
 
-        // حفظ في localStorage
         localStorage.setItem('user', JSON.stringify(userData));
 
-        // التوجيه حسب الدور
-        const redirectUrl = getRedirectUrl(role);
+        const redirectUrl = getRedirectUrl(actualRole);
 
         let welcomeMsg = '✅ تم تسجيل الدخول بنجاح!';
-        if (role === 'admin') {
-            welcomeMsg = '🔐 مرحباً أيها المدير! جاري الدخول...';
-        } else if (role === 'company') {
-            welcomeMsg = '🏢 مرحباً بك في لوحة شركتك!';
-        }
+        if (actualRole === 'admin') welcomeMsg = '🔐 مرحباً أيها المدير! جاري الدخول...';
+        else if (actualRole === 'company') welcomeMsg = '🏢 مرحباً بك في لوحة شركتك!';
 
         showToast(welcomeMsg, 'success');
 
         setTimeout(function () {
             window.location.href = redirectUrl;
         }, 1500);
+    }
+
+    if (customerForm) {
+        customerForm.addEventListener('submit', function (e) {
+            handleLogin(e, 'customer');
+        });
+    }
+
+    if (companyForm) {
+        companyForm.addEventListener('submit', function (e) {
+            handleLogin(e, 'company');
+        });
+    }
+
+
+    // ============================================
+    // 6. تسجيل الخروج
+    // ============================================
+    function logoutUser() {
+        localStorage.removeItem('user');
+        console.log('👋 تم تسجيل الخروج');
+        window.location.href = 'login.html';
+    }
+
+    document.querySelectorAll('[data-logout]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            logoutUser();
+        });
     });
-}
 
-
-// ============================================
-// 6. إنشاء حساب جديد
-// ============================================
-const registerForm = document.getElementById('registerForm');
-
-if (registerForm) {
-    registerForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('registerName').value.trim();
-        const email = document.getElementById('registerEmail').value.trim();
-        const password = document.getElementById('registerPassword').value;
-
-        // تحقق
-        if (!name || name.length < 3) {
-            showToast('❌ الاسم قصير جداً', 'error');
-            return;
-        }
-
-        if (!email || !email.includes('@')) {
-            showToast('❌ البريد الإلكتروني غير صحيح', 'error');
-            return;
-        }
-
-        if (!password || password.length < 6) {
-            showToast('❌ كلمة المرور يجب أن تكون 6 أحرف على الأقل', 'error');
-            return;
-        }
-
-        console.log('محاولة إنشاء حساب:', { name: name, email: email });
-
-        // حفظ بيانات المستخدم (كل حساب جديد = customer)
-        localStorage.setItem('user', JSON.stringify({
-            name: name,
-            email: email,
-            role: 'customer',
-            loggedIn: true,
-            loginTime: new Date().toISOString()
-        }));
-
-        showToast('✅ تم إنشاء الحساب! جاري التوجيه...', 'success');
-
-        setTimeout(function () {
-            window.location.href = 'my-bookings.html';
-        }, 1500);
-    });
-}
+})();

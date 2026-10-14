@@ -10,15 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/dashboard-home.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard-home.css">
+    <link rel="stylesheet" href="../css/pagination.css">
+    <link rel="stylesheet" href="../css/auth-ui.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 
 <body>
 
-    <!-- ========== الهيدر ========== -->
     <header>
         <div class="logo">
             <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -31,17 +32,15 @@
         </div>
     </header>
 
-    <!-- ========== لوحة التحكم ========== -->
     <div class="dashboard-layout container">
 
         <main class="dashboard-content">
 
-            <!-- ========== الترحيب ========== -->
             <div class="welcome-banner">
                 <div class="welcome-text">
                     <h1 class="welcome-title">
                         <span data-i18n="dashboardHome.welcome">مرحباً،</span>
-                        <span class="welcome-company">Ram Rentals</span>
+                        <span class="welcome-company" id="welcomeCompany">Ram Rentals</span>
                         👋
                     </h1>
                     <p class="welcome-subtitle" data-i18n="dashboardHome.welcomeSubtitle">
@@ -56,7 +55,6 @@
                 </div>
             </div>
 
-            <!-- ========== بطاقات KPI ========== -->
             <div class="kpi-grid">
 
                 <div class="kpi-card kpi-gradient-blue">
@@ -97,7 +95,6 @@
 
             </div>
 
-            <!-- ========== Quick Actions ========== -->
             <div class="quick-actions-section">
                 <h2 class="section-subtitle" data-i18n="dashboardHome.quickActions">إجراءات سريعة</h2>
 
@@ -130,7 +127,6 @@
                 </div>
             </div>
 
-            <!-- ========== الرسم البياني ========== -->
             <div class="chart-section">
                 <div class="chart-header">
                     <h2 class="section-subtitle" data-i18n="dashboardHome.weeklyBookings">الحجوزات هذا الأسبوع</h2>
@@ -172,7 +168,6 @@
                 </div>
             </div>
 
-            <!-- ========== آخر الحجوزات ========== -->
             <div class="recent-section">
                 <div class="chart-header">
                     <h2 class="section-subtitle" data-i18n="dashboardHome.recentBookings">آخر الحجوزات</h2>
@@ -201,7 +196,8 @@
                                 <td class="cell-date">12 - 15 أكتوبر</td>
                                 <td class="cell-price">66 <span data-i18n="car.currency">د.أ</span></td>
                                 <td>
-                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد
+                                        الانتظار</span>
                                 </td>
                             </tr>
                             <tr>
@@ -210,7 +206,8 @@
                                 <td class="cell-date">20 - 25 أكتوبر</td>
                                 <td class="cell-price">140 <span data-i18n="car.currency">د.أ</span></td>
                                 <td>
-                                    <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                                    <span class="status-badge status-confirmed"
+                                        data-i18n="incoming.status.confirmed">مؤكد</span>
                                 </td>
                             </tr>
                             <tr>
@@ -219,7 +216,8 @@
                                 <td class="cell-date">20 - 22 أكتوبر</td>
                                 <td class="cell-price">90 <span data-i18n="car.currency">د.أ</span></td>
                                 <td>
-                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد الانتظار</span>
+                                    <span class="status-badge status-pending" data-i18n="incoming.status.pending">قيد
+                                        الانتظار</span>
                                 </td>
                             </tr>
                             <tr>
@@ -228,7 +226,8 @@
                                 <td class="cell-date">01 - 05 نوفمبر</td>
                                 <td class="cell-price">88 <span data-i18n="car.currency">د.أ</span></td>
                                 <td>
-                                    <span class="status-badge status-confirmed" data-i18n="incoming.status.confirmed">مؤكد</span>
+                                    <span class="status-badge status-confirmed"
+                                        data-i18n="incoming.status.confirmed">مؤكد</span>
                                 </td>
                             </tr>
                             <tr>
@@ -237,7 +236,8 @@
                                 <td class="cell-date">10 - 13 أكتوبر</td>
                                 <td class="cell-price">255 <span data-i18n="car.currency">د.أ</span></td>
                                 <td>
-                                    <span class="status-badge status-cancelled" data-i18n="incoming.status.cancelled">ملغى</span>
+                                    <span class="status-badge status-cancelled"
+                                        data-i18n="incoming.status.cancelled">ملغى</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -247,7 +247,6 @@
 
         </main>
 
-        <!-- ========== Sidebar ========== -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-logo">
                 <span class="logo-first" data-i18n="logo.first">يلا</span>
@@ -269,7 +268,7 @@
                 </a>
             </nav>
 
-            <a href="index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
+            <a href="../index.html" class="sidebar-logout" data-i18n="dashboard.logout" data-logout>تسجيل الخروج</a>
         </aside>
 
     </div>
@@ -281,9 +280,14 @@
             </div>
         </div>
     </footer>
-<script src="js/theme.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/dashboard.js"></script>
+
+    <!-- ✅ السكربتات (تمت إضافة notifications.js + auth-ui.js) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/pagination.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 
 </html>

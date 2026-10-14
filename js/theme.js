@@ -12,11 +12,39 @@
     const THEME_KEY = 'yallacar_theme';
     const html = document.documentElement;
 
+
     // ============================================
-    // 1. تطبيق الثيم المحفوظ فوراً (قبل render الصفحة)
+    // 0. Anti-FOUC: حقن سكريبت في <head>
+    // ============================================
+    (function injectAntiFOUCScript() {
+        if (document.getElementById('anti-fouc-theme')) return;
+
+        const script = document.createElement('script');
+        script.id = 'anti-fouc-theme';
+        script.textContent = `
+            (function() {
+                try {
+                    var t = localStorage.getItem('yallacar_theme') || 'light';
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        `;
+
+        const head = document.head || document.getElementsByTagName('head')[0];
+        if (head.firstChild) {
+            head.insertBefore(script, head.firstChild);
+        } else {
+            head.appendChild(script);
+        }
+    })();
+
+
+    // ============================================
+    // 1. تطبيق الثيم المحفوظ فوراً
     // ============================================
     const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
     html.setAttribute('data-theme', savedTheme);
+
 
     // ============================================
     // 2. دالة تبديل الثيم
@@ -28,7 +56,6 @@
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem(THEME_KEY, newTheme);
 
-        // تحديث أيقونة جميع الأزرار
         document.querySelectorAll('.theme-toggle').forEach(function (btn) {
             btn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
             btn.setAttribute('aria-label',
@@ -36,6 +63,7 @@
             );
         });
     }
+
 
     // ============================================
     // 3. إنشاء زر التبديل
@@ -52,16 +80,16 @@
         return btn;
     }
 
+
     // ============================================
     // 4. حقن الزر في المكان المناسب
     // ============================================
     function injectButton() {
-        // تجنب التكرار
         if (document.querySelector('.theme-toggle')) return;
 
         const btn = createToggleButton();
 
-        // (1) الهيدر العادي (index, search, about, contact, etc.)
+        // (1) الهيدر العادي
         const action = document.querySelector('header .action');
         if (action) {
             action.insertBefore(btn, action.firstChild);
@@ -75,7 +103,7 @@
             return;
         }
 
-        // (3) صفحات auth (login, register-company)
+        // (3) صفحات auth
         const authBody = document.querySelector('.auth-body, .register-body, .pending-page');
         if (authBody) {
             btn.classList.add('theme-toggle-fixed');
@@ -83,10 +111,11 @@
             return;
         }
 
-        // (4) fallback — ثابت في الزاوية
+        // (4) fallback
         btn.classList.add('theme-toggle-fixed');
         document.body.appendChild(btn);
     }
+
 
     // ============================================
     // 5. الحقن بعد تحميل DOM
@@ -97,15 +126,13 @@
         injectButton();
     }
 
+
     // ============================================
-    // 6. ✅ مراقبة تغيير اللغة (dir فقط)
+    // 6. مراقبة تغيير اللغة (dir فقط)
     // ============================================
-    // قبل الإصلاح: يراقب كل attribute
-    // بعد الإصلاح: يراقب dir فقط
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.attributeName === 'dir') {
-                // اللغة تغيرت — نحدّث aria-label للزر
                 const current = html.getAttribute('data-theme');
                 document.querySelectorAll('.theme-toggle').forEach(function (btn) {
                     btn.setAttribute('aria-label',
@@ -118,7 +145,37 @@
 
     observer.observe(document.documentElement, {
         attributes: true,
-        attributeFilter: ['dir']   // ⬅️ فقط dir — أداء أفضل
+        attributeFilter: ['dir']
     });
+
+
+    // ============================================
+    // 7. ✅ إضافة class .scrolled للهيدر عند التمرير
+    // ============================================
+    (function headerScrollEffect() {
+        const header = document.querySelector('header');
+        if (!header) return;
+
+        let ticking = false;
+
+        function updateHeader() {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // تشغيل أولي
+        updateHeader();
+    })();
 
 })();
